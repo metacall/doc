@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Understanding Metacall CLI
+# Understanding MetaCall CLI
 
 This document will guide you through the basic commands of MetaCall CLI, explaining each one with simple examples to help you get started.
 

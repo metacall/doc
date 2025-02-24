@@ -1,5 +1,8 @@
 ---
 sidebar_position: 4
+tags:
+  - machine-learning
+  - python
 ---
 
 Guide to install Metacall CLI on Docker.

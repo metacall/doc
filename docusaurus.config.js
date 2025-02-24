@@ -4,34 +4,31 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
+const { themes } = require("prism-react-renderer");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Metacall Tutorial',
+  title: 'MetaCall',
   tagline: 'Documentation for MetaCall',
   favicon: 'img/metacall-logo.png',
+  organizationName: "MetaCall",
 
   // Set the production url of your site here
-  url: 'https://github.com',
+  url: 'https://docs-ptc.netlify.app',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/doc/',
+  baseUrl: '/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'metacall', // Usually your GitHub org/user name.
-  projectName: 'doc', // Usually your repo name.
-  deploymentBranch: 'gh-pages',
 
-  onBrokenLinks: 'ignore',
+  projectName: 'MetaCall', // Usually your repo name.
+
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace 'en' with 'zh-Hans'.
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -44,6 +41,12 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
+          
+          
+          tagsBasePath: "tags",
+          breadcrumbs: true, 
+          
+          
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -51,10 +54,12 @@ const config = {
       }),
     ],
   ],
-
+  
+  
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      customCss: './src/css/custom.css', // Correct placement for customCss
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
@@ -71,56 +76,87 @@ const config = {
             label: 'Documentation',
           },
           {
+            label: "Install",
+            href: "/docs/category/installating-metacall-cli",
+            position: "left",
+          },
+          {
+            label: "Tutorials",
+            href: "/docs/category/tutorials",
+            position: "left",
+          },
+          {
             href: 'https://github.com/metacall',
             label: 'GitHub',
             position: 'right',
           },
         ],
       },
+     
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Docs',
+            title: "Intro",
             items: [
               {
-                label: 'Documentation',
-                to: '/docs/category/introduction',
+                label: "Getting Started",
+                to: "/docs/getting-started",
+              },
+              {
+                label: "Install",
+                to: "/docs/category/installating-metacall-cli",
+              },
+              
+            ],
+          },
+          {
+            title: "Use MetaCall",
+            items: [
+              {
+                label: "Configuration",
+                to: "/docs/running-bracket/configuration",
+              },
+              {
+                label: "Deployment",
+                to: "/docs/deployment",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: "Examples",
+                to: "/docs/community/contributing",
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
+                label: "Developing",
+                to: "/docs/community/development",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: "GitHub",
+                href: "https://github.com/metacall/",
+              },
+             
+              {
+                label: "Changelog",
+                href: "https://github.com/metacall/core/releases",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} MetaCall. All Rights Reserved.`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        theme: prismThemes.vsDark,
+        darkTheme: prismThemes.vsDark,
+        
       },
     }),
 };
