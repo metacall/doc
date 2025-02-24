@@ -32,7 +32,7 @@ const FeatureList = [
         Learn from existing tutorials on how to use MetaCall in different scenarios.
       </>
     ),
-    goto: '/docs/category/tutorial---basics/',
+    goto: '/docs/category/tutorials',
   },
 ];
 

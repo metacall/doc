@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Getting Started with Metacall
+# Getting Started with MetaCall
 
 **Metacall** is a **polyglot** tool that allows calling *functions*, *methods*, *procedures* between different programming languages.
 

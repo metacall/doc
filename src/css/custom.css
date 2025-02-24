@@ -6,25 +6,76 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
+  
+  
+  --ifm-color-primary: #4019cc;
+  --ifm-color-primary-dark: #a08de5;
+  --ifm-color-primary-darker: #927de2;
+  --ifm-color-primary-darkest: #674ad6;
+  --ifm-color-primary-light: #d8d1f5;
+  --ifm-color-primary-lighter: #e6e1f8;
+  --ifm-color-primary-lightest: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --mantine-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
+
+
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  color: #c1c2c5;
+  --ifm-color-primary: #bcafed;
+  --ifm-color-primary-dark: #a08de5;
+  --ifm-color-primary-darker: #927de2;
+  --ifm-color-primary-darkest: #674ad6;
+  --ifm-color-primary-light: #d8d1f5;
+  background-color: #1a1b1e;
+  --ifm-color-primary-lighter: #e6e1f8;
+  .card {
+    background-color: var(--ifm-card-background-color);
+    border-radius: var(--ifm-card-border-radius);
+    box-shadow: var(--ifm-global-shadow-lw);
+    display: flex
+;
+    flex-direction: column;
+    overflow: hidden;}
+  
+  --ifm-color-primary-lightest: #ffffff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+ 
+}
+.footer {
+  background-color: #141517 ;
+}
+body {
+  
+    word-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: var(--mantine-moz-font-smoothing);
+    
+    
+    font-family: var(--mantine-font-family);
+    line-height: 1.55;
+    margin: 0;
+}
+
+custom-tags {
+  margin-bottom: 20px; /* Space between tags and title */
+}
+
+.custom-tags .tag {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 15px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 20px; /* This makes the tag look like a pill */
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.custom-tags .tag:hover {
+  background-color: #0056b3;
+  cursor: pointer;
 }

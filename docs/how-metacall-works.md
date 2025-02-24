@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# How Metacall works
+# How MetaCall works
 
 `Metacall` is a runtime that allows you to seamlessly connect and interoperate between multiple programming languages. It acts as a bridge, enabling you to call functions from one language in another without worrying about compatibility issues.
 
