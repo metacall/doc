@@ -1,10 +1,11 @@
 name: Test and Deploy Docusaurus
 
 on:
+  workflow_dispatch:
+  pull_request:
   push:
     branches:
       - master
-  pull_request:
 
 jobs:
   build:
