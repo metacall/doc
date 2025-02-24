@@ -9,19 +9,22 @@ import { themes as prismThemes } from "prism-react-renderer";
 const { themes } = require("prism-react-renderer");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'MetaCall',
+  title: 'MetaCall Tutorial',
   tagline: 'Documentation for MetaCall',
   favicon: 'img/metacall-logo.png',
   organizationName: "MetaCall",
 
   // Set the production url of your site here
-  url: 'https://docs-ptc.netlify.app',
+  url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/doc/',
 
-
-  projectName: 'MetaCall', // Usually your repo name.
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: 'metacall', // Usually your GitHub org/user name.
+  projectName: 'doc', // Usually your repo name.
+  deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
