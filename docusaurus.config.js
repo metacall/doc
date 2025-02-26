@@ -89,10 +89,22 @@ const config = {
             position: "left",
           },
           {
+            label: "Google Summer of Code 2025",
+            href: "/docs/gsoc",
+            position: "left",
+          },
+          {
+            href: '/starred',
+            label: '⭐ Stars',
+            position: 'right',
+          },
+          
+          {
             href: 'https://github.com/metacall',
             label: 'GitHub',
             position: 'right',
           },
+          
         ],
       },
      
@@ -117,8 +129,8 @@ const config = {
             title: "Use MetaCall",
             items: [
               {
-                label: "Configuration",
-                to: "/docs/running-bracket/configuration",
+                label: "Tutorials",
+                to: "/docs/category/tutorials",
               },
               {
                 label: "Deployment",
@@ -130,13 +142,18 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Examples",
-                to: "/docs/community/contributing",
+                label: "Discord",
+                to: "https://discord.gg/upwP4mwJWa",
               },
               {
-                label: "Developing",
-                to: "/docs/community/development",
+                label: "Telegram",
+                to: "https://t.me/joinchat/BMSVbBatp0Vi4s5l4VgUgg",
               },
+              {
+                label: "Matrix",
+                to: "https://matrix.to/#/#metacall:matrix.org",
+              },
+              
             ],
           },
           {
@@ -146,11 +163,16 @@ const config = {
                 label: "GitHub",
                 href: "https://github.com/metacall/",
               },
+              {
+                label: "Gsoc",
+                href: "/docs/Gsoc",
+              },
              
               {
                 label: "Changelog",
                 href: "https://github.com/metacall/core/releases",
               },
+
             ],
           },
         ],

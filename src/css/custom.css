@@ -79,3 +79,25 @@ custom-tags {
   background-color: #0056b3;
   cursor: pointer;
 }
+
+
+
+.card:hover {
+  transform: translateY(5px);
+  transition: transform 0.3s ease;
+}
+
+.starred-link {
+  font-size: 1.5rem;
+  color: var(--ifm-color-white) !important;
+  transition: opacity 0.3s ease;
+}
+
+.starred-link:hover {
+  opacity: 0.8;
+  color: var(--ifm-color-white) !important;
+  text-decoration: none;
+}
+
+
+
