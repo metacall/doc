@@ -27,7 +27,12 @@
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+<<<<<<< HEAD
     "react-icons": "^5.5.0"
+=======
+    "react-icons": "^5.5.0",
+    "react-xarrows": "^2.0.2"
+>>>>>>> 8dd1b7160ea9cc53a604224d40385d2ab010de1c
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.7.0",
