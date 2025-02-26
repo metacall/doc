@@ -7,9 +7,9 @@ tags:
   - vue.js
   - machine-learning
 ---
-import StarRepo from '@site/src/components/StarRepo.js';
+import StarRepo from '@site/src/components/StarRepo';
 
-<StarRepo itemId="1" />
+<StarRepo />
 
 ## Building a Polyglot Weather Dashboard with MetaCall
 In this tutorial, you will learn how to build a **weather dashboard** by integrating **Node.js** for API handling and **Python** for weather analytics. This project demonstrates how to leverage multiple programming languages in a seamless manner using **MetaCall**.
