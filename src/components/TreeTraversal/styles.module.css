@@ -1,0 +1,182 @@
+.container {
+  min-height: 100vh;
+  background-color: rgb(249, 250, 251);
+  padding: 2rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: rgb(31, 41, 55);
+}
+
+.header p {
+  margin-top: 0.5rem;
+  color: rgb(75, 85, 99);
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blue-text {
+  color: rgb(59, 130, 246);
+  font-weight: bold;
+}
+
+.yellow-text {
+  color: rgb(234, 179, 8);
+  font-weight: bold;
+}
+
+.red-text {
+  color: rgb(239, 68, 68);
+  font-weight: bold;
+}
+
+/* Form controls */
+.controls {
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  ring: 2px solid rgb(59, 130, 246);
+}
+
+.button {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: rgb(59, 130, 246);
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Tree visualization */
+.tree-container {
+  position: relative;
+  width: 100%;
+  max-width: 56rem;
+  height: 500px;
+  margin: 0 auto;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.node {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+  font-weight: bold;
+  border: 2px solid rgb(209, 213, 219);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.5s;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+}
+
+.node-python {
+  background-color: rgb(191, 219, 254);
+}
+
+.node-python.active {
+  background-color: rgb(59, 130, 246);
+}
+
+.node-javascript {
+  background-color: rgb(254, 240, 138);
+}
+
+.node-javascript.active {
+  background-color: rgb(234, 179, 8);
+}
+
+.node-c {
+  background-color: rgb(254, 202, 202);
+}
+
+.node-c.active {
+  background-color: rgb(239, 68, 68);
+}
+
+/* Sequence and legend */
+.sequence {
+  max-width: 56rem;
+  margin: 2rem auto 0 auto;
+}
+
+.sequence-text {
+  text-align: center;
+  font-size: 1.125rem;
+  color: rgb(55, 65, 81);
+  margin-bottom: 1rem;
+}
+
+.sequence-text span {
+  font-weight: bold;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-dot {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+}
+
+.legend-dot-python {
+  background-color: rgb(59, 130, 246);
+}
+
+.legend-dot-javascript {
+  background-color: rgb(234, 179, 8);
+}
+
+.legend-dot-c {
+  background-color: rgb(239, 68, 68);
+}
