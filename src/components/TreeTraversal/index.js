@@ -1,6 +1,6 @@
-import { useState, useEffect, Fragment } from "react";
-import Xarrow, { Xwrapper } from "react-xarrows";
-import styles from "./styles.module.css";
+import { useState, useEffect, Fragment } from 'react';
+import Xarrow, { Xwrapper } from 'react-xarrows';
+import styles from './styles.module.css';
 
 export default function TreeVisualization() {
   const [array, setArray] = useState("1,2,3,4,5,6,7");
@@ -94,7 +94,7 @@ export default function TreeVisualization() {
     if (!node) return styles.node;
     const isActive = nodeId === activeNode;
     return `${styles.node} ${styles[`node-${node.language}`]} ${
-      isActive ? styles.active : ""
+      isActive ? styles.active : ''
     }`;
   };
 
