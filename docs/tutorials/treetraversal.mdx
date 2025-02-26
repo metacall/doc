@@ -1,0 +1,361 @@
+import DocusaurusTreeVisualization from "@site/src/components/TreeTraversal/DocusaurusWrapper";
+
+# Traversing a Polyglot Tree with MetaCall
+
+A comprehensive guide to implementing and visualizing tree traversal across multiple programming languages using MetaCall.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Prerequisites](#prerequisites)
+- [Project Setup](#project-setup)
+- [Implementation Details](#implementation-details)
+- [Tree Visualization](#tree-visualization)
+- [Running the Project](#running-the-project)
+- [Technical Deep Dive](#technical-deep-dive)
+
+## Overview
+
+This tutorial demonstrates how to create a binary tree where each node is implemented in a different programming language:
+
+- Root Node: Python
+- Middle Node: JavaScript
+- Leaf Node: C
+
+The implementation showcases MetaCall's ability to seamlessly integrate functions across different programming languages in a single process.
+
+## Prerequisites
+
+- Linux environment
+- Git
+- CMake
+- Basic knowledge of:
+  - Python
+  - JavaScript
+  - C
+  - React/Next.js (for visualization)
+- MetaCall installation
+
+## Project Setup
+
+### 1. System Dependencies
+
+```bash
+sudo apt-get update
+sudo apt-get install -y --no-install-recommends \
+  ca-certificates \
+  git \
+  liburing-dev \
+  cmake \
+  curl
+```
+
+### 2. MetaCall Installation
+
+```bash
+git clone --branch v0.8.7 https://github.com/metacall/core
+cd core
+./tools/metacall-environment.sh release base nodejs c python
+sudo mkdir build && cd build
+sudo cmake \
+  -DOPTION_BUILD_LOADERS_C=On \
+  -DOPTION_BUILD_LOADERS_NODE=On \
+  -DOPTION_BUILD_LOADERS_PY=On \
+  -DOPTION_BUILD_PORTS=On \
+  -DOPTION_BUILD_PORTS_NODE=On \
+  -DOPTION_BUILD_PORTS_PY=On \
+  -DOPTION_BUILD_DETOURS=Off \
+  -DOPTION_BUILD_SCRIPTS=Off \
+  -DOPTION_BUILD_TESTS=Off \
+  -DOPTION_BUILD_EXAMPLES=Off \
+  ..
+sudo cmake --build . --target install
+sudo ldconfig /usr/local/lib
+```
+
+### 3. Environment Configuration
+
+```bash
+export LOADER_LIBRARY_PATH="/usr/local/lib"
+export LOADER_SCRIPT_PATH="$(pwd)"
+```
+
+## Implementation Details
+
+### Leaf Node (C)
+
+`leaf_Node.c`:
+
+```c
+#include <stdio.h>
+
+void leaf_node(int currentNode) {
+    printf("%d ", currentNode);
+}
+```
+
+### Middle Node (JavaScript)
+
+`middleNode.js`:
+
+```javascript
+const { metacall, metacall_load_from_file } = require("metacall");
+metacall_load_from_file("c", ["leaf_Node.c"]);
+
+function traverse_middleNode(currentNode) {
+  // Left child
+  metacall("leaf_node", 2 * currentNode);
+
+  // Current node
+  process.stdout.write(currentNode.toString() + " ");
+
+  // Right child
+  metacall("leaf_node", 2 * currentNode + 1);
+}
+
+module.exports = traverse_middleNode;
+```
+
+### Root Node (Python)
+
+`rootNode.py`:
+
+```python
+from metacall import metacall, metacall_load_from_file
+
+# Load JavaScript middle node
+metacall_load_from_file('node', ['middleNode.js'])
+
+currentNode = 1
+
+# Traverse tree
+metacall('traverse_middleNode', 2 * currentNode)  # Left subtree
+print(currentNode, end=" ", flush=True)           # Current node
+metacall('traverse_middleNode', 2 * currentNode + 1)  # Right subtree
+```
+
+## Tree Visualization
+
+The visualization component is built with Next.js and provides an interactive way to understand the tree traversal process. Let's dive into the implementation details.
+
+<DocusaurusTreeVisualization />
+
+### Component Architecture
+
+```typescript
+interface TreeNode {
+  id: number;
+  language: "python" | "javascript" | "c";
+  left?: number;
+  right?: number;
+  x: number;
+  y: number;
+}
+```
+
+### Key Features
+
+1. **Tree Generation**
+
+```typescript
+const generateTree = (input: string): TreeNode[] => {
+  const values = input.split(",").map(Number);
+  const height = Math.floor(Math.log2(values.length)) + 1;
+
+  return values.map((value, i) => {
+    const level = Math.floor(Math.log2(i + 1));
+    // Calculate x,y coordinates for visual layout
+    const x = calculateXPosition(level, i);
+    const y = calculateYPosition(level, height);
+
+    // Assign language based on node level
+    const language =
+      level === 0 ? "python" : level === height - 1 ? "c" : "javascript";
+
+    return {
+      id: value,
+      language,
+      left: 2 * i + 1 < values.length ? values[2 * i + 1] : undefined,
+      right: 2 * i + 2 < values.length ? values[2 * i + 2] : undefined,
+      x,
+      y,
+    };
+  });
+};
+```
+
+2. **Traversal Implementation**
+
+```typescript
+const getTraversalOrder = (type: string, nodes: TreeNode[]): number[] => {
+  const result: number[] = [];
+
+  const traverse = (nodeId: number) => {
+    const node = nodes.find((n) => n.id === nodeId);
+    if (!node) return;
+
+    // Preorder: Root -> Left -> Right
+    if (type === "preorder") result.push(node.id);
+
+    // Traverse left subtree
+    if (node.left !== undefined) traverse(node.left);
+
+    // Inorder: Left -> Root -> Right
+    if (type === "inorder") result.push(node.id);
+
+    // Traverse right subtree
+    if (node.right !== undefined) traverse(node.right);
+
+    // Postorder: Left -> Right -> Root
+    if (type === "postorder") result.push(node.id);
+  };
+
+  if (nodes.length > 0) traverse(nodes[0].id);
+  return result;
+};
+```
+
+3. **Animation Control**
+
+```typescript
+useEffect(() => {
+  if (isAnimating && currentStep < traversalSteps.length - 1) {
+    const timer = setTimeout(() => {
+      const nextStep = currentStep + 1;
+      setCurrentStep(nextStep);
+      setActiveNode(traversalSteps[nextStep]);
+
+      // Highlight the path from parent to current node
+      const currentNode = tree.find((n) => n.id === traversalSteps[nextStep]);
+      if (currentNode) {
+        const parentNode = tree.find(
+          (n) => n.left === currentNode.id || n.right === currentNode.id
+        );
+        if (parentNode) {
+          setActivePath(`${parentNode.id}-${currentNode.id}`);
+        }
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }
+}, [isAnimating, currentStep, traversalSteps, tree]);
+```
+
+### Visual Elements
+
+1. **Node Colors**
+
+```typescript
+const getNodeClasses = (nodeId) => {
+  const node = tree.find((n) => n.id === nodeId);
+  if (!node) return styles.node;
+  const isActive = nodeId === activeNode;
+  return `${styles.node} ${styles[`node-${node.language}`]} ${
+    isActive ? styles.active : ""
+  }`;
+};
+```
+
+2. **Arrow Connections**
+
+```typescript
+<Xarrow
+  start={`node-${node.id}`}
+  end={`node-${node.left}`}
+  color={getArrowColor(node.id, node.left)}
+  strokeWidth={activePath === `${node.id}-${node.left}` ? 3 : 2}
+  animateDrawing={true}
+  dashness={{ animation: 5 }}
+/>
+```
+
+### Traversal Types
+
+The visualization supports three types of tree traversal:
+
+1. **Inorder (Left -> Root -> Right)**
+
+   - Visit left subtree
+   - Visit root
+   - Visit right subtree
+
+2. **Preorder (Root -> Left -> Right)**
+
+   - Visit root
+   - Visit left subtree
+   - Visit right subtree
+
+3. **Postorder (Left -> Right -> Root)**
+   - Visit left subtree
+   - Visit right subtree
+   - Visit root
+
+## Running the Project
+
+1. Start MetaCall CLI:
+
+```bash
+metacallcli rootNode.py
+```
+
+2. Launch visualization (if using Next.js):
+
+```bash
+npm run dev
+```
+
+## Technical Deep Dive
+
+### MetaCall Integration
+
+The project demonstrates three key MetaCall features:
+
+1. **Cross-Language Loading**
+
+```python
+metacall_load_from_file('node', ['middleNode.js'])
+```
+
+2. **Function Execution**
+
+```python
+metacall('traverse_middleNode', currentNode)
+```
+
+3. **Data Type Handling**
+
+- Numbers are automatically converted between languages
+- Stdout is properly managed across language boundaries
+
+### Tree Traversal Logic
+
+The traversal follows these steps:
+
+1. Python root node initiates traversal
+2. JavaScript middle node processes:
+   - Left child (C)
+   - Current node
+   - Right child (C)
+3. C leaf nodes print their values
+
+### Performance Considerations
+
+- MetaCall overhead is minimal for this use case
+- Memory usage is efficient due to:
+  - No redundant data copying between languages
+  - Direct function calls across language boundaries
+
+## Resources
+
+- [MetaCall Documentation](https://metacall.github.io/doc/docs/getting-started)
+- [Project GitHub Repository](https://github.com/metacall/doc)
+- [Next.js Documentation](https://nextjs.org/docs)
+
+## Contributing
+
+Contributions are welcome! Please:
+
+1. Fork the repository
+2. Create a feature branch
+3. Submit a pull request
