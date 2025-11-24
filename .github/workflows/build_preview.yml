@@ -3,7 +3,7 @@ name: Docusaurus CI, Previews & Cleanup
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     types: [opened, synchronize, reopened, closed]
 
