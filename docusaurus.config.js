@@ -9,7 +9,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const { themes } = require("prism-react-renderer");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'MetaCall Tutorial',
+  title: 'MetaCall Getting Started',
   tagline: 'Documentation for MetaCall',
   favicon: 'img/metacall-logo.png',
   organizationName: "MetaCall",
