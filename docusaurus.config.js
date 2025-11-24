@@ -6,18 +6,15 @@
 
 import { themes as prismThemes } from "prism-react-renderer";
 
-const { themes } = require("prism-react-renderer");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'MetaCall Getting Started',
   tagline: 'Documentation for MetaCall',
   favicon: 'img/metacall-logo.png',
-  organizationName: "MetaCall",
 
   // Set the production url of your site here
   url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/docs2/',
 
   // GitHub pages deployment config.
@@ -61,8 +58,7 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      customCss: './src/css/custom.css', // Correct placement for customCss
-      // Replace with your project's social card
+      customCss: './src/css/custom.css',
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Metacall Docs',
@@ -77,110 +73,75 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
+          // Use "to" for internal Docusaurus routes
           {
-            label: "Install",
-            href: "/docs/category/installating-metacall-cli",
-            position: "left",
+            label: 'Install',
+            to: '/docs/category/installating-metacall-cli',
+            position: 'left',
           },
           {
-            label: "Tutorials",
-            href: "/docs/category/tutorials",
-            position: "left",
+            label: 'Tutorials',
+            to: '/docs/category/tutorials',
+            position: 'left',
           },
           {
-            label: "Google Summer of Code 2025",
-            href: "/docs/gsoc",
-            position: "left",
+            label: 'Google Summer of Code 2025',
+            to: '/docs/gsoc',
+            position: 'left',
           },
           {
             href: '/starred',
             label: '⭐ Stars',
             position: 'right',
           },
-          
           {
             href: 'https://github.com/metacall',
             label: 'GitHub',
             position: 'right',
           },
-          
         ],
       },
-     
+
       footer: {
-        style: "dark",
+        style: 'dark',
         links: [
           {
-            title: "Intro",
+            title: 'Intro',
             items: [
-              {
-                label: "Getting Started",
-                to: "/docs/getting-started",
-              },
-              {
-                label: "Install",
-                to: "/docs/category/installating-metacall-cli",
-              },
-              
+              { label: 'Getting Started', to: '/docs/getting-started' },
+              { label: 'Install', to: '/docs/category/installating-metacall-cli' },
             ],
           },
           {
-            title: "Use MetaCall",
+            title: 'Use MetaCall',
             items: [
-              {
-                label: "Tutorials",
-                to: "/docs/category/tutorials",
-              },
-              {
-                label: "Deployment",
-                to: "/docs/deployment",
-              },
+              { label: 'Tutorials', to: '/docs/category/tutorials' },
+              { label: 'Deployment', to: '/docs/deployment' },
             ],
           },
           {
-            title: "Community",
+            title: 'Community',
             items: [
-              {
-                label: "Discord",
-                to: "https://discord.gg/upwP4mwJWa",
-              },
-              {
-                label: "Telegram",
-                to: "https://t.me/joinchat/BMSVbBatp0Vi4s5l4VgUgg",
-              },
-              {
-                label: "Matrix",
-                to: "https://matrix.to/#/#metacall:matrix.org",
-              },
-              
+              { label: 'Discord', href: 'https://discord.gg/upwP4mwJWa' },
+              { label: 'Telegram', href: 'https://t.me/joinchat/BMSVbBatp0Vi4s5l4VgUgg' },
+              { label: 'Matrix', href: 'https://matrix.to/#/#metacall:matrix.org' },
             ],
           },
           {
-            title: "More",
+            title: 'More',
             items: [
-              {
-                label: "GitHub",
-                href: "https://github.com/metacall/",
-              },
-              {
-                label: "Gsoc",
-                href: "/docs/Gsoc",
-              },
-             
-              {
-                label: "Changelog",
-                href: "https://github.com/metacall/core/releases",
-              },
-
+              { label: 'GitHub', href: 'https://github.com/metacall/' },
+              { label: 'Gsoc', href: '/docs/Gsoc' },
+              { label: 'Changelog', href: 'https://github.com/metacall/core/releases' },
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} MetaCall. All Rights Reserved.`,
       },
+
       prism: {
         theme: prismThemes.vsDark,
         darkTheme: prismThemes.vsDark,
-        
       },
     }),
 };
