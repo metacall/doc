@@ -13,21 +13,18 @@ const config = {
   favicon: 'img/metacall-logo.png',
 
   // Set the production url of your site here
-  url: 'https://github.com',
+  url: 'https://mox678.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: '/docs2/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  projectName: 'doc', // Usually your repo name.
+  organizationName: 'mox678', // your GitHub user/org
+  projectName: 'docs2', // repo name
   deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -40,12 +37,8 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          
-          
-          tagsBasePath: "tags",
-          breadcrumbs: true, 
-          
-          
+          tagsBasePath: 'tags',
+          breadcrumbs: true,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -53,8 +46,7 @@ const config = {
       }),
     ],
   ],
-  
-  
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
