@@ -38,7 +38,28 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+      - name: Inject correct baseUrl into docusaurus.config.js
+        id: inject
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE_URL="/${{ github.event.repository.name }}/pr-${{ github.event.number }}/"
+          else
+            BASE_URL="/${{ github.event.repository.name }}/"
+          fi
 
+          echo "Using baseUrl=$BASE_URL"
+          echo "baseUrl=$BASE_URL" >> $GITHUB_OUTPUT
+
+          sed -i "s|baseUrl: '.*'|baseUrl: '$BASE_URL'|" docusaurus.config.js
+      - name: Comment injected baseUrl on PR
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: docusaurus-baseurl
+          message: |
+            🛠 **Docusaurus baseUrl injected**
+            ➤ Base URL set to: `${{ steps.inject.outputs.baseUrl }}`
+            ✔ Applied to `docusaurus.config.js` successfully.
       - name: Build Docusaurus site
         run: npm run build
 
