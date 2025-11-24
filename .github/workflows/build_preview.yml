@@ -13,7 +13,6 @@ permissions:
   id-token: write
   pull-requests: write
 
-
 jobs:
   build:
     if: github.event.action != 'closed'
@@ -32,6 +31,7 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+        
       - name: Inject correct baseUrl into docusaurus.config.js
         id: inject
         run: |
@@ -45,6 +45,7 @@ jobs:
           echo "baseUrl=$BASE_URL" >> $GITHUB_OUTPUT
 
           sed -i "s|baseUrl: '.*'|baseUrl: '$BASE_URL'|" docusaurus.config.js
+          
       - name: Comment injected baseUrl on PR
         if: github.event_name == 'pull_request'
         uses: marocchino/sticky-pull-request-comment@v2
@@ -69,8 +70,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     
-
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
@@ -81,10 +80,10 @@ jobs:
         id: vars
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            echo "branch=pr-${{ github.event.number }}" >> $GITHUB_OUTPUT
+            echo "destination_dir=pr-${{ github.event.number }}" >> $GITHUB_OUTPUT
             echo "url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-${{ github.event.number }}/" >> $GITHUB_OUTPUT
           else
-            echo "branch=gh-pages" >> $GITHUB_OUTPUT
+            echo "destination_dir=." >> $GITHUB_OUTPUT
             echo "url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> $GITHUB_OUTPUT
           fi
 
@@ -93,7 +92,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build
-          publish_branch: ${{ steps.vars.outputs.branch }}
+          publish_branch: gh-pages
+          destination_dir: ${{ steps.vars.outputs.destination_dir }}
+          keep_files: true  # Keep other PR previews intact
 
       - name: Comment preview link on PR
         if: github.event_name == 'pull_request'
@@ -109,10 +110,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Delete preview branch
-        uses: dawidd6/action-delete-branch@v3
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branches: pr-${{ github.event.pull_request.number }}
-          soft_fail: true
+          ref: gh-pages
           
+      - name: Remove PR preview directory
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          if [ -d "pr-${{ github.event.pull_request.number }}" ]; then
+            git rm -rf pr-${{ github.event.pull_request.number }}
+            git commit -m "🧹 Remove preview for PR #${{ github.event.pull_request.number }}"
+            git push
+          else
+            echo "Directory pr-${{ github.event.pull_request.number }} not found, skipping cleanup"
+          fi
