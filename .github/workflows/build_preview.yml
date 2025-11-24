@@ -20,21 +20,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout PR branch
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
-      - name: Cache npm dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-npm-
 
       - name: Install dependencies
         run: npm ci
@@ -57,9 +51,9 @@ jobs:
         with:
           header: docusaurus-baseurl
           message: |
-            🛠 **Docusaurus baseUrl injected**
-            ➤ Base URL set to: `${{ steps.inject.outputs.baseUrl }}`
-            ✔ Applied to `docusaurus.config.js` successfully.
+            🛠 **Injected baseUrl**
+            ➤ `${{ steps.inject.outputs.baseUrl }}`
+
       - name: Build Docusaurus site
         run: npm run build
 
