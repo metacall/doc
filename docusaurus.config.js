@@ -13,13 +13,13 @@ const config = {
   favicon: 'img/metacall-logo.png',
 
   // Set the production url of your site here
-  url: 'https://mox678.github.io',
+  url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/docs2/',
+  baseUrl: '/doc/',
 
   // GitHub pages deployment config.
-  organizationName: 'mox678', // your GitHub user/org
-  projectName: 'docs2', // repo name
+  organizationName: 'metacall', // your GitHub user/org
+  projectName: 'doc', // repo name
   deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'warn',
