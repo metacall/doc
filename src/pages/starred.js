@@ -1,25 +1,25 @@
 // src/pages/starred.js
-import React, { useState, useEffect } from "react";
-import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import { useAllDocsData } from "@docusaurus/plugin-content-docs/client";
-import useBaseUrl from "@docusaurus/useBaseUrl";
+import React, { useState, useEffect } from 'react';
+import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
+import { useAllDocsData } from '@docusaurus/plugin-content-docs/client';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-import Heading from "@theme/Heading";
+import Heading from '@theme/Heading';
 
 const StarredPage = () => {
   const [starredItems, setStarredItems] = useState([]);
   const [isBrowser, setIsBrowser] = useState(false);
   const allDocsData = useAllDocsData();
-  const baseUrl = useBaseUrl("/");
+  const baseUrl = useBaseUrl('/');
 
   useEffect(() => {
-    setIsBrowser(typeof window !== "undefined");
+    setIsBrowser(typeof window !== 'undefined');
   }, []);
 
   useEffect(() => {
     if (isBrowser) {
-      const items = JSON.parse(localStorage.getItem("starredItems") || "[]");
+      const items = JSON.parse(localStorage.getItem('starredItems') || '[]');
       setStarredItems(items);
     }
   }, [isBrowser]);
@@ -50,22 +50,22 @@ const StarredPage = () => {
                     <div
                       className="card__body"
                       style={{
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
                       }}
                     >
                       <Link
                         to={permalink}
                         style={{
-                          fontSize: "1.5rem",
-                          color: "#c1c2c5",
-                          textDecoration: "none",
+                          fontSize: '1.5rem',
+                          color: '#c1c2c5',
+                          textDecoration: 'none',
                           fontWeight: 500,
                         }}
                       >
-                        {doc.id.split("/").pop().charAt(0).toUpperCase() +
-                          doc.id.split("/").pop().slice(1)}
+                        {doc.id.split('/').pop().charAt(0).toUpperCase() +
+                          doc.id.split('/').pop().slice(1)}
                       </Link>
                     </div>
                   </div>

@@ -1,10 +1,10 @@
-import { useState, useEffect, Fragment } from "react";
-import Xarrow, { Xwrapper } from "react-xarrows";
-import styles from "./styles.module.css";
-import Heading from "@theme/Heading";
+import { useState, useEffect, Fragment } from 'react';
+import Xarrow, { Xwrapper } from 'react-xarrows';
+import styles from './styles.module.css';
+import Heading from '@theme/Heading';
 export default function TreeVisualization() {
-  const [array, setArray] = useState("1,2,3,4,5,6,7");
-  const [traversalType, setTraversalType] = useState("inorder");
+  const [array, setArray] = useState('1,2,3,4,5,6,7');
+  const [traversalType, setTraversalType] = useState('inorder');
   const [activeNode, setActiveNode] = useState(null);
   const [activePath, setActivePath] = useState(null);
   const [traversalSteps, setTraversalSteps] = useState([]);
@@ -14,9 +14,9 @@ export default function TreeVisualization() {
 
   const generateTree = (input) => {
     const values = input
-      .split(",")
+      .split(',')
       .map((v) => v.trim())
-      .filter((v) => v !== "")
+      .filter((v) => v !== '')
       .map(Number);
     const n = values.length;
     if (n === 0) return [];
@@ -27,9 +27,9 @@ export default function TreeVisualization() {
       const numNodesInLevel = Math.pow(2, level);
       const x = ((posInLevel + 0.5) / numNodesInLevel) * 100;
       const y = height > 1 ? (level / (height - 1)) * 90 + 5 : 50;
-      let language = "javascript";
-      if (level === 0) language = "python";
-      else if (level === height - 1) language = "c";
+      let language = 'javascript';
+      if (level === 0) language = 'python';
+      else if (level === height - 1) language = 'c';
       let left = undefined;
       let right = undefined;
       if (2 * i + 1 < n) left = values[2 * i + 1];
@@ -44,11 +44,11 @@ export default function TreeVisualization() {
     const traverse = (nodeId) => {
       const node = nodes.find((n) => n.id === nodeId);
       if (!node) return;
-      if (type === "preorder") result.push(node.id);
+      if (type === 'preorder') result.push(node.id);
       if (node.left !== undefined) traverse(node.left);
-      if (type === "inorder") result.push(node.id);
+      if (type === 'inorder') result.push(node.id);
       if (node.right !== undefined) traverse(node.right);
-      if (type === "postorder") result.push(node.id);
+      if (type === 'postorder') result.push(node.id);
     };
     if (nodes.length > 0) {
       traverse(nodes[0].id);
@@ -94,7 +94,7 @@ export default function TreeVisualization() {
     if (!node) return styles.node;
     const isActive = nodeId === activeNode;
     return `${styles.node} ${styles[`node-${node.language}`]} ${
-      isActive ? styles.active : ""
+      isActive ? styles.active : ''
     }`;
   };
 
@@ -104,18 +104,18 @@ export default function TreeVisualization() {
       const childNode = tree.find((n) => n.id === toId);
       if (childNode) {
         switch (childNode.language) {
-          case "python":
-            return "blue";
-          case "javascript":
-            return "yellow";
-          case "c":
-            return "red";
+          case 'python':
+            return 'blue';
+          case 'javascript':
+            return 'yellow';
+          case 'c':
+            return 'red';
           default:
-            return "black";
+            return 'black';
         }
       }
     }
-    return "black";
+    return 'black';
   };
 
   return (
@@ -124,11 +124,11 @@ export default function TreeVisualization() {
         <Heading as="h1">Binary Tree Traversal Visualizer</Heading>
         <p>
           This interactive tool demonstrates how binary tree traversals work.
-          The <span className={styles["blue-text"]}>blue</span> node is the root
+          The <span className={styles['blue-text']}>blue</span> node is the root
           (Python),
-          <span className={styles["yellow-text"]}> yellow</span> nodes are
-          intermediate (JavaScript), and the{" "}
-          <span className={styles["red-text"]}> red</span> nodes are leaves (C).
+          <span className={styles['yellow-text']}> yellow</span> nodes are
+          intermediate (JavaScript), and the{' '}
+          <span className={styles['red-text']}> red</span> nodes are leaves (C).
           Click "Execute Traversal" to see the animated traversal sequence.
         </p>
       </div>
@@ -161,7 +161,7 @@ export default function TreeVisualization() {
         </button>
       </div>
 
-      <div className={styles["tree-container"]}>
+      <div className={styles['tree-container']}>
         <Xwrapper>
           {tree.map((node) => (
             <Fragment key={node.id}>
@@ -208,26 +208,26 @@ export default function TreeVisualization() {
       </div>
 
       <div className={styles.sequence}>
-        <div className={styles["sequence-text"]}>
-          Traversal Sequence:{" "}
-          <span>{traversalSteps.slice(0, currentStep + 1).join(" → ")}</span>
+        <div className={styles['sequence-text']}>
+          Traversal Sequence:{' '}
+          <span>{traversalSteps.slice(0, currentStep + 1).join(' → ')}</span>
         </div>
         <div className={styles.legend}>
-          <div className={styles["legend-item"]}>
+          <div className={styles['legend-item']}>
             <div
-              className={`${styles["legend-dot"]} ${styles["legend-dot-python"]}`}
+              className={`${styles['legend-dot']} ${styles['legend-dot-python']}`}
             ></div>
             <span>Python (Root)</span>
           </div>
-          <div className={styles["legend-item"]}>
+          <div className={styles['legend-item']}>
             <div
-              className={`${styles["legend-dot"]} ${styles["legend-dot-javascript"]}`}
+              className={`${styles['legend-dot']} ${styles['legend-dot-javascript']}`}
             ></div>
             <span>JavaScript (Middle)</span>
           </div>
-          <div className={styles["legend-item"]}>
+          <div className={styles['legend-item']}>
             <div
-              className={`${styles["legend-dot"]} ${styles["legend-dot-c"]}`}
+              className={`${styles['legend-dot']} ${styles['legend-dot-c']}`}
             ></div>
             <span>C (Leaf)</span>
           </div>

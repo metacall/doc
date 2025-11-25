@@ -2,14 +2,14 @@
 module.exports = {
   root: true,
   extends: [
-    "plugin:@docusaurus/recommended",
-    "plugin:mdx/recommended",
-    "plugin:import/recommended",
+    'plugin:@docusaurus/recommended',
+    'plugin:mdx/recommended',
+    'plugin:import/recommended',
   ],
-  plugins: ["@docusaurus", "mdx", "import"],
+  plugins: ['@docusaurus', 'mdx', 'import'],
   parserOptions: {
     ecmaVersion: 2021,
-    sourceType: "module",
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
     },
@@ -17,27 +17,32 @@ module.exports = {
 
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
     // Fix for import resolution if you keep getting import errors
-    "import/resolver": {
+    'import/resolver': {
       node: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
     },
   },
   rules: {
-    "@docusaurus/no-untranslated-text": "off",
-    "@docusaurus/string-literal-i18n-messages": "error",
+    '@docusaurus/no-untranslated-text': 'off',
+    '@docusaurus/string-literal-i18n-messages': 'error',
 
     // Suggest using Docusaurus headings, but don't error out
-    "@docusaurus/prefer-docusaurus-heading": "warn",
+    '@docusaurus/prefer-docusaurus-heading': 'warn',
 
     // Import rules
-    "import/no-unresolved": [
-      "error",
-      { ignore: ["^@theme", "^@docusaurus", "^@site"] },
+    'import/no-unresolved': [
+      'error',
+      { ignore: ['^@theme', '^@docusaurus', '^@site'] },
     ],
-    "import/no-named-as-default": "off",
+    'import/no-named-as-default': 'off',
+    quotes: [
+      'error',
+      'single',
+      { avoidEscape: true, allowTemplateLiterals: true },
+    ],
   },
 };

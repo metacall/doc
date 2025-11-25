@@ -1,7 +1,7 @@
 // src/components/StarRepo.js
-import React, { useState, useEffect } from "react";
-import { useActiveDocContext } from "@docusaurus/plugin-content-docs/client";
-import { FaStar, FaRegStar } from "react-icons/fa";
+import React, { useState, useEffect } from 'react';
+import { useActiveDocContext } from '@docusaurus/plugin-content-docs/client';
+import { FaStar, FaRegStar } from 'react-icons/fa';
 
 const StarRepo = () => {
   const { activeDoc } = useActiveDocContext();
@@ -11,13 +11,13 @@ const StarRepo = () => {
   const [isBrowser, setIsBrowser] = useState(false);
 
   useEffect(() => {
-    setIsBrowser(typeof window !== "undefined");
+    setIsBrowser(typeof window !== 'undefined');
   }, []);
 
   useEffect(() => {
     if (isBrowser && itemId) {
       const starredItems = JSON.parse(
-        localStorage.getItem("starredItems") || "[]",
+        localStorage.getItem('starredItems') || '[]',
       );
       setIsStarred(starredItems.includes(itemId));
     }
@@ -26,7 +26,7 @@ const StarRepo = () => {
   const toggleStar = () => {
     if (!isBrowser || !itemId) return;
 
-    let starredItems = JSON.parse(localStorage.getItem("starredItems") || "[]");
+    let starredItems = JSON.parse(localStorage.getItem('starredItems') || '[]');
 
     // Prevent duplicates
     if (isStarred) {
@@ -35,7 +35,7 @@ const StarRepo = () => {
       starredItems.push(itemId);
     }
 
-    localStorage.setItem("starredItems", JSON.stringify(starredItems));
+    localStorage.setItem('starredItems', JSON.stringify(starredItems));
     setIsStarred(!isStarred);
   };
 
@@ -45,7 +45,7 @@ const StarRepo = () => {
     <div
       className="star-bookmark"
       onClick={toggleStar}
-      style={{ cursor: "pointer" }}
+      style={{ cursor: 'pointer' }}
     >
       {isStarred ? <FaStar size={24} color="gold" /> : <FaRegStar size={24} />}
     </div>
