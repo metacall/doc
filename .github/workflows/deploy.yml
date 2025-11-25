@@ -2,8 +2,7 @@ name: Docusaurus CI, Previews & Cleanup
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
   pull_request:
     types: [opened, synchronize, reopened, closed]
 
@@ -14,7 +13,44 @@ permissions:
   pull-requests: write
 
 jobs:
+
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check Formatting (Prettier)
+        run: npm run format:check
+
+  lint-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint Code
+        run: npm run lint
+
+
+  # ---------------------
+  # BUILD JOB
+  # Runs ONLY if lint + prettier succeed
+  # ---------------------
   build:
+    needs: [format-check, lint-check]  # Dependencies
     if: github.event.action != 'closed'
     runs-on: ubuntu-latest
 
@@ -31,11 +67,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-      - name: Check Formatting (Prettier)
-        run: npm run format:check
-
-      - name: Lint Code (ESLint)
-        run: npm run lint
 
       - name: Inject correct baseUrl into docusaurus.config.js
         id: inject
@@ -45,20 +76,10 @@ jobs:
           else
             BASE_URL="/${{ github.event.repository.name }}/"
           fi
-
           echo "Using baseUrl=$BASE_URL"
           echo "baseUrl=$BASE_URL" >> $GITHUB_OUTPUT
 
           sed -i "s|baseUrl: '.*'|baseUrl: '$BASE_URL'|" docusaurus.config.js
-
-      - name: Comment injected baseUrl on PR
-        if: github.event_name == 'pull_request'
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: docusaurus-baseurl
-          message: |
-            🛠 **Injected baseUrl**
-            ➤ `${{ steps.inject.outputs.baseUrl }}`
 
       - name: Build Docusaurus site
         run: npm run build
@@ -69,9 +90,13 @@ jobs:
           name: docusaurus-build
           path: build
 
+
+  # ---------------------
+  # DEPLOY JOB
+  # ---------------------
   deploy:
-    if: github.event.action != 'closed'
     needs: build
+    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
 
     steps:
@@ -99,7 +124,7 @@ jobs:
           publish_dir: ./build
           publish_branch: gh-pages
           destination_dir: ${{ steps.vars.outputs.destination_dir }}
-          keep_files: true # Keep other PR previews intact
+          keep_files: true
 
       - name: Comment preview link on PR
         if: github.event_name == 'pull_request'
@@ -110,6 +135,10 @@ jobs:
             🚀 **Docusaurus preview deployed!**
             🔗 [View Preview](${{ steps.vars.outputs.url }})
 
+
+  # ---------------------
+  # CLEANUP JOB
+  # ---------------------
   cleanup:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
