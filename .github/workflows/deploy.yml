@@ -4,7 +4,7 @@ on:
   push:
     branches: [master]
   pull_request:
-    types: [opened, synchronize, reopened, closed]
+    types: [ opened, synchronize, reopened, closed ]
 
 permissions:
   contents: write
@@ -23,14 +23,23 @@ jobs:
         with:
           node-version: 22
 
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline
 
       - name: Check Formatting (Prettier)
         run: npm run format:check
 
   lint-check:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -38,10 +47,18 @@ jobs:
         with:
           node-version: 22
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-      - name: Lint Code
+      - name: Install dependencies
+        run: npm ci --prefer-offline
+
+      - name: Lint Code (ESLint)
         run: npm run lint
 
 
@@ -50,7 +67,7 @@ jobs:
   # Runs ONLY if lint + prettier succeed
   # ---------------------
   build:
-    needs: [format-check, lint-check]  # Dependencies
+    needs: [ format-check, lint-check ]
     if: github.event.action != 'closed'
     runs-on: ubuntu-latest
 
@@ -65,8 +82,16 @@ jobs:
         with:
           node-version: 22
 
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --prefer-offline
 
       - name: Inject correct baseUrl into docusaurus.config.js
         id: inject
@@ -76,6 +101,7 @@ jobs:
           else
             BASE_URL="/${{ github.event.repository.name }}/"
           fi
+
           echo "Using baseUrl=$BASE_URL"
           echo "baseUrl=$BASE_URL" >> $GITHUB_OUTPUT
 
