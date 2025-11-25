@@ -76,7 +76,7 @@ export default function TreeVisualization() {
         const currentNode = tree.find((n) => n.id === traversalSteps[nextStep]);
         if (currentNode) {
           const parentNode = tree.find(
-            (n) => n.left === currentNode.id || n.right === currentNode.id
+            (n) => n.left === currentNode.id || n.right === currentNode.id,
           );
           if (parentNode) {
             setActivePath(`${parentNode.id}-${currentNode.id}`);

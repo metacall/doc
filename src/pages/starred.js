@@ -26,11 +26,11 @@ const StarredPage = () => {
 
   // Get all docs from all versions
   const allDocs = Object.values(allDocsData).flatMap((versionData) =>
-    versionData.versions.flatMap((v) => v.docs)
+    versionData.versions.flatMap((v) => v.docs),
   );
 
   const starredDocs = allDocs.filter((doc) =>
-    starredItems.includes(doc.unversionedId || doc.id)
+    starredItems.includes(doc.unversionedId || doc.id),
   );
 
   return (

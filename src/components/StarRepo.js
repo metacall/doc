@@ -17,7 +17,7 @@ const StarRepo = () => {
   useEffect(() => {
     if (isBrowser && itemId) {
       const starredItems = JSON.parse(
-        localStorage.getItem("starredItems") || "[]"
+        localStorage.getItem("starredItems") || "[]",
       );
       setIsStarred(starredItems.includes(itemId));
     }

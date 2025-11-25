@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "▶ Running Prettier..."
+npx lint-staged
+
