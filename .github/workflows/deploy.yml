@@ -1,4 +1,4 @@
-name: Docusaurus CI, Previews & Cleanup
+name: Docs CI
 
 on:
   push:
@@ -15,7 +15,9 @@ permissions:
 jobs:
 
   format-check:
+    name: Prettier Check
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
 
@@ -38,6 +40,7 @@ jobs:
         run: npm run format:check
 
   lint-check:
+    name: ESLint Check
     runs-on: ubuntu-latest
 
     steps:
@@ -62,11 +65,9 @@ jobs:
         run: npm run lint
 
 
-  # ---------------------
-  # BUILD JOB
-  # Runs ONLY if lint + prettier succeed
-  # ---------------------
+
   build:
+    name: Build Site
     needs: [ format-check, lint-check ]
     if: github.event.action != 'closed'
     runs-on: ubuntu-latest
@@ -117,10 +118,9 @@ jobs:
           path: build
 
 
-  # ---------------------
-  # DEPLOY JOB
-  # ---------------------
+  
   deploy:
+    name: Deploy Preview
     needs: build
     if: github.event.action != 'closed'
     runs-on: ubuntu-latest
@@ -158,14 +158,12 @@ jobs:
         with:
           header: docusaurus-preview
           message: |
-            🚀 **Docusaurus preview deployed!**
+            🚀 **Preview Deployed**
             🔗 [View Preview](${{ steps.vars.outputs.url }})
 
 
-  # ---------------------
-  # CLEANUP JOB
-  # ---------------------
   cleanup:
+    name: Cleanup Preview
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
 
