@@ -1,53 +1,134 @@
-name: Test and Deploy Docusaurus
+name: Docs CI
 
 on:
-  workflow_dispatch:
-  pull_request:
   push:
-    branches:
-      - master
+    branches: [master]
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: write
 
 jobs:
   build:
-    name: Build Docusaurus
+    name: Build Site
+    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v4
+          node-version: 22
+
+      - name: Cache npm dependencies
+        uses: actions/cache@v4
         with:
-          node-version: 18
-          cache: npm
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm ci
-      - name: Build website
+        run: npm ci --prefer-offline
+
+      - name: Lint Code (ESLint)
+        run: npm run lint
+
+      - name: Check Formatting (Prettier)
+        run: npm run format
+
+      - name: Inject correct baseUrl into docusaurus.config.js
+        id: inject
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            BASE_URL="/${{ github.event.repository.name }}/pr-${{ github.event.number }}/"
+          else
+            BASE_URL="/${{ github.event.repository.name }}/"
+          fi
+
+          echo "Using baseUrl=$BASE_URL"
+          echo "baseUrl=$BASE_URL" >> $GITHUB_OUTPUT
+
+          sed -i "s|baseUrl: '.*'|baseUrl: '$BASE_URL'|" docusaurus.config.js
+
+      - name: Build Docusaurus site
         run: npm run build
 
-      - name: Upload Build Artifact
-        if: github.event_name != 'pull_request'
-        uses: actions/upload-pages-artifact@v3
+      - name: Upload site build as artifact
+        uses: actions/upload-artifact@v4
         with:
+          name: docusaurus-build
           path: build
 
   deploy:
-    name: Deploy to GitHub Pages
+    name: Deploy Preview
     needs: build
-    if: github.event_name != 'pull_request'
-
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write # to deploy to Pages
-      id-token: write # to verify the deployment originates from an appropriate source
-
-    # Deploy to the github-pages environment
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
+    if: github.event.action != 'closed'
     runs-on: ubuntu-latest
+
     steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docusaurus-build
+          path: build
+
+      - name: Determine deploy target
+        id: vars
+        run: |
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo "destination_dir=pr-${{ github.event.number }}" >> $GITHUB_OUTPUT
+            echo "url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-${{ github.event.number }}/" >> $GITHUB_OUTPUT
+          else
+            echo "destination_dir=." >> $GITHUB_OUTPUT
+            echo "url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/" >> $GITHUB_OUTPUT
+          fi
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          publish_branch: gh-pages
+          destination_dir: ${{ steps.vars.outputs.destination_dir }}
+          keep_files: true
+
+      - name: Comment preview link on PR
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: docusaurus-preview
+          message: |
+            🚀 **Preview Deployed**
+            🔗 [View Preview](${{ steps.vars.outputs.url }})
+
+  cleanup:
+    name: Cleanup Preview
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Remove PR preview directory
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if [ -d "pr-${{ github.event.pull_request.number }}" ]; then
+            git rm -rf pr-${{ github.event.pull_request.number }}
+            git commit -m "🧹 Remove preview for PR #${{ github.event.pull_request.number }}"
+            git push
+          else
+            echo "Directory pr-${{ github.event.pull_request.number }} not found, skipping cleanup"
+          fi

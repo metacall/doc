@@ -4,34 +4,27 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from "prism-react-renderer";
+import { themes as prismThemes } from 'prism-react-renderer';
 
-const { themes } = require("prism-react-renderer");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'MetaCall Tutorial',
+  title: 'MetaCall Docs',
   tagline: 'Documentation for MetaCall',
   favicon: 'img/metacall-logo.png',
-  organizationName: "MetaCall",
 
   // Set the production url of your site here
   url: 'https://github.com',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/doc/',
 
   // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'metacall', // Usually your GitHub org/user name.
-  projectName: 'doc', // Usually your repo name.
+  organizationName: 'metacall', // your GitHub user/org
+  projectName: 'doc', // repo name
   deploymentBranch: 'gh-pages',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
@@ -44,12 +37,8 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          
-          
-          tagsBasePath: "tags",
-          breadcrumbs: true, 
-          
-          
+          tagsBasePath: 'tags',
+          breadcrumbs: true,
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -57,13 +46,11 @@ const config = {
       }),
     ],
   ],
-  
-  
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      customCss: './src/css/custom.css', // Correct placement for customCss
-      // Replace with your project's social card
+      customCss: './src/css/custom.css',
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
         title: 'Metacall Docs',
@@ -78,110 +65,81 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
+          // Use "to" for internal Docusaurus routes
           {
-            label: "Install",
-            href: "/docs/category/installating-metacall-cli",
-            position: "left",
+            label: 'Install',
+            to: '/docs/category/installating-metacall-cli',
+            position: 'left',
           },
           {
-            label: "Tutorials",
-            href: "/docs/category/tutorials",
-            position: "left",
-          },
-          {
-            label: "Google Summer of Code 2025",
-            href: "/docs/gsoc",
-            position: "left",
+            label: 'Tutorials',
+            to: '/docs/category/tutorials',
+            position: 'left',
           },
           {
             href: '/starred',
             label: '⭐ Stars',
             position: 'right',
           },
-          
           {
             href: 'https://github.com/metacall',
             label: 'GitHub',
             position: 'right',
           },
-          
         ],
       },
-     
+
       footer: {
-        style: "dark",
+        style: 'dark',
         links: [
           {
-            title: "Intro",
+            title: 'Intro',
             items: [
+              { label: 'Getting Started', to: '/docs/getting-started' },
               {
-                label: "Getting Started",
-                to: "/docs/getting-started",
-              },
-              {
-                label: "Install",
-                to: "/docs/category/installating-metacall-cli",
-              },
-              
-            ],
-          },
-          {
-            title: "Use MetaCall",
-            items: [
-              {
-                label: "Tutorials",
-                to: "/docs/category/tutorials",
-              },
-              {
-                label: "Deployment",
-                to: "/docs/deployment",
+                label: 'Install',
+                to: '/docs/category/installating-metacall-cli',
               },
             ],
           },
           {
-            title: "Community",
+            title: 'Use MetaCall',
             items: [
-              {
-                label: "Discord",
-                to: "https://discord.gg/upwP4mwJWa",
-              },
-              {
-                label: "Telegram",
-                to: "https://t.me/joinchat/BMSVbBatp0Vi4s5l4VgUgg",
-              },
-              {
-                label: "Matrix",
-                to: "https://matrix.to/#/#metacall:matrix.org",
-              },
-              
+              { label: 'Tutorials', to: '/docs/category/tutorials' },
+              { label: 'Deployment', to: '/docs/deployment' },
             ],
           },
           {
-            title: "More",
+            title: 'Community',
             items: [
+              { label: 'Discord', href: 'https://discord.gg/upwP4mwJWa' },
               {
-                label: "GitHub",
-                href: "https://github.com/metacall/",
+                label: 'Telegram',
+                href: 'https://t.me/joinchat/BMSVbBatp0Vi4s5l4VgUgg',
               },
               {
-                label: "Gsoc",
-                href: "/docs/Gsoc",
+                label: 'Matrix',
+                href: 'https://matrix.to/#/#metacall:matrix.org',
               },
-             
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              { label: 'GitHub', href: 'https://github.com/metacall/' },
               {
-                label: "Changelog",
-                href: "https://github.com/metacall/core/releases",
+                label: 'Changelog',
+                href: 'https://github.com/metacall/core/releases',
               },
-
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} MetaCall. All Rights Reserved.`,
       },
+
       prism: {
         theme: prismThemes.vsDark,
         darkTheme: prismThemes.vsDark,
-        
       },
     }),
 };
