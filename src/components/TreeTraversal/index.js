@@ -1,6 +1,6 @@
-import { useState, useEffect, Fragment } from 'react';
-import Xarrow, { Xwrapper } from 'react-xarrows';
-import styles from './styles.module.css';
+import { useState, useEffect, Fragment } from "react";
+import Xarrow, { Xwrapper } from "react-xarrows";
+import styles from "./styles.module.css";
 
 export default function TreeVisualization() {
   const [array, setArray] = useState("1,2,3,4,5,6,7");
@@ -94,7 +94,7 @@ export default function TreeVisualization() {
     if (!node) return styles.node;
     const isActive = nodeId === activeNode;
     return `${styles.node} ${styles[`node-${node.language}`]} ${
-      isActive ? styles.active : ''
+      isActive ? styles.active : ""
     }`;
   };
 
@@ -121,7 +121,7 @@ export default function TreeVisualization() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h1>Binary Tree Traversal Visualizer</h1>
+        <Heading as="h1">Binary Tree Traversal Visualizer</Heading>
         <p>
           This interactive tool demonstrates how binary tree traversals work.
           The <span className={styles["blue-text"]}>blue</span> node is the root

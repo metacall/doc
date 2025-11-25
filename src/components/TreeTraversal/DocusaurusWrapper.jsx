@@ -1,6 +1,6 @@
-import React from 'react';
-import BrowserOnly from '@docusaurus/BrowserOnly';
-import TreeVisualization from '../TreeTraversal/index';
+import React from "react";
+import BrowserOnly from "@docusaurus/BrowserOnly";
+import TreeVisualization from "../TreeTraversal/index";
 
 export default function DocusaurusTreeVisualization() {
   return (
