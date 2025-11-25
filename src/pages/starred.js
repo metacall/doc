@@ -5,7 +5,7 @@ import Link from "@docusaurus/Link";
 import { useAllDocsData } from "@docusaurus/plugin-content-docs/client";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 
-import { FaStar } from "react-icons/fa";
+import Heading from "@theme/Heading";
 
 const StarredPage = () => {
   const [starredItems, setStarredItems] = useState([]);

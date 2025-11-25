@@ -20,9 +20,9 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@docusaurus/core": "3.7.0",
-    "@docusaurus/preset-classic": "3.7.0",
-    "@docusaurus/theme-search-algolia": "^3.7.0",
+    "@docusaurus/core": "^3.9.2",
+    "@docusaurus/preset-classic": "^3.9.2",
+    "@docusaurus/theme-search-algolia": "^3.9.2",
     "@mantine/carousel": "^7.17.0",
     "@mantine/core": "^7.17.0",
     "@mdx-js/react": "^3.0.0",

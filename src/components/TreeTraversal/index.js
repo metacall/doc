@@ -1,7 +1,7 @@
 import { useState, useEffect, Fragment } from "react";
 import Xarrow, { Xwrapper } from "react-xarrows";
 import styles from "./styles.module.css";
-
+import Heading from "@theme/Heading";
 export default function TreeVisualization() {
   const [array, setArray] = useState("1,2,3,4,5,6,7");
   const [traversalType, setTraversalType] = useState("inorder");
