@@ -170,101 +170,23 @@ The Node.js Loader includes a sophisticated type conversion system that translat
 
 ### Type Mapping
 
-MetaCall Type
-
-Node.js Type
-
-Conversion Function
-
-`NULL`
-
-`undefined` or `null`
-
-`node_loader_impl_value_create_null`
-
-`BOOL`
-
-`Boolean`
-
-`node_loader_impl_value_create_bool`
-
-`CHAR`
-
-`String` (length 1)
-
-`node_loader_impl_value_create_char`
-
-`SHORT`
-
-`Number`
-
-`node_loader_impl_value_create_short`
-
-`INT`
-
-`Number`
-
-`node_loader_impl_value_create_int`
-
-`LONG`
-
-`Number` or `BigInt`
-
-`node_loader_impl_value_create_long`
-
-`FLOAT`
-
-`Number`
-
-`node_loader_impl_value_create_float`
-
-`DOUBLE`
-
-`Number`
-
-`node_loader_impl_value_create_double`
-
-`STRING`
-
-`String`
-
-`node_loader_impl_value_create_string`
-
-`BUFFER`
-
-`Buffer` or `ArrayBuffer`
-
-`node_loader_impl_value_create_buffer`
-
-`ARRAY`
-
-`Array`
-
-`node_loader_impl_value_create_array`
-
-`MAP`
-
-`Object`
-
-`node_loader_impl_value_create_map`
-
-`PTR`
-
-N-API External
-
-`node_loader_impl_value_create_ptr`
-
-`FUTURE`
-
-`Promise`
-
-`node_loader_impl_value_create_future`
-
-`FUNCTION`
-
-`Function`
-
-`node_loader_impl_value_create_function`
+| MetaCall Type | Node.js Type              | Conversion Function                      |
+| ------------- | ------------------------- | ---------------------------------------- |
+| `NULL`        | `undefined` or `null`     | `node_loader_impl_value_create_null`     |
+| `BOOL`        | `Boolean`                 | `node_loader_impl_value_create_bool`     |
+| `CHAR`        | `String` (length 1)       | `node_loader_impl_value_create_char`     |
+| `SHORT`       | `Number`                  | `node_loader_impl_value_create_short`    |
+| `INT`         | `Number`                  | `node_loader_impl_value_create_int`      |
+| `LONG`        | `Number` or `BigInt`      | `node_loader_impl_value_create_long`     |
+| `FLOAT`       | `Number`                  | `node_loader_impl_value_create_float`    |
+| `DOUBLE`      | `Number`                  | `node_loader_impl_value_create_double`   |
+| `STRING`      | `String`                  | `node_loader_impl_value_create_string`   |
+| `BUFFER`      | `Buffer` or `ArrayBuffer` | `node_loader_impl_value_create_buffer`   |
+| `ARRAY`       | `Array`                   | `node_loader_impl_value_create_array`    |
+| `MAP`         | `Object`                  | `node_loader_impl_value_create_map`      |
+| `PTR`         | N-API External            | `node_loader_impl_value_create_ptr`      |
+| `FUTURE`      | `Promise`                 | `node_loader_impl_value_create_future`   |
+| `FUNCTION`    | `Function`                | `node_loader_impl_value_create_function` |
 
 ### Node.js to MetaCall Conversion
 
@@ -318,38 +240,15 @@ The Node.js Loader requires:
 ### Configuration Options
 
 The loader can be configured using CMake options:
-
-Option
-
-Description
-
-`OPTION_BUILD_LOADERS_NODE`
-
-Enable or disable building the Node.js loader
-
-`NodeJS_CMAKE_DEBUG`
-
-Print paths for debugging Node.js dependencies
-
-`NodeJS_EXECUTABLE_ONLY`
-
-Find only Node.js executable (avoid library and include files)
-
-`NodeJS_SHARED_UV`
-
-If enabled, libuv won't be required by this script
-
-`NodeJS_BUILD_FROM_SOURCE`
-
-If enabled, Node.js runtime library will be built from source
-
-`NodeJS_BUILD_WITHOUT_ICU`
-
-If enabled, Node.js runtime library will be built without internationalization support
-
-`NodeJS_INSTALL_PREFIX`
-
-Define a custom install prefix for Node.js (Linux / Darwin only)
+| Option | Description |
+| --- | --- |
+| `OPTION_BUILD_LOADERS_NODE` | Enable or disable building the Node.js loader |
+| `NodeJS_CMAKE_DEBUG` | Print paths for debugging Node.js dependencies |
+| `NodeJS_EXECUTABLE_ONLY` | Find only Node.js executable (avoid library and include files) |
+| `NodeJS_SHARED_UV` | If enabled, libuv won't be required by this script |
+| `NodeJS_BUILD_FROM_SOURCE` | If enabled, Node.js runtime library will be built from source |
+| `NodeJS_BUILD_WITHOUT_ICU` | If enabled, Node.js runtime library will be built without internationalization support |
+| `NodeJS_INSTALL_PREFIX` | Define a custom install prefix for Node.js (Linux / Darwin only) |
 
 - [source/loaders/node_loader/CMakeLists.txt1-43](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/CMakeLists.txt#L1-L43)
 - [cmake/FindNodeJS.cmake6-35](https://github.com/metacall/core/blob/af9cad19/cmake/FindNodeJS.cmake#L6-L35)

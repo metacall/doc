@@ -88,151 +88,19 @@ Key handle operations include:
 ## Supported Languages
 
 MetaCall supports multiple programming languages through its loader system. Each language has a dedicated loader that bridges between the MetaCall core and the language's native environment.
-
-Language
-
-Tag
-
-Load from File
-
-Load from Memory
-
-Async
-
-Status
-
-Python
-
-`py`
-
-✓
-
-✓
-
-✓
-
-Stable
-
-Node.js
-
-`node`
-
-✓
-
-✓
-
-✓
-
-Stable
-
-JavaScript
-
-`js`
-
-✓
-
-✓
-
-✓
-
-Stable
-
-Ruby
-
-`rb`
-
-✓
-
-✓
-
-✓
-
-Stable
-
-C#
-
-`cs`
-
-✓
-
-✓
-
-✓
-
-Stable
-
-Rust
-
-`rs`
-
-✓
-
-✓
-
-✓
-
-Stable
-
-C
-
-`c`
-
-✓
-
-✓
-
-✗
-
-Stable
-
-TypeScript
-
-`ts`
-
-✓
-
-✓
-
-✓
-
-Stable
-
-Cobol
-
-`cob`
-
-✓
-
-✗
-
-✗
-
-Experimental
-
-File
-
-`file`
-
-✓
-
-✗
-
-✗
-
-Stable
-
-Mock
-
-`mock`
-
-✓
-
-✓
-
-✗
-
-Testing
-
+| Language | Tag | Load from File | Load from Memory | Async | Status |
+| --- | --- | --- | --- | --- | --- |
+| Python | `py` | ✓ | ✓ | ✓ | Stable |
+| Node.js | `node` | ✓ | ✓ | ✓ | Stable |
+| JavaScript | `js` | ✓ | ✓ | ✓ | Stable |
+| Ruby | `rb` | ✓ | ✓ | ✓ | Stable |
+| C# | `cs` | ✓ | ✓ | ✓ | Stable |
+| Rust | `rs` | ✓ | ✓ | ✓ | Stable |
+| C | `c` | ✓ | ✓ | ✗ | Stable |
+| TypeScript | `ts` | ✓ | ✓ | ✓ | Stable |
+| Cobol | `cob` | ✓ | ✗ | ✗ | Experimental |
+| File | `file` | ✓ | ✗ | ✗ | Stable |
+| Mock | `mock` | ✓ | ✓ | ✗ | Testing |
 Each language loader implements a common interface defined in `loader_impl_interface.h`, enabling consistent behavior across languages.
 
 ## Language Ports

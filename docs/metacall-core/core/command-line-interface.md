@@ -87,51 +87,18 @@ The CLI supports multiple commands through a registration mechanism. Commands ar
 ## Language Support and Script Loading
 
 The CLI supports loading and executing scripts in various programming languages. It maps file extensions to the appropriate loaders:
-
-Extension
-
-Language/Loader
-
-`.py`
-
-Python
-
-`.js`, `.node`
-
-Node.js
-
-`.rb`
-
-Ruby
-
-`.cs`, `.dll`, `.vb`
-
-C#
-
-`.ts`, `.jsx`, `.tsx`
-
-TypeScript
-
-`.wasm`, `.wat`
-
-WebAssembly
-
-`.rs`
-
-Rust
-
-`.c`, `.h`
-
-C
-
-`.java`, `.jar`
-
-Java
-
-`.rpc`
-
-RPC
-
+| Extension | Language/Loader |
+| --- | --- |
+| `.py` | Python |
+| `.js`, `.node` | Node.js |
+| `.rb` | Ruby |
+| `.cs`, `.dll`, `.vb` | C# |
+| `.ts`, `.jsx`, `.tsx` | TypeScript |
+| `.wasm`, `.wat` | WebAssembly |
+| `.rs` | Rust |
+| `.c`, `.h` | C |
+| `.java`, `.jar` | Java |
+| `.rpc` | RPC |
 The CLI uses this mapping to automatically select the appropriate loader when executing scripts.
 
 - [source/cli/metacallcli/source/application.cpp305-373](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/source/application.cpp#L305-L373)
@@ -153,55 +120,15 @@ Plugins are loaded dynamically using the MetaCall plugin system, allowing for mo
 ## REPL Commands
 
 The REPL mode provides several built-in commands for interacting with MetaCall:
-
-Command
-
-Description
-
-Example
-
-`load`
-
-Load scripts from files
-
-`load py script.py other_script.py`
-
-`inspect`
-
-Inspect loaded modules and functions
-
-`inspect`
-
-`eval`
-
-Evaluate code in a specific language
-
-`eval node console.log("hello world")`
-
-`call`
-
-Call a function with parameters
-
-`call multiply(3, 4)`
-
-`clear`
-
-Clear a loaded script
-
-`clear py script.py`
-
-`help`
-
-Display help information
-
-`help`
-
-`exit`
-
-Exit the REPL
-
-`exit`
-
+| Command | Description | Example |
+| --- | --- | --- |
+| `load` | Load scripts from files | `load py script.py other_script.py` |
+| `inspect` | Inspect loaded modules and functions | `inspect` |
+| `eval` | Evaluate code in a specific language | `eval node console.log("hello world")` |
+| `call` | Call a function with parameters | `call multiply(3, 4)` |
+| `clear` | Clear a loaded script | `clear py script.py` |
+| `help` | Display help information | `help` |
+| `exit` | Exit the REPL | `exit` |
 The REPL provides command completion for registered commands and displays results in a user-friendly format.
 
 - [source/cli/plugins/cli_repl_plugin/source/test.js1-63](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/test.js#L1-L63)

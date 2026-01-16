@@ -81,90 +81,21 @@ The type conversion system consists of two main functions:
 3.  **py_loader_impl_value_to_capi**: Converts a MetaCall value to a Python object
 
 The following table shows the complete type mapping between Python and MetaCall:
-
-Python Type
-
-MetaCall Type
-
-Notes
-
-bool
-
-TYPE_BOOL
-
-Boolean values
-
-int
-
-TYPE_INT/TYPE_LONG
-
-Integer values
-
-float
-
-TYPE_DOUBLE
-
-Floating-point values
-
-str
-
-TYPE_STRING
-
-String values
-
-bytes
-
-TYPE_BUFFER
-
-Binary data
-
-list/tuple
-
-TYPE_ARRAY
-
-Sequential collections
-
-dict
-
-TYPE_MAP
-
-Key-value mappings
-
-function
-
-TYPE_FUNCTION
-
-Callable functions
-
-None
-
-TYPE_NULL
-
-Null/None values
-
-class
-
-TYPE_CLASS
-
-Class definitions
-
-object
-
-TYPE_OBJECT
-
-Class instances
-
-coroutine
-
-TYPE_FUTURE
-
-Async functions
-
-exception
-
-TYPE_EXCEPTION
-
-Error objects
+| Python Type | MetaCall Type | Notes |
+| --- | --- | --- |
+| bool | TYPE_BOOL | Boolean values |
+| int | TYPE_INT/TYPE_LONG | Integer values |
+| float | TYPE_DOUBLE | Floating-point values |
+| str | TYPE_STRING | String values |
+| bytes | TYPE_BUFFER | Binary data |
+| list/tuple | TYPE_ARRAY | Sequential collections |
+| dict | TYPE_MAP | Key-value mappings |
+| function | TYPE_FUNCTION | Callable functions |
+| None | TYPE_NULL | Null/None values |
+| class | TYPE_CLASS | Class definitions |
+| object | TYPE_OBJECT | Class instances |
+| coroutine | TYPE_FUTURE | Async functions |
+| exception | TYPE_EXCEPTION | Error objects |
 
 ## Function Discovery and Calling Mechanism
 

@@ -51,42 +51,16 @@ To use the Ruby Port, you first need to install the MetaCall library and the Rub
 ### Data Type Conversion
 
 The Ruby Port automatically handles data type conversion between Ruby and the MetaCall value system:
-
-Ruby Type
-
-MetaCall Type
-
-String
-
-String
-
-Integer
-
-Int/Long
-
-Float
-
-Float/Double
-
-Array
-
-Array
-
-Hash
-
-Map
-
-nil
-
-Null
-
-Class
-
-Class
-
-Object
-
-Object
+| Ruby Type | MetaCall Type |
+| --- | --- |
+| String | String |
+| Integer | Int/Long |
+| Float | Float/Double |
+| Array | Array |
+| Hash | Map |
+| nil | Null |
+| Class | Class |
+| Object | Object |
 
 ### Working with Objects and Classes
 

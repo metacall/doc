@@ -65,30 +65,11 @@ The sequence diagram above illustrates how the Rust Loader handles loading and e
 ### Code Loading Methods
 
 The Rust Loader supports three primary methods for loading Rust code:
-
-Method
-
-Function
-
-Description
-
-File
-
-`metacall_load_from_file`
-
-Loads Rust code from .rs source files
-
-Memory
-
-`metacall_load_from_memory`
-
-Loads Rust code provided as a string in memory
-
-Package
-
-`metacall_load_from_package`
-
-Loads a Rust package (Cargo project structure)
+| Method | Function | Description |
+| --- | --- | --- |
+| File | `metacall_load_from_file` | Loads Rust code from .rs source files |
+| Memory | `metacall_load_from_memory` | Loads Rust code provided as a string in memory |
+| Package | `metacall_load_from_package` | Loads a Rust package (Cargo project structure) |
 
 ### Rust Function Exports
 
@@ -161,19 +142,10 @@ These dependencies are installed alongside MetaCall to ensure proper execution o
 ### Environment Variables
 
 The Rust Loader uses several environment variables that aid in development and debugging:
-
-Environment Variable
-
-Purpose
-
-RUST_BACKTRACE=1
-
-Enables full backtrace for Rust panics
-
-RUST_LOG=INFO
-
-Sets the logging level for Rust code
-
+| Environment Variable | Purpose |
+| --- | --- |
+| RUST_BACKTRACE=1 | Enables full backtrace for Rust panics |
+| RUST_LOG=INFO | Sets the logging level for Rust code |
 These variables help with debugging Rust code loaded through MetaCall.
 
 ### Build Options

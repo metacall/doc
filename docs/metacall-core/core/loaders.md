@@ -44,77 +44,16 @@ All loaders implement a common interface defined in the loader implementation in
 
 ### Interface Functions
 
-Function
-
-Purpose
-
-Parameters
-
-Return Value
-
-`initialize`
-
-Initialize the loader with configuration
-
-`loader_impl impl, configuration config`
-
-Pointer to loader data
-
-`execution_path`
-
-Add a path to runtime's search paths
-
-`loader_impl impl, const loader_path path`
-
-0 on success, non-zero on failure
-
-`load_from_file`
-
-Load code from file(s)
-
-`loader_impl impl, const loader_path paths[], size_t size`
-
-Handle to loaded code
-
-`load_from_memory`
-
-Load code from memory buffer
-
-`loader_impl impl, const loader_name name, const char *buffer, size_t size`
-
-Handle to loaded code
-
-`load_from_package`
-
-Load code from a package
-
-`loader_impl impl, const loader_path path`
-
-Handle to loaded code
-
-`clear`
-
-Unload code
-
-`loader_impl impl, loader_handle handle`
-
-0 on success, non-zero on failure
-
-`discover`
-
-Discover and register functions
-
-`loader_impl impl, loader_handle handle, context ctx`
-
-0 on success, non-zero on failure
-
-`destroy`
-
-Clean up loader resources
-
-`loader_impl impl`
-
-0 on success, non-zero on failure
+| Function            | Purpose                                  | Parameters                                                                  | Return Value                      |
+| ------------------- | ---------------------------------------- | --------------------------------------------------------------------------- | --------------------------------- |
+| `initialize`        | Initialize the loader with configuration | `loader_impl impl, configuration config`                                    | Pointer to loader data            |
+| `execution_path`    | Add a path to runtime's search paths     | `loader_impl impl, const loader_path path`                                  | 0 on success, non-zero on failure |
+| `load_from_file`    | Load code from file(s)                   | `loader_impl impl, const loader_path paths[], size_t size`                  | Handle to loaded code             |
+| `load_from_memory`  | Load code from memory buffer             | `loader_impl impl, const loader_name name, const char *buffer, size_t size` | Handle to loaded code             |
+| `load_from_package` | Load code from a package                 | `loader_impl impl, const loader_path path`                                  | Handle to loaded code             |
+| `clear`             | Unload code                              | `loader_impl impl, loader_handle handle`                                    | 0 on success, non-zero on failure |
+| `discover`          | Discover and register functions          | `loader_impl impl, loader_handle handle, context ctx`                       | 0 on success, non-zero on failure |
+| `destroy`           | Clean up loader resources                | `loader_impl impl`                                                          | 0 on success, non-zero on failure |
 
 ## Loader Manager
 
@@ -143,41 +82,16 @@ The Node.js loader works by:
 
 #### Value Conversion
 
-MetaCall Type
-
-JavaScript Type
-
-`null`
-
-`null` or `undefined`
-
-`bool`
-
-`boolean`
-
-`int`/`long`/`double`
-
-`number`
-
-`string`
-
-`string`
-
-`array`
-
-`Array`
-
-`map`
-
-`Object`
-
-`function`
-
-`Function`
-
-`future`
-
-`Promise`
+| MetaCall Type         | JavaScript Type       |
+| --------------------- | --------------------- |
+| `null`                | `null` or `undefined` |
+| `bool`                | `boolean`             |
+| `int`/`long`/`double` | `number`              |
+| `string`              | `string`              |
+| `array`               | `Array`               |
+| `map`                 | `Object`              |
+| `function`            | `Function`            |
+| `future`              | `Promise`             |
 
 ### Python Loader
 
@@ -223,60 +137,16 @@ MetaCall supports asynchronous function calls through its future system. This is
 ## Building and Configuring Loaders
 
 Loaders are built as plugins and can be enabled or disabled using CMake options. Each loader has its own set of dependencies that must be installed on the system.
-
-Loader
-
-CMake Option
-
-Dependencies
-
-Node.js
-
-`OPTION_BUILD_LOADERS_NODE`
-
-Node.js development libraries
-
-Python
-
-`OPTION_BUILD_LOADERS_PY`
-
-Python development libraries
-
-Ruby
-
-`OPTION_BUILD_LOADERS_RB`
-
-Ruby development libraries
-
-C#
-
-`OPTION_BUILD_LOADERS_CS`
-
-.NET Core development libraries
-
-TypeScript
-
-`OPTION_BUILD_LOADERS_TS`
-
-Node.js loader
-
-C
-
-`OPTION_BUILD_LOADERS_C`
-
-TCC, libffi, libclang
-
-JavaScript (V8)
-
-`OPTION_BUILD_LOADERS_JS`
-
-V8 libraries
-
-JavaScript (SpiderMonkey)
-
-`OPTION_BUILD_LOADERS_JSM`
-
-SpiderMonkey libraries
+| Loader | CMake Option | Dependencies |
+| --- | --- | --- |
+| Node.js | `OPTION_BUILD_LOADERS_NODE` | Node.js development libraries |
+| Python | `OPTION_BUILD_LOADERS_PY` | Python development libraries |
+| Ruby | `OPTION_BUILD_LOADERS_RB` | Ruby development libraries |
+| C# | `OPTION_BUILD_LOADERS_CS` | .NET Core development libraries |
+| TypeScript | `OPTION_BUILD_LOADERS_TS` | Node.js loader |
+| C | `OPTION_BUILD_LOADERS_C` | TCC, libffi, libclang |
+| JavaScript (V8) | `OPTION_BUILD_LOADERS_JS` | V8 libraries |
+| JavaScript (SpiderMonkey) | `OPTION_BUILD_LOADERS_JSM` | SpiderMonkey libraries |
 
 ## Loader Configuration
 

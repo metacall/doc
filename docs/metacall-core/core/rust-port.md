@@ -118,27 +118,12 @@ This example demonstrates:
 ## Testing
 
 The Rust Port includes tests run through Cargo's test framework. The CMake build system sets up the necessary environment variables for the tests:
-
-Environment Variable
-
-Purpose
-
-`LOADER_LIBRARY_PATH`
-
-Path to language loaders
-
-`LOADER_SCRIPT_PATH`
-
-Path to test scripts
-
-`CONFIGURATION_PATH`
-
-Path to MetaCall configuration
-
-`PROJECT_LIBRARY_PATH_NAME`
-
-Path to project libraries
-
+| Environment Variable | Purpose |
+| --- | --- |
+| `LOADER_LIBRARY_PATH` | Path to language loaders |
+| `LOADER_SCRIPT_PATH` | Path to test scripts |
+| `CONFIGURATION_PATH` | Path to MetaCall configuration |
+| `PROJECT_LIBRARY_PATH_NAME` | Path to project libraries |
 The test environment is also configured to support debugging in VS Code through the generation of `.vscode/.env` and `config.toml` files.
 
 ## Docker Development Environment

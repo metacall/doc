@@ -181,71 +181,23 @@ MetaCall's build system consists of several phases, each with its own prerequisi
 MetaCall provides `metacall-environment.sh` for automatically installing required dependencies. This script accepts parameters to install dependencies for specific loaders:
 
 Available options include:
-
-Option
-
-Description
-
-base
-
-Install base build dependencies
-
-python
-
-Install Python runtime and development files
-
-ruby
-
-Install Ruby runtime and development files
-
-netcore
-
-Install .NET Core 1.x runtime
-
-netcore2
-
-Install .NET Core 2.x runtime
-
-netcore5
-
-Install .NET Core 5.x runtime
-
-netcore7
-
-Install .NET Core 7.x runtime
-
-nodejs
-
-Install NodeJS runtime and development files
-
-typescript
-
-Install TypeScript support
-
-java
-
-Install Java JDK and JRE
-
-c
-
-Install C loader dependencies (libffi, libclang)
-
-cobol
-
-Install GNU Cobol
-
-rust
-
-Install Rust (nightly)
-
-debug
-
-Build dependencies in debug mode
-
-release
-
-Build dependencies in release mode
-
+| Option | Description |
+| --- | --- |
+| base | Install base build dependencies |
+| python | Install Python runtime and development files |
+| ruby | Install Ruby runtime and development files |
+| netcore | Install .NET Core 1.x runtime |
+| netcore2 | Install .NET Core 2.x runtime |
+| netcore5 | Install .NET Core 5.x runtime |
+| netcore7 | Install .NET Core 7.x runtime |
+| nodejs | Install NodeJS runtime and development files |
+| typescript | Install TypeScript support |
+| java | Install Java JDK and JRE |
+| c | Install C loader dependencies (libffi, libclang) |
+| cobol | Install GNU Cobol |
+| rust | Install Rust (nightly) |
+| debug | Build dependencies in debug mode |
+| release | Build dependencies in release mode |
 Example for a full development environment:
 
 ## Dependency Management in Docker
@@ -270,43 +222,16 @@ After installing prerequisites, you can verify your environment is ready for bui
 ## Setting up Path Environment
 
 MetaCall relies on various environment variables to locate dependencies. The key ones are:
-
-Variable
-
-Description
-
-Default Location
-
-LOADER\_LIBRARY\_PATH
-
-Directory containing loader plugins
-
-`.` (current directory)
-
-LOADER\_SCRIPT\_PATH
-
-Directory containing scripts to be loaded
-
-`.` (current directory)
-
-CONFIGURATION\_PATH
-
-Global configuration file location
-
-`configurations/global.json`
-
-SERIAL\_LIBRARY\_PATH
-
-Directory containing serial plugins
-
-`serials`
-
-DETOUR\_LIBRARY\_PATH
-
-Directory containing detour plugins
-
-`detours`
-
+| Variable | Description |
+| --- | --- |
+| Default Location | LOADER\_LIBRARY\_PATH |
+| Directory containing loader plugins | `.` (current directory) |
+| LOADER\_SCRIPT\_PATH | Directory containing scripts to be loaded |
+| `.` (current directory) | CONFIGURATION\_PATH |
+| Global configuration file location | `configurations/global.json` |
+| SERIAL\_LIBRARY\_PATH | Directory containing serial plugins |
+| `serials` | DETOUR\_LIBRARY\_PATH |
+| Directory containing detour plugins | `detours` |
 For development, the build directory usually contains all these components. After installation, they are placed in standard system locations.
 
 ## Troubleshooting Common Issues

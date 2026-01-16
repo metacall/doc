@@ -187,47 +187,14 @@ Error handling follows this pattern:
 
 ## API Summary
 
-Function
-
-Description
-
-Parameters
-
-`metacall_load_from_file`
-
-Load code from file(s)
-
-tag, paths\[\], size, handle
-
-`metacall_load_from_memory`
-
-Load code from a memory buffer
-
-tag, buffer, size, handle
-
-`metacall_load_from_package`
-
-Load code from a package
-
-tag, path, handle
-
-`metacall_execution_path`
-
-Set execution path
-
-tag, path
-
-`metacall_handle_function`
-
-Get function from handle
-
-handle, name
-
-`metacallhv`
-
-Call function by handle
-
-handle, name, args\[\]
+| Function                     | Description                    | Parameters                   |
+| ---------------------------- | ------------------------------ | ---------------------------- |
+| `metacall_load_from_file`    | Load code from file(s)         | tag, paths\[\], size, handle |
+| `metacall_load_from_memory`  | Load code from a memory buffer | tag, buffer, size, handle    |
+| `metacall_load_from_package` | Load code from a package       | tag, path, handle            |
+| `metacall_execution_path`    | Set execution path             | tag, path                    |
+| `metacall_handle_function`   | Get function from handle       | handle, name                 |
+| `metacallhv`                 | Call function by handle        | handle, name, args\[\]       |
 
 - [source/metacall/source/metacall.c444-496](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L444-L496)
 - [source/metacall/source/metacall.c413-425](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L413-L425)

@@ -102,41 +102,11 @@ MetaCall checks value validity during operations to detect potential memory corr
 ## Troubleshooting Initialization Issues
 
 Common initialization issues and solutions:
-
-Issue
-
-Possible Cause
-
-Solution
-
-Function returns `NULL`
-
-MetaCall not initialized
-
-Call `metacall_initialize()` before using MetaCall functions
-
-Loader fails to initialize
-
-Missing dependencies
-
-Check if language runtime is properly installed
-
-Memory leaks
-
-Missing `metacall_destroy()`
-
-Ensure proper shutdown or register with `atexit()`
-
-Crashes during initialization
-
-Conflicting runtimes
-
-Use `METACALL_HOST` environment variable
-
-File loading errors
-
-Incorrect execution path
-
-Set correct path with `metacall_execution_path()`
-
+| Issue | Possible Cause | Solution |
+| --- | --- | --- |
+| Function returns `NULL` | MetaCall not initialized | Call `metacall_initialize()` before using MetaCall functions |
+| Loader fails to initialize | Missing dependencies | Check if language runtime is properly installed |
+| Memory leaks | Missing `metacall_destroy()` | Ensure proper shutdown or register with `atexit()` |
+| Crashes during initialization | Conflicting runtimes | Use `METACALL_HOST` environment variable |
+| File loading errors | Incorrect execution path | Set correct path with `metacall_execution_path()` |
 Sources: [source/metacall/source/metacall.c222-341](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L222-L341) [source/loader/source/loader_impl.c391-511](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader_impl.c#L391-L511)

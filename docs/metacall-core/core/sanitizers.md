@@ -69,39 +69,11 @@ It's important to note that sanitizers and memcheck (Valgrind) are not compatibl
 ## Platform Support for Sanitizers
 
 Sanitizer support varies by platform:
-
-Sanitizer
-
-Linux
-
-macOS
-
-Windows
-
-Address Sanitizer
-
-✓
-
-✓
-
-✓
-
-Thread Sanitizer
-
-✓
-
-✓
-
-❌
-
-Memory Sanitizer
-
-✓
-
-❌
-
-❌
-
+| Sanitizer | Linux | macOS | Windows |
+| --- | --- | --- | --- |
+| Address Sanitizer | ✓ | ✓ | ✓ |
+| Thread Sanitizer | ✓ | ✓ | ❌ |
+| Memory Sanitizer | ✓ | ❌ | ❌ |
 Windows support for Thread Sanitizer and Memory Sanitizer is currently limited or non-existent because these sanitizers are not fully supported by the MSVC compiler.
 
 ## Sanitizers in CI Workflows
@@ -134,27 +106,12 @@ To get the most out of sanitizers in MetaCall development:
 ## Environment Variables for Sanitizers
 
 When running with sanitizers enabled, several environment variables can control their behavior:
-
-Environment Variable
-
-Description
-
-`ASAN_OPTIONS`
-
-Controls Address Sanitizer behavior
-
-`TSAN_OPTIONS`
-
-Controls Thread Sanitizer behavior
-
-`MSAN_OPTIONS`
-
-Controls Memory Sanitizer behavior
-
-`SANITIZER_SKIP_SUMMARY`
-
-When set to 1, suppresses sanitizer summary output (used in CI)
-
+| Environment Variable | Description |
+| --- | --- |
+| `ASAN_OPTIONS` | Controls Address Sanitizer behavior |
+| `TSAN_OPTIONS` | Controls Thread Sanitizer behavior |
+| `MSAN_OPTIONS` | Controls Memory Sanitizer behavior |
+| `SANITIZER_SKIP_SUMMARY` | When set to 1, suppresses sanitizer summary output (used in CI) |
 For example, to enable leak detection in Address Sanitizer:
 
 ## Conclusion

@@ -76,47 +76,17 @@ The Ruby Loader implements a comprehensive type conversion system to translate b
 2.  `rb_type_serialize`: Converts MetaCall values to Ruby values
 
 The type mapping is as follows:
-
-Ruby Type
-
-MetaCall Type
-
-T_TRUE/T_FALSE
-
-BOOL
-
-T_FIXNUM
-
-INT
-
-T_BIGNUM
-
-LONG
-
-T_FLOAT
-
-DOUBLE
-
-T_STRING
-
-STRING
-
-T_ARRAY
-
-ARRAY
-
-T_NIL
-
-NULL
-
-T_OBJECT
-
-OBJECT
-
-T_CLASS
-
-CLASS
-
+| Ruby Type | MetaCall Type |
+| --- | --- |
+| T_TRUE/T_FALSE | BOOL |
+| T_FIXNUM | INT |
+| T_BIGNUM | LONG |
+| T_FLOAT | DOUBLE |
+| T_STRING | STRING |
+| T_ARRAY | ARRAY |
+| T_NIL | NULL |
+| T_OBJECT | OBJECT |
+| T_CLASS | CLASS |
 For example, here's how a Ruby string is converted to a MetaCall string:
 
 - [source/loaders/rb_loader/source/rb_loader_impl.c166-307](https://github.com/metacall/core/blob/af9cad19/source/loaders/rb_loader/source/rb_loader_impl.c#L166-L307)

@@ -52,42 +52,16 @@ The Python Port is automatically installed when you build MetaCall with the Pyth
 ## API Reference
 
 The Python Port exposes the following core functions:
-
-Function
-
-Description
-
-`metacall_load_from_file(tag, paths)`
-
-Loads code from files into MetaCall
-
-`metacall_load_from_package(tag, path)`
-
-Loads a package into MetaCall
-
-`metacall_load_from_memory(tag, buffer)`
-
-Loads code from a string buffer
-
-`metacall(function_name, *args)`
-
-Calls a function by name with variable arguments
-
-`metacall_inspect()`
-
-Returns metadata about loaded functions as a Python dictionary
-
-`metacall_value_create_ptr(ptr)`
-
-Creates a MetaCall pointer value
-
-`metacall_value_reference(v)`
-
-Creates a reference to a MetaCall value
-
-`metacall_value_dereference(ptr)`
-
-Dereferences a MetaCall pointer
+| Function | Description |
+| --- | --- |
+| `metacall_load_from_file(tag, paths)` | Loads code from files into MetaCall |
+| `metacall_load_from_package(tag, path)` | Loads a package into MetaCall |
+| `metacall_load_from_memory(tag, buffer)` | Loads code from a string buffer |
+| `metacall(function_name, *args)` | Calls a function by name with variable arguments |
+| `metacall_inspect()` | Returns metadata about loaded functions as a Python dictionary |
+| `metacall_value_create_ptr(ptr)` | Creates a MetaCall pointer value |
+| `metacall_value_reference(v)` | Creates a reference to a MetaCall value |
+| `metacall_value_dereference(ptr)` | Dereferences a MetaCall pointer |
 
 ## Basic Usage
 

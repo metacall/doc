@@ -62,54 +62,19 @@ The bootstrap class is a Java utility class that provides functionality for:
 ### Type Conversion System
 
 One of the key responsibilities of the Java Loader is converting between Java types and MetaCall value types. The loader implements bidirectional conversion for:
-
-Java Type
-
-MetaCall Type
-
-boolean
-
-BOOL
-
-char
-
-CHAR
-
-short
-
-SHORT
-
-int
-
-INT
-
-long
-
-LONG
-
-float
-
-FLOAT
-
-double
-
-DOUBLE
-
-String
-
-STRING
-
-array
-
-ARRAY
-
-Object
-
-OBJECT
-
-Class
-
-CLASS
+| Java Type | MetaCall Type |
+| --- | --- |
+| boolean | BOOL |
+| char | CHAR |
+| short | SHORT |
+| int | INT |
+| long | LONG |
+| float | FLOAT |
+| double | DOUBLE |
+| String | STRING |
+| array | ARRAY |
+| Object | OBJECT |
+| Class | CLASS |
 
 ## Loader Lifecycle
 
@@ -150,42 +115,16 @@ The Java Loader supports creating Java objects (class instances) and manipulatin
 ## Array Handling
 
 The Java Loader has special handling for Java arrays, supporting both getting and setting array elements, as well as passing arrays as method arguments and returning arrays from methods.
-
-Java Array Type
-
-Handling Method
-
-boolean\[\]
-
-jbooleanArray with GetBooleanArrayElements/SetBooleanArrayRegion
-
-char\[\]
-
-jcharArray with GetCharArrayElements/SetCharArrayRegion
-
-short\[\]
-
-jshortArray with GetShortArrayElements/SetShortArrayRegion
-
-int\[\]
-
-jintArray with GetIntArrayElements/SetIntArrayRegion
-
-long\[\]
-
-jlongArray with GetLongArrayElements/SetLongArrayRegion
-
-float\[\]
-
-jfloatArray with GetFloatArrayElements/SetFloatArrayRegion
-
-double\[\]
-
-jdoubleArray with GetDoubleArrayElements/SetDoubleArrayRegion
-
-String\[\]
-
-jobjectArray with GetObjectArrayElement/SetObjectArrayElement
+| Java Array Type | Handling Method |
+| --- | --- |
+| boolean\[\] | jbooleanArray with GetBooleanArrayElements/SetBooleanArrayRegion |
+| char\[\] | jcharArray with GetCharArrayElements/SetCharArrayRegion |
+| short\[\] | jshortArray with GetShortArrayElements/SetShortArrayRegion |
+| int\[\] | jintArray with GetIntArrayElements/SetIntArrayRegion |
+| long\[\] | jlongArray with GetLongArrayElements/SetLongArrayRegion |
+| float\[\] | jfloatArray with GetFloatArrayElements/SetFloatArrayRegion |
+| double\[\] | jdoubleArray with GetDoubleArrayElements/SetDoubleArrayRegion |
+| String\[\] | jobjectArray with GetObjectArrayElement/SetObjectArrayElement |
 
 ## Type Signature Management
 

@@ -61,34 +61,14 @@ The testing framework supports running tests with memory checkers like Valgrind.
 ### 2.3 Test Environment Variables
 
 Tests require specific environment variables to locate loaders, configurations, and other components:
-
-Environment Variable
-
-Purpose
-
-`LOADER_LIBRARY_PATH`
-
-Directory where loader plugins are located
-
-`LOADER_SCRIPT_PATH`
-
-Directory where scripts to be loaded are located
-
-`CONFIGURATION_PATH`
-
-Path to the MetaCall global configuration
-
-`SERIAL_LIBRARY_PATH`
-
-Directory where serial plugins are located
-
-`DETOUR_LIBRARY_PATH`
-
-Directory where detour plugins are located
-
-`PORT_LIBRARY_PATH`
-
-Directory where port plugins are located
+| Environment Variable | Purpose |
+| --- | --- |
+| `LOADER_LIBRARY_PATH` | Directory where loader plugins are located |
+| `LOADER_SCRIPT_PATH` | Directory where scripts to be loaded are located |
+| `CONFIGURATION_PATH` | Path to the MetaCall global configuration |
+| `SERIAL_LIBRARY_PATH` | Directory where serial plugins are located |
+| `DETOUR_LIBRARY_PATH` | Directory where detour plugins are located |
+| `PORT_LIBRARY_PATH` | Directory where port plugins are located |
 
 ## 3\. Test Categories
 

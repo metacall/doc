@@ -97,43 +97,13 @@ To rebuild all images without using cached layers:
 ### Customizing the Build
 
 The Docker build process can be customized through environment variables:
-
-Environment Variable
-
-Description
-
-Default
-
-`METACALL_BASE_IMAGE`
-
-Base OS image
-
-`debian:buster`
-
-`METACALL_PATH`
-
-Path to MetaCall source code
-
-`/metacall`
-
-`METACALL_BUILD_TYPE`
-
-Build type (debug, release)
-
-`release`
-
-`METACALL_INSTALL_OPTIONS`
-
-Dependencies to install
-
-Varies by image
-
-`METACALL_BUILD_OPTIONS`
-
-Components to build
-
-Varies by image
-
+| Environment Variable | Description | Default |
+| --- | --- | --- |
+| `METACALL_BASE_IMAGE` | Base OS image | `debian:buster` |
+| `METACALL_PATH` | Path to MetaCall source code | `/metacall` |
+| `METACALL_BUILD_TYPE` | Build type (debug, release) | `release` |
+| `METACALL_INSTALL_OPTIONS` | Dependencies to install | Varies by image |
+| `METACALL_BUILD_OPTIONS` | Components to build | Varies by image |
 These variables can be set before running the build commands:
 
 ## Testing with Docker
@@ -211,55 +181,15 @@ This builds images for the specified platform, allowing MetaCall to run on diffe
 ## Environment Variables for Docker Images
 
 The following environment variables are used within the Docker containers:
-
-Variable
-
-Description
-
-Default in Runtime Image
-
-`LOADER_LIBRARY_PATH`
-
-Path to loader plugins
-
-`/usr/local/lib`
-
-`LOADER_SCRIPT_PATH`
-
-Path to scripts
-
-`/usr/local/scripts`
-
-`CONFIGURATION_PATH`
-
-Path to configuration
-
-`/usr/local/share/metacall/configurations/global.json`
-
-`SERIAL_LIBRARY_PATH`
-
-Path to serial plugins
-
-`/usr/local/lib`
-
-`DETOUR_LIBRARY_PATH`
-
-Path to detour plugins
-
-`/usr/local/lib`
-
-`PORT_LIBRARY_PATH`
-
-Path to port libraries
-
-`/usr/local/lib`
-
-`NODE_PATH`
-
-Path to Node.js modules
-
-`/usr/local/lib/node_modules`
-
+| Variable | Description | Default in Runtime Image |
+| --- | --- | --- |
+| `LOADER_LIBRARY_PATH` | Path to loader plugins | `/usr/local/lib` |
+| `LOADER_SCRIPT_PATH` | Path to scripts | `/usr/local/scripts` |
+| `CONFIGURATION_PATH` | Path to configuration | `/usr/local/share/metacall/configurations/global.json` |
+| `SERIAL_LIBRARY_PATH` | Path to serial plugins | `/usr/local/lib` |
+| `DETOUR_LIBRARY_PATH` | Path to detour plugins | `/usr/local/lib` |
+| `PORT_LIBRARY_PATH` | Path to port libraries | `/usr/local/lib` |
+| `NODE_PATH` | Path to Node.js modules | `/usr/local/lib/node_modules` |
 These variables configure the runtime behavior of MetaCall within the Docker containers.
 
 ## Troubleshooting Docker Builds

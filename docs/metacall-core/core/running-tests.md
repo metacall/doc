@@ -83,82 +83,24 @@ Alternatively, use the build script which automatically runs the tests:
 To run specific tests, you can use the `--tests-regex` option with CTest:
 
 Common test categories include:
-
-Test Category
-
-Description
-
-Example
-
-Core tests
-
-Tests for core functionality
-
-`ctest -R metacall_test`
-
-Loader tests
-
-Tests for specific language loaders
-
-`ctest -R metacall_python_test`
-
-Port tests
-
-Tests for language ports
-
-`ctest -R metacall_node_port_test`
-
-Integration tests
-
-Tests for cross-language functionality
-
-`ctest -R metacall_integration_test`
+| Test Category | Description | Example |
+| --- | --- | --- |
+| Core tests | Tests for core functionality | `ctest -R metacall_test` |
+| Loader tests | Tests for specific language loaders | `ctest -R metacall_python_test` |
+| Port tests | Tests for language ports | `ctest -R metacall_node_port_test` |
+| Integration tests | Tests for cross-language functionality | `ctest -R metacall_integration_test` |
 
 ### Test Environment Variables
 
 Tests require specific environment variables to locate loader plugins, scripts, configuration files, etc. These are automatically set by the build system, but if you're running tests manually, you'll need to set them:
-
-Environment Variable
-
-Description
-
-Default Value
-
-`LOADER_LIBRARY_PATH`
-
-Directory where loader plugins are located
-
-`build`
-
-`LOADER_SCRIPT_PATH`
-
-Directory where scripts to be loaded are located
-
-`build/scripts`
-
-`CONFIGURATION_PATH`
-
-Global configuration file path
-
-`build/configurations/global.json`
-
-`SERIAL_LIBRARY_PATH`
-
-Directory where serial plugins are located
-
-`build`
-
-`DETOUR_LIBRARY_PATH`
-
-Directory where detour plugins are located
-
-`build`
-
-`PORT_LIBRARY_PATH`
-
-Directory where port plugins are located
-
-`build`
+| Environment Variable | Description | Default Value |
+| --- | --- | --- |
+| `LOADER_LIBRARY_PATH` | Directory where loader plugins are located | `build` |
+| `LOADER_SCRIPT_PATH` | Directory where scripts to be loaded are located | `build/scripts` |
+| `CONFIGURATION_PATH` | Global configuration file path | `build/configurations/global.json` |
+| `SERIAL_LIBRARY_PATH` | Directory where serial plugins are located | `build` |
+| `DETOUR_LIBRARY_PATH` | Directory where detour plugins are located | `build` |
+| `PORT_LIBRARY_PATH` | Directory where port plugins are located | `build` |
 
 ## Advanced Testing
 
@@ -208,41 +150,13 @@ For memory checks and sanitizers, additional error information is provided, such
 
 ### Common Test Failures
 
-Error Type
-
-Description
-
-Possible Cause
-
-Segmentation fault
-
-The program accessed an invalid memory address
-
-Null pointer dereference, buffer overflow
-
-Memory leak
-
-Memory was allocated but not freed
-
-Forgot to clean up resources
-
-Timeout
-
-The test took too long to complete
-
-Infinite loop, deadlock
-
-Assertion failed
-
-A test assertion did not pass
-
-Incorrect behavior, regression
-
-Race condition
-
-Concurrent access to shared data
-
-Missing synchronization
+| Error Type         | Description                                    | Possible Cause                            |
+| ------------------ | ---------------------------------------------- | ----------------------------------------- |
+| Segmentation fault | The program accessed an invalid memory address | Null pointer dereference, buffer overflow |
+| Memory leak        | Memory was allocated but not freed             | Forgot to clean up resources              |
+| Timeout            | The test took too long to complete             | Infinite loop, deadlock                   |
+| Assertion failed   | A test assertion did not pass                  | Incorrect behavior, regression            |
+| Race condition     | Concurrent access to shared data               | Missing synchronization                   |
 
 ### Platform-Specific Considerations
 

@@ -45,19 +45,10 @@ MetaCall's build configuration system allows you to customize which language run
 ## Configuration Scripts
 
 MetaCall provides platform-specific scripts for configuring the build:
-
-Platform
-
-Script
-
-Linux/macOS
-
-`tools/metacall-configure.sh`
-
-Windows
-
-`tools/metacall-configure.ps1`
-
+| Platform | Script |
+| --- | --- |
+| Linux/macOS | `tools/metacall-configure.sh` |
+| Windows | `tools/metacall-configure.ps1` |
 These scripts provide a simplified interface to the underlying CMake build system, allowing you to easily enable or disable various features.
 
 ### Basic Usage
@@ -69,221 +60,59 @@ The configuration scripts accept a list of space-separated options that control 
 ### Build Types
 
 MetaCall supports different build types that control optimization and debugging features:
-
-Build Type
-
-Description
-
-`debug`
-
-Debug build with all debug symbols and no optimization
-
-`release`
-
-Release build with optimizations and no debug symbols
-
-`relwithdebinfo`
-
-Release build with optimizations and debug symbols
-
+| Build Type | Description |
+| --- | --- |
+| `debug` | Debug build with all debug symbols and no optimization |
+| `release` | Release build with optimizations and no debug symbols |
+| `relwithdebinfo` | Release build with optimizations and debug symbols |
 Example usage:
 
 ### Language Support Options
 
 Each supported language has a corresponding build option to enable its loader:
-
-Option
-
-Description
-
-Default
-
-`python`
-
-Enable Python loader
-
-OFF
-
-`ruby`
-
-Enable Ruby loader
-
-OFF
-
-`nodejs`
-
-Enable Node.js loader
-
-OFF
-
-`typescript`
-
-Enable TypeScript loader
-
-OFF
-
-`netcore`
-
-Enable .NET Core 1.x loader
-
-OFF
-
-`netcore2`
-
-Enable .NET Core 2.x loader
-
-OFF
-
-`netcore5`
-
-Enable .NET Core 5.x loader
-
-OFF
-
-`netcore7`
-
-Enable .NET Core 7.x loader
-
-OFF
-
-`java`
-
-Enable Java loader
-
-OFF
-
-`c`
-
-Enable C loader
-
-OFF
-
-`cobol`
-
-Enable COBOL loader
-
-OFF
-
-`file`
-
-Enable File loader
-
-OFF
-
-`rpc`
-
-Enable RPC loader
-
-OFF
-
-`wasm`
-
-Enable WebAssembly loader
-
-OFF
-
-`rust`
-
-Enable Rust loader
-
-OFF
-
-`go`
-
-Enable Go port support (loader not available yet)
-
-OFF
-
+| Option | Description | Default |
+| --- | --- | --- |
+| `python` | Enable Python loader | OFF |
+| `ruby` | Enable Ruby loader | OFF |
+| `nodejs` | Enable Node.js loader | OFF |
+| `typescript` | Enable TypeScript loader | OFF |
+| `netcore` | Enable .NET Core 1.x loader | OFF |
+| `netcore2` | Enable .NET Core 2.x loader | OFF |
+| `netcore5` | Enable .NET Core 5.x loader | OFF |
+| `netcore7` | Enable .NET Core 7.x loader | OFF |
+| `java` | Enable Java loader | OFF |
+| `c` | Enable C loader | OFF |
+| `cobol` | Enable COBOL loader | OFF |
+| `file` | Enable File loader | OFF |
+| `rpc` | Enable RPC loader | OFF |
+| `wasm` | Enable WebAssembly loader | OFF |
+| `rust` | Enable Rust loader | OFF |
+| `go` | Enable Go port support (loader not available yet) | OFF |
 Example usage:
 
 ### Component Options
 
 The following options control which components of the MetaCall system are built:
-
-Option
-
-Description
-
-Default
-
-`scripts`
-
-Build script examples
-
-OFF
-
-`examples`
-
-Build example applications
-
-OFF
-
-`tests`
-
-Build and run tests
-
-OFF
-
-`benchmarks`
-
-Build and run benchmarks
-
-OFF
-
-`ports`
-
-Build language ports (frontends)
-
-OFF
-
-`install`
-
-Install after building
-
-OFF
-
+| Option | Description | Default |
+| --- | --- | --- |
+| `scripts` | Build script examples | OFF |
+| `examples` | Build example applications | OFF |
+| `tests` | Build and run tests | OFF |
+| `benchmarks` | Build and run benchmarks | OFF |
+| `ports` | Build language ports (frontends) | OFF |
+| `install` | Install after building | OFF |
 Example usage:
 
 ### Advanced Options
 
 MetaCall offers additional advanced build options:
-
-Option
-
-Description
-
-Default
-
-`sandbox`
-
-Enable sandboxing support
-
-OFF
-
-`coverage`
-
-Enable code coverage reporting
-
-OFF
-
-`address-sanitizer`
-
-Build with AddressSanitizer
-
-OFF
-
-`thread-sanitizer`
-
-Build with ThreadSanitizer
-
-OFF
-
-`memory-sanitizer`
-
-Build with MemorySanitizer
-
-OFF
-
+| Option | Description | Default |
+| --- | --- | --- |
+| `sandbox` | Enable sandboxing support | OFF |
+| `coverage` | Enable code coverage reporting | OFF |
+| `address-sanitizer` | Build with AddressSanitizer | OFF |
+| `thread-sanitizer` | Build with ThreadSanitizer | OFF |
+| `memory-sanitizer` | Build with MemorySanitizer | OFF |
 Example usage:
 
 ## CMake Configuration
@@ -295,84 +124,20 @@ The configuration scripts ultimately generate CMake configuration. The options a
 For advanced users, it's possible to configure MetaCall directly using CMake instead of the configuration scripts:
 
 The following table shows common CMake options:
-
-CMake Option
-
-Description
-
-Default
-
-`OPTION_BUILD_TESTS`
-
-Build tests
-
-ON
-
-`OPTION_BUILD_BENCHMARKS`
-
-Build benchmarks
-
-OFF
-
-`OPTION_BUILD_EXAMPLES`
-
-Build examples
-
-ON
-
-`OPTION_BUILD_CLI`
-
-Build CLI tools
-
-ON
-
-`OPTION_BUILD_LOADERS`
-
-Build loaders
-
-ON
-
-`OPTION_BUILD_EXTENSIONS`
-
-Build extensions
-
-ON
-
-`OPTION_BUILD_SCRIPTS`
-
-Build scripts
-
-ON
-
-`OPTION_BUILD_SERIALS`
-
-Build serials
-
-ON
-
-`OPTION_BUILD_DETOURS`
-
-Build detours
-
-ON
-
-`OPTION_BUILD_PORTS`
-
-Build ports
-
-OFF
-
-`OPTION_THREAD_SAFE`
-
-Enable thread safety
-
-OFF
-
-`OPTION_FORK_SAFE`
-
-Enable fork safety
-
-ON
+| CMake Option | Description | Default |
+| --- | --- | --- |
+| `OPTION_BUILD_TESTS` | Build tests | ON |
+| `OPTION_BUILD_BENCHMARKS` | Build benchmarks | OFF |
+| `OPTION_BUILD_EXAMPLES` | Build examples | ON |
+| `OPTION_BUILD_CLI` | Build CLI tools | ON |
+| `OPTION_BUILD_LOADERS` | Build loaders | ON |
+| `OPTION_BUILD_EXTENSIONS` | Build extensions | ON |
+| `OPTION_BUILD_SCRIPTS` | Build scripts | ON |
+| `OPTION_BUILD_SERIALS` | Build serials | ON |
+| `OPTION_BUILD_DETOURS` | Build detours | ON |
+| `OPTION_BUILD_PORTS` | Build ports | OFF |
+| `OPTION_THREAD_SAFE` | Enable thread safety | OFF |
+| `OPTION_FORK_SAFE` | Enable fork safety | ON |
 
 ## Platform-Specific Considerations
 
@@ -411,49 +176,14 @@ This approach is especially useful for CI/CD environments or when you want to en
 ## Configuration Variables
 
 When the build is configured, several environment variables are set that control the runtime behavior of MetaCall:
-
-Variable
-
-Description
-
-Default Value
-
-`LOADER_LIBRARY_PATH`
-
-Path to loader plugins
-
-`${CMAKE_BINARY_DIR}`
-
-`LOADER_SCRIPT_PATH`
-
-Path to scripts
-
-`${CMAKE_BINARY_DIR}/scripts`
-
-`CONFIGURATION_PATH`
-
-Path to configuration file
-
-`${CMAKE_BINARY_DIR}/configurations/global.json`
-
-`SERIAL_LIBRARY_PATH`
-
-Path to serial plugins
-
-`${CMAKE_BINARY_DIR}`
-
-`DETOUR_LIBRARY_PATH`
-
-Path to detour plugins
-
-`${CMAKE_BINARY_DIR}`
-
-`PORT_LIBRARY_PATH`
-
-Path to port libraries
-
-`${CMAKE_BINARY_DIR}`
-
+| Variable | Description | Default Value |
+| --- | --- | --- |
+| `LOADER_LIBRARY_PATH` | Path to loader plugins | `${CMAKE_BINARY_DIR}` |
+| `LOADER_SCRIPT_PATH` | Path to scripts | `${CMAKE_BINARY_DIR}/scripts` |
+| `CONFIGURATION_PATH` | Path to configuration file | `${CMAKE_BINARY_DIR}/configurations/global.json` |
+| `SERIAL_LIBRARY_PATH` | Path to serial plugins | `${CMAKE_BINARY_DIR}` |
+| `DETOUR_LIBRARY_PATH` | Path to detour plugins | `${CMAKE_BINARY_DIR}` |
+| `PORT_LIBRARY_PATH` | Path to port libraries | `${CMAKE_BINARY_DIR}` |
 These variables are automatically set during the build process but can be overridden for custom installations.
 
 ## Sanitizer Support

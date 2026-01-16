@@ -215,77 +215,19 @@ A critical part of creating a custom loader is proper integration with MetaCall'
 
 ### Required Types to Support
 
-MetaCall Type
-
-Description
-
-Example in Implementation
-
-`NULL`
-
-Null/None value
-
-Map to language's null/nil/None
-
-`BOOL`
-
-Boolean value
-
-Convert to/from language's boolean
-
-`CHAR`
-
-Single character
-
-Map to char or single-character string
-
-`INT`/`LONG`
-
-Integer values
-
-Map to language integers
-
-`FLOAT`/`DOUBLE`
-
-Floating point values
-
-Map to language floats
-
-`STRING`
-
-Text string
-
-Map to language string type
-
-`ARRAY`
-
-Sequence of values
-
-Map to language arrays/lists
-
-`MAP`
-
-Key-value mapping
-
-Map to language dictionaries/objects
-
-`POINTER`
-
-Raw pointer
-
-Special handling for FFI
-
-`FUNCTION`
-
-Function reference
-
-Wrap language functions
-
-`FUTURE`
-
-Async result
-
-Map to language promises/futures
+| MetaCall Type    | Description           | Example in Implementation              |
+| ---------------- | --------------------- | -------------------------------------- |
+| `NULL`           | Null/None value       | Map to language's null/nil/None        |
+| `BOOL`           | Boolean value         | Convert to/from language's boolean     |
+| `CHAR`           | Single character      | Map to char or single-character string |
+| `INT`/`LONG`     | Integer values        | Map to language integers               |
+| `FLOAT`/`DOUBLE` | Floating point values | Map to language floats                 |
+| `STRING`         | Text string           | Map to language string type            |
+| `ARRAY`          | Sequence of values    | Map to language arrays/lists           |
+| `MAP`            | Key-value mapping     | Map to language dictionaries/objects   |
+| `POINTER`        | Raw pointer           | Special handling for FFI               |
+| `FUNCTION`       | Function reference    | Wrap language functions                |
+| `FUTURE`         | Async result          | Map to language promises/futures       |
 
 - [source/loaders/py_loader/source/py_loader_impl.c875-952](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/source/py_loader_impl.c#L875-L952)
 - [source/loaders/node_loader/source/node_loader_impl.cpp1210-1267](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_impl.cpp#L1210-L1267)

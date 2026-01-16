@@ -102,26 +102,12 @@ Each plugin can register new commands and provide implementations for those comm
 ## REPL Implementation Details
 
 The REPL is implemented using the Node.js built-in REPL module, customized with MetaCall-specific evaluator and completer functions:
-
-Component
-
-Description
-
-Prompt
-
-Uses the lambda symbol (λ) to indicate input readiness
-
-Context
-
-Provides an isolated VM context for evaluation
-
-Evaluator
-
-Custom function that processes commands through the MetaCall parser
-
-Completer
-
-Provides command completion based on registered commands
+| Component | Description |
+| --- | --- |
+| Prompt | Uses the lambda symbol (λ) to indicate input readiness |
+| Context | Provides an isolated VM context for evaluation |
+| Evaluator | Custom function that processes commands through the MetaCall parser |
+| Completer | Provides command completion based on registered commands |
 
 ## REPL Promise Chain
 
@@ -155,43 +141,16 @@ The exit function sets the `exit_condition` flag to true, which breaks the main 
 ## Available Commands
 
 The REPL comes with a set of built-in commands loaded from the core plugin. These commands include:
-
-Command
-
-Purpose
-
-`load <tag> <files...>`
-
-Load source files with specified loader
-
-`inspect`
-
-List all loaded functions
-
-`eval <tag> <code>`
-
-Evaluate code snippet with specified loader
-
-`call <function>(<args>)`
-
-Call a function with arguments
-
-`clear <tag> <file>`
-
-Clear a loaded module
-
-`help`
-
-Display help information
-
-`copyright`
-
-Show copyright information
-
-`exit`
-
-Exit the REPL
-
+| Command | Purpose |
+| --- | --- |
+| `load <tag> <files...>` | Load source files with specified loader |
+| `inspect` | List all loaded functions |
+| `eval <tag> <code>` | Evaluate code snippet with specified loader |
+| `call <function>(<args>)` | Call a function with arguments |
+| `clear <tag> <file>` | Clear a loaded module |
+| `help` | Display help information |
+| `copyright` | Show copyright information |
+| `exit` | Exit the REPL |
 Additional commands may be available through plugins.
 
 ## Example Usage

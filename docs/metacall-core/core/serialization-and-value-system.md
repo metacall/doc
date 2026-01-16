@@ -65,120 +65,26 @@ The value memory layout is:
 ### Supported Value Types
 
 MetaCall supports a wide range of value types to accommodate different programming languages:
-
-Type ID
-
-C Type
-
-Description
-
-TYPE_BOOL
-
-boolean
-
-Boolean value (0 or 1)
-
-TYPE_CHAR
-
-char
-
-Single character
-
-TYPE_SHORT
-
-short
-
-16-bit integer
-
-TYPE_INT
-
-int
-
-32-bit integer
-
-TYPE_LONG
-
-long
-
-64-bit integer
-
-TYPE_FLOAT
-
-float
-
-Single-precision floating-point
-
-TYPE_DOUBLE
-
-double
-
-Double-precision floating-point
-
-TYPE_STRING
-
-char\*
-
-Null-terminated string
-
-TYPE_BUFFER
-
-void\*
-
-Binary data buffer
-
-TYPE_ARRAY
-
-value\*
-
-Array of values
-
-TYPE_MAP
-
-value\*
-
-Key-value pairs (as array of tuples)
-
-TYPE_PTR
-
-void\*
-
-Generic pointer
-
-TYPE_FUNCTION
-
-function
-
-Function handle
-
-TYPE_NULL
-
-NULL
-
-Null value
-
-TYPE_CLASS
-
-klass
-
-Class definition
-
-TYPE_OBJECT
-
-object
-
-Object instance
-
-TYPE_EXCEPTION
-
-exception
-
-Exception object
-
-TYPE_THROWABLE
-
-throwable
-
-Wrapped exception
+| Type ID | C Type | Description |
+| --- | --- | --- |
+| TYPE_BOOL | boolean | Boolean value (0 or 1) |
+| TYPE_CHAR | char | Single character |
+| TYPE_SHORT | short | 16-bit integer |
+| TYPE_INT | int | 32-bit integer |
+| TYPE_LONG | long | 64-bit integer |
+| TYPE_FLOAT | float | Single-precision floating-point |
+| TYPE_DOUBLE | double | Double-precision floating-point |
+| TYPE_STRING | char\* | Null-terminated string |
+| TYPE_BUFFER | void\* | Binary data buffer |
+| TYPE_ARRAY | value\* | Array of values |
+| TYPE_MAP | value\* | Key-value pairs (as array of tuples) |
+| TYPE_PTR | void\* | Generic pointer |
+| TYPE_FUNCTION | function | Function handle |
+| TYPE_NULL | NULL | Null value |
+| TYPE_CLASS | klass | Class definition |
+| TYPE_OBJECT | object | Object instance |
+| TYPE_EXCEPTION | exception | Exception object |
+| TYPE_THROWABLE | throwable | Wrapped exception |
 
 ### Value API
 
@@ -227,18 +133,10 @@ Deserialization converts serialized data back into MetaCall values, with type de
 ### Serialization API
 
 The key functions in the serialization API are:
-
-Function
-
-Description
-
-`metacall_serialize(const char *name, void *v, size_t *size, void *allocator)`
-
-Serialize a value to a string using the specified format
-
-`metacall_deserialize(const char *name, const char *buffer, size_t size, void *allocator)`
-
-Deserialize a string into a value using the specified format
+| Function | Description |
+| --- | --- |
+| `metacall_serialize(const char *name, void *v, size_t *size, void *allocator)` | Serialize a value to a string using the specified format |
+| `metacall_deserialize(const char *name, const char *buffer, size_t size, void *allocator)` | Deserialize a string into a value using the specified format |
 
 ## Integration with MetaCall Core
 

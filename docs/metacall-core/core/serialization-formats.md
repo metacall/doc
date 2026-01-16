@@ -40,70 +40,23 @@ The serialization system uses a plugin-based architecture where different serial
 The primary serialization format in MetaCall is JSON, implemented using the RapidJSON library. This format provides a comprehensive mapping between MetaCall values and standard JSON.
 
 Type mappings:
-
-MetaCall Type
-
-JSON Representation
-
-Boolean
-
-Boolean (true/false)
-
-Char, Short, Int, Long
-
-Number
-
-Float, Double
-
-Number (with decimal)
-
-String
-
-String
-
-Buffer
-
-Object with "data" array and "length" field
-
-Array
-
-Array
-
-Map
-
-Object
-
-Pointer
-
-String (memory address)
-
-Function
-
-String ("\[Function\]")
-
-Future
-
-String ("\[Future\]")
-
-Class
-
-String ("\[Class\]")
-
-Object
-
-String ("\[Object\]")
-
-Null
-
-null
-
-Exception
-
-Object with message, label, code, and stacktrace
-
-Throwable
-
-Object with "ExceptionThrown" property
+| MetaCall Type | JSON Representation |
+| --- | --- |
+| Boolean | Boolean (true/false) |
+| Char, Short, Int, Long | Number |
+| Float, Double | Number (with decimal) |
+| String | String |
+| Buffer | Object with "data" array and "length" field |
+| Array | Array |
+| Map | Object |
+| Pointer | String (memory address) |
+| Function | String ("\[Function\]") |
+| Future | String ("\[Future\]") |
+| Class | String ("\[Class\]") |
+| Object | String ("\[Object\]") |
+| Null | null |
+| Exception | Object with message, label, code, and stacktrace |
+| Throwable | Object with "ExceptionThrown" property |
 
 - [source/serials/rapid_json_serial/source/rapid_json_serial_impl.cpp70-130](https://github.com/metacall/core/blob/af9cad19/source/serials/rapid_json_serial/source/rapid_json_serial_impl.cpp#L70-L130)
 - [source/serials/rapid_json_serial/source/rapid_json_serial_impl.cpp131-216](https://github.com/metacall/core/blob/af9cad19/source/serials/rapid_json_serial/source/rapid_json_serial_impl.cpp#L131-L216)

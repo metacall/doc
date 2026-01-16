@@ -119,120 +119,26 @@ The MetaCall value system provides a common representation for data across langu
 ### Value Types
 
 MetaCall supports the following value types:
-
-Value Type ID
-
-C Type
-
-Description
-
-METACALL_BOOL
-
-boolean
-
-Boolean value (0 or 1)
-
-METACALL_CHAR
-
-char
-
-Single character
-
-METACALL_SHORT
-
-short
-
-Short integer
-
-METACALL_INT
-
-int
-
-Integer
-
-METACALL_LONG
-
-long
-
-Long integer
-
-METACALL_FLOAT
-
-float
-
-Single-precision floating point
-
-METACALL_DOUBLE
-
-double
-
-Double-precision floating point
-
-METACALL_STRING
-
-char\*
-
-Null-terminated string
-
-METACALL_BUFFER
-
-void\*
-
-Binary data buffer
-
-METACALL_ARRAY
-
-void\*\*
-
-Array of values
-
-METACALL_MAP
-
-void\*\*
-
-Key-value pairs
-
-METACALL_PTR
-
-void\*
-
-Opaque pointer
-
-METACALL_FUNCTION
-
-void\*
-
-Function reference
-
-METACALL_NULL
-
-NULL
-
-Null value
-
-METACALL_CLASS
-
-void\*
-
-Class definition
-
-METACALL_OBJECT
-
-void\*
-
-Object instance
-
-METACALL_EXCEPTION
-
-void\*
-
-Exception
-
-METACALL_THROWABLE
-
-void\*
-
-Value with exception
+| Value Type ID | C Type | Description |
+| --- | --- | --- |
+| METACALL_BOOL | boolean | Boolean value (0 or 1) |
+| METACALL_CHAR | char | Single character |
+| METACALL_SHORT | short | Short integer |
+| METACALL_INT | int | Integer |
+| METACALL_LONG | long | Long integer |
+| METACALL_FLOAT | float | Single-precision floating point |
+| METACALL_DOUBLE | double | Double-precision floating point |
+| METACALL_STRING | char\* | Null-terminated string |
+| METACALL_BUFFER | void\* | Binary data buffer |
+| METACALL_ARRAY | void\*\* | Array of values |
+| METACALL_MAP | void\*\* | Key-value pairs |
+| METACALL_PTR | void\* | Opaque pointer |
+| METACALL_FUNCTION | void\* | Function reference |
+| METACALL_NULL | NULL | Null value |
+| METACALL_CLASS | void\* | Class definition |
+| METACALL_OBJECT | void\* | Object instance |
+| METACALL_EXCEPTION | void\* | Exception |
+| METACALL_THROWABLE | void\* | Value with exception |
 
 ### Creating Values
 

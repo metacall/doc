@@ -36,38 +36,15 @@ The Detours System is built as a modular component that integrates with the Meta
 ### 1\. Detour API
 
 The Detour API provides a consistent interface for function interception operations:
-
-Function
-
-Description
-
-`detour_initialize()`
-
-Initializes the detour system
-
-`detour_create(name)`
-
-Creates a detour instance with the specified implementation (e.g., "funchook")
-
-`detour_install(detour, target, hook)`
-
-Installs a hook function to intercept calls to a target function
-
-`detour_trampoline(handle)`
-
-Returns a pointer to the original target function
-
-`detour_uninstall(detour, handle)`
-
-Removes a previously installed hook
-
-`detour_clear(detour)`
-
-Clears a detour instance
-
-`detour_destroy()`
-
-Destroys the detour system
+| Function | Description |
+| --- | --- |
+| `detour_initialize()` | Initializes the detour system |
+| `detour_create(name)` | Creates a detour instance with the specified implementation (e.g., "funchook") |
+| `detour_install(detour, target, hook)` | Installs a hook function to intercept calls to a target function |
+| `detour_trampoline(handle)` | Returns a pointer to the original target function |
+| `detour_uninstall(detour, handle)` | Removes a previously installed hook |
+| `detour_clear(detour)` | Clears a detour instance |
+| `detour_destroy()` | Destroys the detour system |
 
 ### 2\. FuncHook Implementation
 

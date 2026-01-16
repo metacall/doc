@@ -70,35 +70,14 @@ At initialization, the port:
 #### Node.js Port API
 
 The Node.js port provides the following main functions:
-
-Function
-
-Description
-
-`metacall(name, ...args)`
-
-Call a function by name with arguments
-
-`metacallfms(name, buffer)`
-
-Call a function with JSON-formatted arguments
-
-`metacall_load_from_file(tag, paths)`
-
-Load code from files with language tag
-
-`metacall_load_from_memory(tag, code)`
-
-Load code from a string with language tag
-
-`metacall_load_from_package(tag, pkg)`
-
-Load code from a package with language tag
-
-`metacall_inspect()`
-
-Get metadata about loaded modules and functions
-
+| Function | Description |
+| --- | --- |
+| `metacall(name, ...args)` | Call a function by name with arguments |
+| `metacallfms(name, buffer)` | Call a function with JSON-formatted arguments |
+| `metacall_load_from_file(tag, paths)` | Load code from files with language tag |
+| `metacall_load_from_memory(tag, code)` | Load code from a string with language tag |
+| `metacall_load_from_package(tag, pkg)` | Load code from a package with language tag |
+| `metacall_inspect()` | Get metadata about loaded modules and functions |
 It also modifies Node.js's `require()` function to enable imports from other languages:
 
 - Direct imports by extension (e.g., `require('./script.py')`)

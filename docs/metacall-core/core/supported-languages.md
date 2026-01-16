@@ -98,118 +98,15 @@ Languages in MetaCall are integrated at different levels, depending on the featu
 ## Feature Support Matrix
 
 The following table summarizes the key features supported across different languages:
-
-Language
-
-Function Calls
-
-Classes & Objects
-
-Async/Await
-
-Exception Handling
-
-Value Conversion
-
-Garbage Collection
-
-Python
-
-✓
-
-✓
-
-✓
-
-✓
-
-✓
-
-✓
-
-Node.js
-
-✓
-
-✓
-
-✓
-
-✓
-
-✓
-
-✓
-
-TypeScript
-
-✓
-
-✓
-
-✓
-
-✓
-
-✓
-
-✓
-
-Ruby
-
-✓
-
-✓
-
-Limited
-
-✓
-
-✓
-
-✓
-
-Java
-
-✓
-
-✓
-
-Limited
-
-✓
-
-✓
-
-✓
-
-C
-
-✓
-
-Limited
-
-✗
-
-Limited
-
-✓
-
-Manual
-
-Rust
-
-✓
-
-Limited
-
-✗
-
-Limited
-
-✓
-
-✓
+| Language | Function Calls | Classes & Objects | Async/Await | Exception Handling | Value Conversion | Garbage Collection |
+| --- | --- | --- | --- | --- | --- | --- |
+| Python | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Node.js | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| TypeScript | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
+| Ruby | ✓ | ✓ | Limited | ✓ | ✓ | ✓ |
+| Java | ✓ | ✓ | Limited | ✓ | ✓ | ✓ |
+| C | ✓ | Limited | ✗ | Limited | ✓ | Manual |
+| Rust | ✓ | Limited | ✗ | Limited | ✓ | ✓ |
 
 ## Python Support
 

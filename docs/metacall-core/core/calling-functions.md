@@ -55,30 +55,13 @@ The simplest way to call functions is using the `metacall` function:
 This function looks up a function by name across all loaded modules and calls it with the provided arguments. For example:
 
 For more control over arguments, there are variants:
-
-Function
-
-Description
-
-`metacall`
-
-Call by name with variable arguments
-
-`metacallv`
-
-Call by name with array of arguments
-
-`metacallv_s`
-
-Call by name with array of arguments and explicit size
-
-`metacallt`
-
-Call by name with explicit argument types
-
-`metacallt_s`
-
-Call by name with explicit argument types and size
+| Function | Description |
+| --- | --- |
+| `metacall` | Call by name with variable arguments |
+| `metacallv` | Call by name with array of arguments |
+| `metacallv_s` | Call by name with array of arguments and explicit size |
+| `metacallt` | Call by name with explicit argument types |
+| `metacallt_s` | Call by name with explicit argument types and size |
 
 ### Calling Functions by Handle
 

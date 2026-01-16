@@ -37,165 +37,27 @@ MetaCall's type system consists of primitive types (like integers and strings) a
 
 ### Supported Types
 
-Type ID
-
-Description
-
-C Type Representation
-
-Common Usage
-
-METACALL_BOOL
-
-Boolean value
-
-`boolean` (unsigned char)
-
-Logical values (true/false)
-
-METACALL_CHAR
-
-Character
-
-`char`
-
-Single character values
-
-METACALL_SHORT
-
-Short integer
-
-`short`
-
-Small numeric values
-
-METACALL_INT
-
-Integer
-
-`int`
-
-Standard numeric values
-
-METACALL_LONG
-
-Long integer
-
-`long`
-
-Larger numeric values
-
-METACALL_FLOAT
-
-Single-precision float
-
-`float`
-
-Decimal values (limited precision)
-
-METACALL_DOUBLE
-
-Double-precision float
-
-`double`
-
-Decimal values (higher precision)
-
-METACALL_STRING
-
-String
-
-`char *`
-
-Text data
-
-METACALL_BUFFER
-
-Binary buffer
-
-`void *`
-
-Raw binary data
-
-METACALL_ARRAY
-
-Array of values
-
-`value *`
-
-Sequential collections of values
-
-METACALL_MAP
-
-Key-value map
-
-`value *` (of tuples)
-
-Associative collections of values
-
-METACALL_PTR
-
-Pointer
-
-`void *`
-
-References to arbitrary memory
-
-METACALL_FUTURE
-
-Async future
-
-`future`
-
-Asynchronous operation results
-
-METACALL_FUNCTION
-
-Function reference
-
-`function`
-
-References to callable functions
-
-METACALL_NULL
-
-Null value
-
-`void *` (NULL)
-
-Absence of value
-
-METACALL_CLASS
-
-Class reference
-
-`klass`
-
-References to class definitions
-
-METACALL_OBJECT
-
-Object reference
-
-`object`
-
-References to objects
-
-METACALL_EXCEPTION
-
-Exception
-
-`exception`
-
-Error information
-
-METACALL_THROWABLE
-
-Throwable
-
-`throwable`
-
-Encapsulated exceptions
+| Type ID            | Description            | C Type Representation     | Common Usage                       |
+| ------------------ | ---------------------- | ------------------------- | ---------------------------------- |
+| METACALL_BOOL      | Boolean value          | `boolean` (unsigned char) | Logical values (true/false)        |
+| METACALL_CHAR      | Character              | `char`                    | Single character values            |
+| METACALL_SHORT     | Short integer          | `short`                   | Small numeric values               |
+| METACALL_INT       | Integer                | `int`                     | Standard numeric values            |
+| METACALL_LONG      | Long integer           | `long`                    | Larger numeric values              |
+| METACALL_FLOAT     | Single-precision float | `float`                   | Decimal values (limited precision) |
+| METACALL_DOUBLE    | Double-precision float | `double`                  | Decimal values (higher precision)  |
+| METACALL_STRING    | String                 | `char *`                  | Text data                          |
+| METACALL_BUFFER    | Binary buffer          | `void *`                  | Raw binary data                    |
+| METACALL_ARRAY     | Array of values        | `value *`                 | Sequential collections of values   |
+| METACALL_MAP       | Key-value map          | `value *` (of tuples)     | Associative collections of values  |
+| METACALL_PTR       | Pointer                | `void *`                  | References to arbitrary memory     |
+| METACALL_FUTURE    | Async future           | `future`                  | Asynchronous operation results     |
+| METACALL_FUNCTION  | Function reference     | `function`                | References to callable functions   |
+| METACALL_NULL      | Null value             | `void *` (NULL)           | Absence of value                   |
+| METACALL_CLASS     | Class reference        | `klass`                   | References to class definitions    |
+| METACALL_OBJECT    | Object reference       | `object`                  | References to objects              |
+| METACALL_EXCEPTION | Exception              | `exception`               | Error information                  |
+| METACALL_THROWABLE | Throwable              | `throwable`               | Encapsulated exceptions            |
 
 ## Value Memory Model
 

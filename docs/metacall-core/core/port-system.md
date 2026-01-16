@@ -66,48 +66,14 @@ Each port follows a similar architectural pattern but with language-specific imp
 ## Port Implementation Approaches
 
 MetaCall uses different implementation approaches for its ports depending on the language characteristics:
-
-Port
-
-Implementation Approach
-
-Binding Method
-
-Node.js
-
-JavaScript with native addon integration
-
-Node API (N-API)
-
-Python
-
-Python C API or SWIG
-
-C extension module
-
-Ruby
-
-SWIG-generated Ruby bindings
-
-Ruby C extension
-
-Rust
-
-Rust FFI
-
-Foreign Function Interface
-
-Go
-
-Go C bindings
-
-cgo
-
-Java
-
-JNI interface
-
-Java Native Interface
+| Port | Implementation Approach | Binding Method |
+| --- | --- | --- |
+| Node.js | JavaScript with native addon integration | Node API (N-API) |
+| Python | Python C API or SWIG | C extension module |
+| Ruby | SWIG-generated Ruby bindings | Ruby C extension |
+| Rust | Rust FFI | Foreign Function Interface |
+| Go | Go C bindings | cgo |
+| Java | JNI interface | Java Native Interface |
 
 - [source/ports/node_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/node_port/CMakeLists.txt)
 - [source/ports/rb_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/rb_port/CMakeLists.txt)
@@ -135,47 +101,17 @@ The Node.js port exposes the following main functions:
 The Node.js port extends the native `require` function to support loading code from non-JavaScript languages:
 
 The system supports loading different languages based on file extensions:
-
-Extension
-
-Language/Loader
-
-.py
-
-Python
-
-.rb
-
-Ruby
-
-.cs, .vb
-
-C#
-
-.cob, .cbl, .cpy
-
-Cobol
-
-.js, .node
-
-Node.js
-
-.wat
-
-WebAssembly
-
-.ts, .jsx, .tsx
-
-TypeScript
-
-.rs
-
-Rust
-
-.c
-
-C
-
+| Extension | Language/Loader |
+| --- | --- |
+| .py | Python |
+| .rb | Ruby |
+| .cs, .vb | C# |
+| .cob, .cbl, .cpy | Cobol |
+| .js, .node | Node.js |
+| .wat | WebAssembly |
+| .ts, .jsx, .tsx | TypeScript |
+| .rs | Rust |
+| .c | C |
 It also supports explicit language prefixes in require calls: `require('py:module')` for Python modules.
 
 - [source/ports/node_port/index.js342-444](https://github.com/metacall/core/blob/af9cad19/source/ports/node_port/index.js#L342-L444)

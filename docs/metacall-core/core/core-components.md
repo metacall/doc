@@ -56,37 +56,12 @@ Key initialization functions include:
 ### Code Loading
 
 MetaCall provides multiple ways to load code from different languages:
-
-Function
-
-Purpose
-
-Key Implementation
-
-`metacall_load_from_file()`
-
-Load code from files
-
-[source/metacall/source/metacall.c446-473](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L446-L473)
-
-`metacall_load_from_memory()`
-
-Load code from memory buffers
-
-[source/metacall/source/metacall.c475-478](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L475-L478)
-
-`metacall_load_from_package()`
-
-Load code from packages
-
-[source/metacall/source/metacall.c480-483](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L480-L483)
-
-`metacall_load_from_configuration()`
-
-Load code based on configuration
-
-[source/metacall/source/metacall.c485-488](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L485-L488)
-
+| Function | Purpose | Key Implementation |
+| --- | --- | --- |
+| `metacall_load_from_file()` | Load code from files | [source/metacall/source/metacall.c446-473](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L446-L473) |
+| `metacall_load_from_memory()` | Load code from memory buffers | [source/metacall/source/metacall.c475-478](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L475-L478) |
+| `metacall_load_from_package()` | Load code from packages | [source/metacall/source/metacall.c480-483](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L480-L483) |
+| `metacall_load_from_configuration()` | Load code based on configuration | [source/metacall/source/metacall.c485-488](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c#L485-L488) |
 These functions delegate to the loader system, which handles language-specific loading.
 
 ### Function Calling
@@ -142,39 +117,11 @@ The type system is defined in [source/reflect/include/reflect/reflect_type_id.h3
 ### Value Operations
 
 The Value System provides operations for creating, converting, and manipulating values:
-
-Operation
-
-Description
-
-Implementation
-
-Creation
-
-Create values of specific types
-
-`value_create_*()` functions in [source/reflect/source/reflect_value_type.c212-350](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type.c#L212-L350)
-
-Conversion
-
-Extract native types from values
-
-`value_to_*()` functions in [source/reflect/source/reflect_value_type.c352-489](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type.c#L352-L489)
-
-Casting
-
-Convert between different value types
-
-`value_type_cast()` in [source/reflect/source/reflect_value_type_cast.c21-538](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type_cast.c#L21-L538)
-
-Reference
-
-Create references to values
-
-`value_type_reference()` in [source/reflect/source/reflect_value_type.c156-161](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type.c#L156-L161)
-
-Each value consists of data and a type ID header, allowing for proper type handling across languages:
-
+| Operation | Description | Implementation | Creation |
+| --- | --- | --- | --- |
+| Create values of specific types | `value_create_*()` functions in [source/reflect/source/reflect_value_type.c212-350](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type.c#L212-L350) | Conversion | Extract native types from values |
+| `value_to_*()` functions in [source/reflect/source/reflect_value_type.c352-489](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type.c#L352-L489) | Casting | Convert between different value types | `value_type_cast()` in [source/reflect/source/reflect_value_type_cast.c21-538](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type_cast.c#L21-L538) |
+| Reference | Create references to values | `value_type_reference()` in [source/reflect/source/reflect_value_type.c156-161](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type.c#L156-L161) | Each value consists of data and a type ID header, allowing for proper type handling across languages: |
 The Value System enables MetaCall to handle data seamlessly across language boundaries, providing automatic type conversion where appropriate.
 
 ## Serialization System

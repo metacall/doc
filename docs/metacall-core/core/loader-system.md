@@ -61,41 +61,16 @@ Each language-specific loader implements a common interface defined by the `load
 
 ### Interface Methods
 
-Method
-
-Description
-
-`initialize`
-
-Sets up the loader with required configuration and initializes the language runtime
-
-`execution_path`
-
-Defines a path where scripts can be loaded from
-
-`load_from_file`
-
-Loads code from files on disk
-
-`load_from_memory`
-
-Loads code from a buffer in memory
-
-`load_from_package`
-
-Loads code from a package (specific to each language, e.g., DLLs for C#)
-
-`clear`
-
-Unloads code previously loaded
-
-`discover`
-
-Discovers function signatures and types from loaded code
-
-`destroy`
-
-Cleans up and destroys the loader
+| Method              | Description                                                                         |
+| ------------------- | ----------------------------------------------------------------------------------- |
+| `initialize`        | Sets up the loader with required configuration and initializes the language runtime |
+| `execution_path`    | Defines a path where scripts can be loaded from                                     |
+| `load_from_file`    | Loads code from files on disk                                                       |
+| `load_from_memory`  | Loads code from a buffer in memory                                                  |
+| `load_from_package` | Loads code from a package (specific to each language, e.g., DLLs for C#)            |
+| `clear`             | Unloads code previously loaded                                                      |
+| `discover`          | Discovers function signatures and types from loaded code                            |
+| `destroy`           | Cleans up and destroys the loader                                                   |
 
 ## Loading Process
 

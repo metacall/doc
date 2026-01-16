@@ -131,84 +131,20 @@ MetaCall provides numerous configuration options to customize the build. These o
 The `metacall-configure.sh` script generates CMake build options based on the command-line arguments and passes them to CMake. These options control which components are built and how they are configured.
 
 The key CMake options include:
-
-Option
-
-Description
-
-Default
-
-`BUILD_SHARED_LIBS`
-
-Build shared libraries instead of static
-
-ON
-
-`OPTION_BUILD_TESTS`
-
-Build tests
-
-ON
-
-`OPTION_BUILD_BENCHMARKS`
-
-Build benchmarks
-
-OFF
-
-`OPTION_BUILD_EXAMPLES`
-
-Build examples
-
-ON
-
-`OPTION_BUILD_CLI`
-
-Build command line interface
-
-ON
-
-`OPTION_BUILD_LOADERS`
-
-Build loaders
-
-ON
-
-`OPTION_BUILD_EXTENSIONS`
-
-Build extensions
-
-ON
-
-`OPTION_BUILD_SCRIPTS`
-
-Build scripts
-
-ON
-
-`OPTION_BUILD_SERIALS`
-
-Build serials
-
-ON
-
-`OPTION_BUILD_DETOURS`
-
-Build detours
-
-ON
-
-`OPTION_BUILD_PORTS`
-
-Build ports
-
-OFF
-
-`OPTION_COVERAGE`
-
-Enable coverage
-
-OFF
+| Option | Description | Default |
+| --- | --- | --- |
+| `BUILD_SHARED_LIBS` | Build shared libraries instead of static | ON |
+| `OPTION_BUILD_TESTS` | Build tests | ON |
+| `OPTION_BUILD_BENCHMARKS` | Build benchmarks | OFF |
+| `OPTION_BUILD_EXAMPLES` | Build examples | ON |
+| `OPTION_BUILD_CLI` | Build command line interface | ON |
+| `OPTION_BUILD_LOADERS` | Build loaders | ON |
+| `OPTION_BUILD_EXTENSIONS` | Build extensions | ON |
+| `OPTION_BUILD_SCRIPTS` | Build scripts | ON |
+| `OPTION_BUILD_SERIALS` | Build serials | ON |
+| `OPTION_BUILD_DETOURS` | Build detours | ON |
+| `OPTION_BUILD_PORTS` | Build ports | OFF |
+| `OPTION_COVERAGE` | Enable coverage | OFF |
 
 ## Language Loader Configuration
 

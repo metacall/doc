@@ -79,31 +79,17 @@ export LD_LIBRARY_PATH="/gnu/store/`ls /gnu/store/ | grep metacall | head -n 1`/
 
 ### 4.1 Initialization and Shutdown
 
-Function
-
-Description
-
-`Initialize()`
-
-Initializes the MetaCall runtime and starts the worker goroutine
-
-`Destroy()`
-
-Shuts down the MetaCall runtime and stops the worker goroutine
+| Function       | Description                                                      |
+| -------------- | ---------------------------------------------------------------- |
+| `Initialize()` | Initializes the MetaCall runtime and starts the worker goroutine |
+| `Destroy()`    | Shuts down the MetaCall runtime and stops the worker goroutine   |
 
 ### 4.2 Loading Code
 
-Function
-
-Description
-
-`LoadFromFile(tag string, scripts []string) error`
-
-Loads code from file paths
-
-`LoadFromMemory(tag string, buffer string) error`
-
-Loads code from a string buffer
+| Function                                           | Description                     |
+| -------------------------------------------------- | ------------------------------- |
+| `LoadFromFile(tag string, scripts []string) error` | Loads code from file paths      |
+| `LoadFromMemory(tag string, buffer string) error`  | Loads code from a string buffer |
 
 Parameters:
 
@@ -113,17 +99,10 @@ Parameters:
 
 ### 4.3 Calling Functions
 
-Function
-
-Description
-
-`Call(function string, args ...interface{}) (interface{}, error)`
-
-Calls a function with arguments
-
-`Await(function string, resolve, reject awaitCallback, ctx interface{}, args ...interface{}) (interface{}, error)`
-
-Calls an async function with callbacks
+| Function                                                                                                           | Description                            |
+| ------------------------------------------------------------------------------------------------------------------ | -------------------------------------- |
+| `Call(function string, args ...interface{}) (interface{}, error)`                                                  | Calls a function with arguments        |
+| `Await(function string, resolve, reject awaitCallback, ctx interface{}, args ...interface{}) (interface{}, error)` | Calls an async function with callbacks |
 
 Parameters:
 
@@ -141,115 +120,38 @@ The Go Port handles type conversion between Go types and MetaCall value types.
 
 ### 5.1 Go to MetaCall Conversion
 
-Go Type
-
-MetaCall Type
-
-`nil`
-
-`Null`
-
-`bool`
-
-`Bool`
-
-`byte`
-
-`Char`
-
-`int16`
-
-`Short`
-
-`int`
-
-`Int`
-
-`int64`
-
-`Long`
-
-`float32`
-
-`Float`
-
-`float64`
-
-`Double`
-
-`string`
-
-`String`
-
-`bytes.Buffer`
-
-`Buffer`
-
-`slice`
-
-`Array`
-
-`array`
-
-`Array`
-
-`map`
-
-`Map`
+| Go Type        | MetaCall Type |
+| -------------- | ------------- |
+| `nil`          | `Null`        |
+| `bool`         | `Bool`        |
+| `byte`         | `Char`        |
+| `int16`        | `Short`       |
+| `int`          | `Int`         |
+| `int64`        | `Long`        |
+| `float32`      | `Float`       |
+| `float64`      | `Double`      |
+| `string`       | `String`      |
+| `bytes.Buffer` | `Buffer`      |
+| `slice`        | `Array`       |
+| `array`        | `Array`       |
+| `map`          | `Map`         |
 
 ### 5.2 MetaCall to Go Conversion
 
-MetaCall Type
-
-Go Type
-
-`METACALL_NULL`
-
-`nil`
-
-`METACALL_BOOL`
-
-`bool`
-
-`METACALL_CHAR`
-
-`byte`
-
-`METACALL_SHORT`
-
-`int16`
-
-`METACALL_INT`
-
-`int`
-
-`METACALL_LONG`
-
-`int64`
-
-`METACALL_FLOAT`
-
-`float32`
-
-`METACALL_DOUBLE`
-
-`float64`
-
-`METACALL_STRING`
-
-`string`
-
-`METACALL_BUFFER`
-
-`bytes.Buffer`
-
-`METACALL_ARRAY`
-
-`[]interface{}`
-
-`METACALL_MAP`
-
-`map[string]interface{}`
+| MetaCall Type     | Go Type                  |
+| ----------------- | ------------------------ |
+| `METACALL_NULL`   | `nil`                    |
+| `METACALL_BOOL`   | `bool`                   |
+| `METACALL_CHAR`   | `byte`                   |
+| `METACALL_SHORT`  | `int16`                  |
+| `METACALL_INT`    | `int`                    |
+| `METACALL_LONG`   | `int64`                  |
+| `METACALL_FLOAT`  | `float32`                |
+| `METACALL_DOUBLE` | `float64`                |
+| `METACALL_STRING` | `string`                 |
+| `METACALL_BUFFER` | `bytes.Buffer`           |
+| `METACALL_ARRAY`  | `[]interface{}`          |
+| `METACALL_MAP`    | `map[string]interface{}` |
 
 ## 6\. Working with Asynchronous Functions
 

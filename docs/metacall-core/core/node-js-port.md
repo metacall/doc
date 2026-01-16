@@ -60,42 +60,16 @@ The Node.js Port has two initialization modes:
 ## API Reference
 
 The Node.js Port exposes the following core functions from MetaCall:
-
-Function
-
-Description
-
-`metacall(name, ...args)`
-
-Call a function by name with arguments
-
-`metacallfms(name, buffer)`
-
-Call a function by name with a JSON string representing arguments
-
-`metacall_await(name, ...args)`
-
-Call a function by name and await its result (for async functions)
-
-`metacall_load_from_file(tag, paths)`
-
-Load code from specified files with a language tag
-
-`metacall_load_from_memory(tag, code)`
-
-Load code from a string with a language tag
-
-`metacall_load_from_package(tag, pkg)`
-
-Load code from a package with a language tag
-
-`metacall_load_from_configuration(path)`
-
-Load code from a MetaCall configuration file
-
-`metacall_inspect()`
-
-Get reflection data about all loaded functions
+| Function | Description |
+| --- | --- |
+| `metacall(name, ...args)` | Call a function by name with arguments |
+| `metacallfms(name, buffer)` | Call a function by name with a JSON string representing arguments |
+| `metacall_await(name, ...args)` | Call a function by name and await its result (for async functions) |
+| `metacall_load_from_file(tag, paths)` | Load code from specified files with a language tag |
+| `metacall_load_from_memory(tag, code)` | Load code from a string with a language tag |
+| `metacall_load_from_package(tag, pkg)` | Load code from a package with a language tag |
+| `metacall_load_from_configuration(path)` | Load code from a MetaCall configuration file |
+| `metacall_inspect()` | Get reflection data about all loaded functions |
 
 ### Function Details
 
@@ -114,66 +88,17 @@ One of the most powerful features of the Node.js Port is its extension of Node.j
 ### Language Tags and Extensions
 
 The Node.js Port supports the following language tags and file extensions:
-
-Language
-
-Tag
-
-File Extensions
-
-Python
-
-'py'
-
-.py
-
-Ruby
-
-'rb'
-
-.rb
-
-C#
-
-'cs'
-
-.cs, .vb, .dll
-
-TypeScript
-
-'ts'
-
-.ts, .jsx, .tsx
-
-Rust
-
-'rs'
-
-.rs, .rlib
-
-Mock (for testing)
-
-'mock'
-
-.mock
-
-C
-
-'c'
-
-.c
-
-Cobol
-
-'cob'
-
-.cob, .cbl, .cpy
-
-WebAssembly
-
-'wasm'
-
-.wat, .wasm
+| Language | Tag | File Extensions |
+| --- | --- | --- |
+| Python | 'py' | .py |
+| Ruby | 'rb' | .rb |
+| C# | 'cs' | .cs, .vb, .dll |
+| TypeScript | 'ts' | .ts, .jsx, .tsx |
+| Rust | 'rs' | .rs, .rlib |
+| Mock (for testing) | 'mock' | .mock |
+| C | 'c' | .c |
+| Cobol | 'cob' | .cob, .cbl, .cpy |
+| WebAssembly | 'wasm' | .wat, .wasm |
 
 ## Usage Examples
 
@@ -199,18 +124,10 @@ The Node.js Port communicates with the MetaCall Core through a native addon (`no
 ## Environment Variables
 
 The Node.js Port recognizes the following environment variables:
-
-Variable
-
-Description
-
-`METACALL_INSTALL_PATH`
-
-Custom path to the MetaCall library
-
-`NODE_ENV`
-
-When set to 'debug', enables debug logs
+| Variable | Description |
+| --- | --- |
+| `METACALL_INSTALL_PATH` | Custom path to the MetaCall library |
+| `NODE_ENV` | When set to 'debug', enables debug logs |
 
 ## Callbacks and Function Passing
 

@@ -63,142 +63,45 @@ MetaCall provides a comprehensive API for creating and accessing values of diffe
 ### Creating Values
 
 For each supported type, there is a corresponding creation function:
-
-Function
-
-Purpose
-
-`metacall_value_create_bool(boolean b)`
-
-Create a boolean value
-
-`metacall_value_create_char(char c)`
-
-Create a character value
-
-`metacall_value_create_int(int i)`
-
-Create an integer value
-
-`metacall_value_create_long(long l)`
-
-Create a long integer value
-
-`metacall_value_create_float(float f)`
-
-Create a float value
-
-`metacall_value_create_double(double d)`
-
-Create a double value
-
-`metacall_value_create_string(const char *str, size_t length)`
-
-Create a string value
-
-`metacall_value_create_buffer(const void *buffer, size_t size)`
-
-Create a buffer value
-
-`metacall_value_create_array(const void *values[], size_t size)`
-
-Create an array value
-
-`metacall_value_create_map(const void *tuples[], size_t size)`
-
-Create a map value
-
-`metacall_value_create_null()`
-
-Create a null value
-
-`metacall_value_create_function(void *f)`
-
-Create a function value
-
-`metacall_value_create_class(void *c)`
-
-Create a class value
-
-`metacall_value_create_object(void *o)`
-
-Create an object value
-
-`metacall_value_create_exception(void *ex)`
-
-Create an exception value
-
-`metacall_value_create_throwable(void *th)`
-
-Create a throwable value
+| Function | Purpose |
+| --- | --- |
+| `metacall_value_create_bool(boolean b)` | Create a boolean value |
+| `metacall_value_create_char(char c)` | Create a character value |
+| `metacall_value_create_int(int i)` | Create an integer value |
+| `metacall_value_create_long(long l)` | Create a long integer value |
+| `metacall_value_create_float(float f)` | Create a float value |
+| `metacall_value_create_double(double d)` | Create a double value |
+| `metacall_value_create_string(const char *str, size_t length)` | Create a string value |
+| `metacall_value_create_buffer(const void *buffer, size_t size)` | Create a buffer value |
+| `metacall_value_create_array(const void *values[], size_t size)` | Create an array value |
+| `metacall_value_create_map(const void *tuples[], size_t size)` | Create a map value |
+| `metacall_value_create_null()` | Create a null value |
+| `metacall_value_create_function(void *f)` | Create a function value |
+| `metacall_value_create_class(void *c)` | Create a class value |
+| `metacall_value_create_object(void *o)` | Create an object value |
+| `metacall_value_create_exception(void *ex)` | Create an exception value |
+| `metacall_value_create_throwable(void *th)` | Create a throwable value |
 
 ### Accessing Values
 
 Similarly, to extract data from a value, there are accessor functions:
-
-Function
-
-Purpose
-
-`metacall_value_to_bool(void *v)`
-
-Extract boolean from value
-
-`metacall_value_to_char(void *v)`
-
-Extract character from value
-
-`metacall_value_to_int(void *v)`
-
-Extract integer from value
-
-`metacall_value_to_long(void *v)`
-
-Extract long integer from value
-
-`metacall_value_to_float(void *v)`
-
-Extract float from value
-
-`metacall_value_to_double(void *v)`
-
-Extract double from value
-
-`metacall_value_to_string(void *v)`
-
-Extract string from value
-
-`metacall_value_to_buffer(void *v)`
-
-Extract buffer from value
-
-`metacall_value_to_array(void *v)`
-
-Extract array from value
-
-`metacall_value_to_map(void *v)`
-
-Extract map from value
-
-`metacall_value_to_null(void *v)`
-
-Extract null from value
-
-`metacall_value_to_function(void *v)`
-
-Extract function from value
-
-`metacall_value_to_class(void *v)`
-
-Extract class from value
-
-`metacall_value_to_object(void *v)`
-
-Extract object from value
-
-`metacall_value_to_exception(void *v)`
-
-Extract exception from value
+| Function | Purpose |
+| --- | --- |
+| `metacall_value_to_bool(void *v)` | Extract boolean from value |
+| `metacall_value_to_char(void *v)` | Extract character from value |
+| `metacall_value_to_int(void *v)` | Extract integer from value |
+| `metacall_value_to_long(void *v)` | Extract long integer from value |
+| `metacall_value_to_float(void *v)` | Extract float from value |
+| `metacall_value_to_double(void *v)` | Extract double from value |
+| `metacall_value_to_string(void *v)` | Extract string from value |
+| `metacall_value_to_buffer(void *v)` | Extract buffer from value |
+| `metacall_value_to_array(void *v)` | Extract array from value |
+| `metacall_value_to_map(void *v)` | Extract map from value |
+| `metacall_value_to_null(void *v)` | Extract null from value |
+| `metacall_value_to_function(void *v)` | Extract function from value |
+| `metacall_value_to_class(void *v)` | Extract class from value |
+| `metacall_value_to_object(void *v)` | Extract object from value |
+| `metacall_value_to_exception(void *v)` | Extract exception from value |
 
 ### Value Lifecycle Example
 
