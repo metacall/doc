@@ -33,8 +33,8 @@ for (const file of files) {
     }
 
     fs.renameSync(from, to);
-    console.log(`✅ Renamed: ${file} -> ${newFile}`);
+    console.log(`Renamed: ${file} -> ${newFile}`);
   }
 }
 
-console.log("\n🎉 Rename done!");
+console.log("\nRename done!");

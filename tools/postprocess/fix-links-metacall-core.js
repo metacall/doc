@@ -68,16 +68,16 @@ for (const file of files) {
 
   if (updated !== content) {
     fs.writeFileSync(full, updated, "utf8");
-    console.log(`✅ Fixed links in: ${file}`);
+    console.log(`Fixed links in: ${file}`);
     totalFixed++;
   }
 
   if (broken.length > 0) {
     totalBroken += broken.length;
-    console.log(`⚠️ Unresolved links in ${file}:`, broken);
+    console.log(`Unresolved links in ${file}:`, broken);
   }
 }
 
-console.log("\n🎉 Link fixing done!");
+console.log("\nLink fixing done!");
 console.log(`Files modified: ${totalFixed}`);
 console.log(`Unresolved links count: ${totalBroken}`);

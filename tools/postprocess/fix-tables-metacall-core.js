@@ -174,7 +174,7 @@ function collectHeaders(lines, start) {
   return { headers, nextIndex: i };
 }
 
-// Multi-line row collection: each row = N non-empty lines
+// Multi-line row collection: each row=N nonempty lines
 function collectRowsMultiline(lines, startIndex, colCount) {
   const rows = [];
   let i = startIndex;
@@ -263,7 +263,7 @@ function fixBrokenTables(content) {
 
 function main() {
   if (!fs.existsSync(ROOT_DIR)) {
-    console.error(`❌ Root dir not found: ${ROOT_DIR}`);
+    console.error(`Root dir not found: ${ROOT_DIR}`);
     process.exit(1);
   }
 
@@ -279,11 +279,11 @@ function main() {
     if (changed && fixed !== original) {
       fs.writeFileSync(file, fixed, "utf8");
       modified++;
-      console.log(`✅ Fixed: ${path.relative(process.cwd(), file)}`);
+      console.log(`Fixed: ${path.relative(process.cwd(), file)}`);
     }
   }
 
-  console.log(`\n🎉 Table fixing done!\nFiles modified: ${modified}`);
+  console.log(`\nTable fixing done!\nFiles modified: ${modified}`);
 }
 
 main();

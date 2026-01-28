@@ -12,12 +12,12 @@ export function extractTitleAndMarkdown(html) {
   const title =
     $("h1").first().text().trim() || $("title").text().trim() || "Untitled";
 
-  // safest: use MAIN if present else BODY
+  //use MAIN if present else BODY
   const root = (
     $("main").first().length ? $("main").first() : $("body").first()
   ).clone();
 
-  // remove only scripts/styles (DO NOT remove nav/aside etc yet)
+  //remove only scripts/styles (DO NOT remove nav/aside etc yet)
   root.find("script").remove();
   root.find("style").remove();
   root.find("noscript").remove();

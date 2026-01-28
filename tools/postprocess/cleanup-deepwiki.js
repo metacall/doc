@@ -106,7 +106,7 @@ function processFile(filePath) {
   content = addFrontmatter(content, title);
 
   fs.writeFileSync(filePath, content, "utf8");
-  console.log(`✅ Cleaned: ${file}`);
+  console.log(`Cleaned: ${file}`);
 }
 
 /**
@@ -128,9 +128,9 @@ function walk(dir) {
 
 // Main
 if (!fs.existsSync(TARGET_DIR)) {
-  console.error("❌ Target folder not found:", TARGET_DIR);
+  console.error("Target folder not found:", TARGET_DIR);
   process.exit(1);
 }
 
 walk(TARGET_DIR);
-console.log("\n🎉 Done cleaning markdown files!");
+console.log("\nDone cleaning markdown files!");
