@@ -49,7 +49,8 @@ jobs:
       - name: Inject correct baseUrl into docusaurus.config.js
         id: inject
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+          set -exuo pipefail
+          if [[ "${{ github.event_name }}" == "pull_request_target" ]]; then
             BASE_URL="/${{ github.event.repository.name }}/pr-${{ github.event.number }}/"
           else
             BASE_URL="/${{ github.event.repository.name }}/"
@@ -86,7 +87,7 @@ jobs:
         id: vars
         run: |
           set -exuo pipefail
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+          if [[ "${{ github.event_name }}" == "pull_request_target" ]]; then
             echo "destination_dir=pr-${{ github.event.number }}" >> $GITHUB_OUTPUT
             echo "url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-${{ github.event.number }}/" >> $GITHUB_OUTPUT
           else
@@ -104,7 +105,7 @@ jobs:
           keep_files: true
 
       - name: Comment preview link on PR
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request_target'
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           header: docusaurus-preview
@@ -114,7 +115,7 @@ jobs:
 
   cleanup:
     name: Cleanup Preview
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    if: github.event_name == 'pull_request_target' && github.event.action == 'closed'
     runs-on: ubuntu-latest
 
     steps:
