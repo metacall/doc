@@ -3,7 +3,7 @@ name: Docs CI
 on:
   push:
     branches: [master]
-  pull_request:
+  pull_request_target:
     types: [opened, synchronize, reopened, closed]
 
 permissions:
