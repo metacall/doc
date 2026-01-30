@@ -4,33 +4,8 @@ title: Core Components
 
 # Core Components
 
-## Relevant source files
-
-- [cmake/FindV8.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindV8.cmake)
-- [source/loader/include/loader/loader.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader.h)
-- [source/loader/include/loader/loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl.h)
-- [source/loader/include/loader/loader_impl_interface.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl_interface.h)
-- [source/loader/source/loader.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader.c)
-- [source/loader/source/loader_impl.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader_impl.c)
-- [source/metacall/include/metacall/metacall.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall.h)
-- [source/metacall/include/metacall/metacall_value.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall_value.h)
-- [source/metacall/source/metacall.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c)
-- [source/metacall/source/metacall_value.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall_value.c)
-- [source/reflect/include/reflect/reflect_type_id.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_type_id.h)
-- [source/reflect/include/reflect/reflect_value_type.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_value_type.h)
-- [source/reflect/source/reflect_type_id.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_type_id.c)
-- [source/reflect/source/reflect_value_type.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type.c)
-- [source/reflect/source/reflect_value_type_cast.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type_cast.c)
-- [source/reflect/source/reflect_value_type_id_size.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type_id_size.c)
-- [source/serials/metacall_serial/source/metacall_serial_impl_serialize.c](https://github.com/metacall/core/blob/af9cad19/source/serials/metacall_serial/source/metacall_serial_impl_serialize.c)
-- [source/serials/rapid_json_serial/source/rapid_json_serial_impl.cpp](https://github.com/metacall/core/blob/af9cad19/source/serials/rapid_json_serial/source/rapid_json_serial_impl.cpp)
-- [source/tests/metacall_test/source/metacall_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_test/source/metacall_test.cpp)
-- [source/tests/serial_test/source/serial_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/serial_test/source/serial_test.cpp)
-
 The Core Components form the foundation of MetaCall, providing essential functionality for cross-language function calls. This page details the internal systems that enable code written in different programming languages to seamlessly interact: the Core API, reflection system, value system, serialization, and detour mechanisms.
-
 For information about language-specific runtimes, see [Loader System](./loader-system.md). For information about language-specific interfaces to MetaCall, see [Port System](./port-system.md).
-
 ## Core Architecture
 
 The following diagram illustrates the main components within MetaCall Core and how they interact:

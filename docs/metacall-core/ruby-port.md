@@ -4,38 +4,8 @@ title: Ruby Port
 
 # Ruby Port
 
-## Relevant source files
-
-- [VERSION](https://github.com/metacall/core/blob/af9cad19/VERSION)
-- [source/loaders/rb_loader/source/rb_loader_impl.c](https://github.com/metacall/core/blob/af9cad19/source/loaders/rb_loader/source/rb_loader_impl.c)
-- [source/loaders/rb_loader/source/rb_loader_impl_parser.c](https://github.com/metacall/core/blob/af9cad19/source/loaders/rb_loader/source/rb_loader_impl_parser.c)
-- [source/metacall/include/metacall/metacall_error.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall_error.h)
-- [source/metacall/source/metacall_error.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall_error.c)
-- [source/ports/java_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/java_port/CMakeLists.txt)
-- [source/ports/js_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/js_port/CMakeLists.txt)
-- [source/ports/py_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/py_port/CMakeLists.txt)
-- [source/ports/rb_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/rb_port/CMakeLists.txt)
-- [source/reflect/include/reflect/reflect_accessor.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_accessor.h)
-- [source/reflect/include/reflect/reflect_class.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_class.h)
-- [source/reflect/include/reflect/reflect_exception.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_exception.h)
-- [source/reflect/include/reflect/reflect_object.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_object.h)
-- [source/reflect/source/reflect_class.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_class.c)
-- [source/reflect/source/reflect_exception.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_exception.c)
-- [source/reflect/source/reflect_object.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_object.c)
-- [source/scripts/python/classname/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/classname/CMakeLists.txt)
-- [source/scripts/python/classname/depends/\_\_init\_\_.py](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/classname/depends/__init__.py)
-- [source/scripts/python/classname/source/classname.py](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/classname/source/classname.py)
-- [source/scripts/ruby/klass/source/klass.rb](https://github.com/metacall/core/blob/af9cad19/source/scripts/ruby/klass/source/klass.rb)
-- [source/tests/metacall_python_object_class_test/source/metacall_python_object_class_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_python_object_class_test/source/metacall_python_object_class_test.cpp)
-- [source/tests/metacall_ruby_object_class_test/source/metacall_ruby_object_class_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_ruby_object_class_test/source/metacall_ruby_object_class_test.cpp)
-- [source/tests/reflect_object_class_test/source/reflect_object_class_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/reflect_object_class_test/source/reflect_object_class_test.cpp)
-- [source/threading/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/threading/CMakeLists.txt)
-- [tools/runtime/Dockerfile](https://github.com/metacall/core/blob/af9cad19/tools/runtime/Dockerfile)
-
 The Ruby Port in MetaCall provides Ruby developers with the ability to use the MetaCall foreign function interface within Ruby applications. This allows Ruby code to seamlessly load and execute functions written in other programming languages like Python, JavaScript, C#, and more. This page documents the architecture, usage, and implementation of the Ruby Port.
-
 For information about executing Ruby code from other languages, see the [Ruby Loader](./ruby-loader.md).
-
 ## Architecture
 
 The Ruby Port functions as a bridge between the MetaCall Core library and Ruby applications. It allows Ruby developers to use the MetaCall API to load code from different languages and call functions across language boundaries.

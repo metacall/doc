@@ -4,30 +4,7 @@ title: Architecture
 
 # Architecture
 
-## Relevant source files
-
-- [CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/CMakeLists.txt)
-- [README.md](https://github.com/metacall/core/blob/af9cad19/README.md)
-- [cmake/FindV8.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindV8.cmake)
-- [deploy/images/overview.png](https://github.com/metacall/core/blob/af9cad19/deploy/images/overview.png)
-- [docker-compose.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.yml)
-- [docs/README.md](https://github.com/metacall/core/blob/af9cad19/docs/README.md)
-- [source/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/CMakeLists.txt)
-- [source/loader/include/loader/loader.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader.h)
-- [source/loader/include/loader/loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl.h)
-- [source/loader/include/loader/loader_impl_interface.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl_interface.h)
-- [source/loader/source/loader.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader.c)
-- [source/loader/source/loader_impl.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader_impl.c)
-- [source/loaders/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/CMakeLists.txt)
-- [source/metacall/include/metacall/metacall.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall.h)
-- [source/metacall/source/metacall.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c)
-- [source/tests/metacall_test/source/metacall_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_test/source/metacall_test.cpp)
-- [tools/metacall-configure.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-configure.sh)
-- [tools/metacall-environment.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-environment.sh)
-- [tools/metacall-runtime.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-runtime.sh)
-
 This page provides a comprehensive overview of the MetaCall Core architecture, explaining the structure and interactions between key components that enable cross-language function calls. For information about specific language support, see [Supported Languages](./supported-languages.md), and for details about using the core API, see [Core API](./core-api.md).
-
 ## System Overview
 
 MetaCall is designed as a modular system that enables seamless function calls between different programming languages. The architecture follows a plugin-based approach, with core components handling reflection, type conversion, and function dispatching.

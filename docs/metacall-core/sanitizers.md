@@ -4,38 +4,7 @@ title: Sanitizers
 
 # Sanitizers
 
-## Relevant source files
-
-- [.env](https://github.com/metacall/core/blob/af9cad19/.env)
-- [.github/workflows/benchmark.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/benchmark.yml)
-- [.github/workflows/clang-format.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/clang-format.yml)
-- [.github/workflows/docker-hub.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/docker-hub.yml)
-- [.github/workflows/linux-test.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/linux-test.yml)
-- [.github/workflows/macos-test.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/macos-test.yml)
-- [.github/workflows/release.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/release.yml)
-- [.github/workflows/windows-test.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/windows-test.yml)
-- [CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/CMakeLists.txt)
-- [README.md](https://github.com/metacall/core/blob/af9cad19/README.md)
-- [deploy/images/overview.png](https://github.com/metacall/core/blob/af9cad19/deploy/images/overview.png)
-- [docker-compose.platform.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.platform.yml)
-- [docker-compose.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.yml)
-- [docs/README.md](https://github.com/metacall/core/blob/af9cad19/docs/README.md)
-- [source/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/CMakeLists.txt)
-- [source/loaders/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/CMakeLists.txt)
-- [source/scripts/python/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/CMakeLists.txt)
-- [source/tests/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/CMakeLists.txt)
-- [tools/metacall-benchmarks-merge.py](https://github.com/metacall/core/blob/af9cad19/tools/metacall-benchmarks-merge.py)
-- [tools/metacall-build.ps1](https://github.com/metacall/core/blob/af9cad19/tools/metacall-build.ps1)
-- [tools/metacall-build.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-build.sh)
-- [tools/metacall-configure.ps1](https://github.com/metacall/core/blob/af9cad19/tools/metacall-configure.ps1)
-- [tools/metacall-configure.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-configure.sh)
-- [tools/metacall-environment.ps1](https://github.com/metacall/core/blob/af9cad19/tools/metacall-environment.ps1)
-- [tools/metacall-environment.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-environment.sh)
-- [tools/metacall-runtime.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-runtime.sh)
-- [tools/metacall-sanitizer.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-sanitizer.sh)
-
 Sanitizers are powerful diagnostic tools integrated into the MetaCall build system to detect runtime errors that might otherwise be difficult to find. This page documents the sanitizer options available in MetaCall, how they are configured, and how they are used in the continuous integration (CI) pipeline for quality assurance.
-
 ## Overview of Sanitizers
 
 Sanitizers are compiler-based dynamic analysis tools that can detect various types of bugs during program execution. MetaCall supports three main types of sanitizers:

@@ -4,37 +4,6 @@ title: Rust Loader
 
 # Rust Loader
 
-## Relevant source files
-
-- [cmake/FindPatchelf.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindPatchelf.cmake)
-- [cmake/FindRust.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindRust.cmake)
-- [cmake/InstallGBench.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/InstallGBench.cmake)
-- [cmake/InstallGTest.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/InstallGTest.cmake)
-- [cmake/InstallLibTCC.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/InstallLibTCC.cmake)
-- [cmake/InstallPatchelf.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/InstallPatchelf.cmake)
-- [deploy/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/deploy/CMakeLists.txt)
-- [source/loaders/c_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/c_loader/CMakeLists.txt)
-- [source/loaders/cs_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/cs_loader/CMakeLists.txt)
-- [source/loaders/file_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/file_loader/CMakeLists.txt)
-- [source/loaders/js_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/js_loader/CMakeLists.txt)
-- [source/loaders/jsm_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/jsm_loader/CMakeLists.txt)
-- [source/loaders/mock_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/mock_loader/CMakeLists.txt)
-- [source/loaders/py_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/CMakeLists.txt)
-- [source/loaders/rb_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/rb_loader/CMakeLists.txt)
-- [source/loaders/rs_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/rs_loader/CMakeLists.txt)
-- [source/loaders/rs_loader/rust/.cargo/config](https://github.com/metacall/core/blob/af9cad19/source/loaders/rs_loader/rust/.cargo/config)
-- [source/loaders/rs_loader/rust/.vscode/launch.json.in](https://github.com/metacall/core/blob/af9cad19/source/loaders/rs_loader/rust/.vscode/launch.json.in)
-- [source/loaders/rs_loader/rust/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/rs_loader/rust/CMakeLists.txt)
-- [source/loaders/rs_loader/rust/rust-toolchain](https://github.com/metacall/core/blob/af9cad19/source/loaders/rs_loader/rust/rust-toolchain)
-- [source/loaders/rs_loader/rust/test/file.rs](https://github.com/metacall/core/blob/af9cad19/source/loaders/rs_loader/rust/test/file.rs)
-- [source/serials/metacall_serial/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/serials/metacall_serial/CMakeLists.txt)
-- [source/serials/rapid_json_serial/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/serials/rapid_json_serial/CMakeLists.txt)
-- [source/tests/metacall_rust_class_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_rust_class_test/CMakeLists.txt)
-- [source/tests/metacall_rust_load_from_mem_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_rust_load_from_mem_test/CMakeLists.txt)
-- [source/tests/metacall_rust_load_from_package_class_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_rust_load_from_package_class_test/CMakeLists.txt)
-- [source/tests/metacall_rust_load_from_package_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_rust_load_from_package_test/CMakeLists.txt)
-- [source/tests/metacall_rust_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_rust_test/CMakeLists.txt)
-
 ## Overview
 
 The Rust Loader is a component of the MetaCall Core framework that enables loading and executing Rust code from other programming languages. It integrates Rust's performance, safety features, and ecosystem into MetaCall's polyglot environment, allowing cross-language function calls to and from Rust.

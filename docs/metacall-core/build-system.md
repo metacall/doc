@@ -4,26 +4,8 @@ title: Build System
 
 # Build System
 
-## Relevant source files
-
-- [CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/CMakeLists.txt)
-- [README.md](https://github.com/metacall/core/blob/af9cad19/README.md)
-- [deploy/images/overview.png](https://github.com/metacall/core/blob/af9cad19/deploy/images/overview.png)
-- [docker-compose.cache.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.cache.yml)
-- [docker-compose.sh](https://github.com/metacall/core/blob/af9cad19/docker-compose.sh)
-- [docker-compose.test.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.test.yml)
-- [docker-compose.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.yml)
-- [docs/README.md](https://github.com/metacall/core/blob/af9cad19/docs/README.md)
-- [source/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/CMakeLists.txt)
-- [source/loaders/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/CMakeLists.txt)
-- [tools/metacall-configure.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-configure.sh)
-- [tools/metacall-environment.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-environment.sh)
-- [tools/metacall-runtime.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-runtime.sh)
-
 The MetaCall build system provides a flexible and comprehensive way to build, test, and package the MetaCall Core across different platforms. This document explains the architecture and usage of the build system, including environment setup, configuration options, and build workflows for both local development and Docker-based builds.
-
 For information about the overall architecture of MetaCall, see [Architecture](./architecture.md).
-
 ## Overview
 
 MetaCall's build system is designed to handle the complexity of building a polyglot runtime that supports multiple programming languages and platforms. It consists of several components that work together to provide a seamless build experience.

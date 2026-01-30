@@ -4,25 +4,7 @@ title: CLI Commands
 
 # CLI Commands
 
-## Relevant source files
-
-- [source/cli/metacallcli/include/metacallcli/application.hpp](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/include/metacallcli/application.hpp)
-- [source/cli/metacallcli/source/application.cpp](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/source/application.cpp)
-- [source/cli/metacallcli/test/time.py](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/test/time.py)
-- [source/cli/plugins/cli_cmd_plugin/include/cli_cmd_plugin/cli_cmd_plugin.hpp](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_cmd_plugin/include/cli_cmd_plugin/cli_cmd_plugin.hpp)
-- [source/cli/plugins/cli_cmd_plugin/source/cli_cmd_plugin.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_cmd_plugin/source/cli_cmd_plugin.js)
-- [source/cli/plugins/cli_cmd_plugin/source/test.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_cmd_plugin/source/test.js)
-- [source/cli/plugins/cli_core_plugin/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_core_plugin/CMakeLists.txt)
-- [source/cli/plugins/cli_repl_plugin/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/CMakeLists.txt)
-- [source/cli/plugins/cli_repl_plugin/source/cli_repl_plugin.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/cli_repl_plugin.js)
-- [source/cli/plugins/cli_repl_plugin/source/parser.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/parser.js)
-- [source/cli/plugins/cli_repl_plugin/source/test.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/test.js)
-- [source/cli/plugins/cli_sandbox_plugin/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_sandbox_plugin/CMakeLists.txt)
-- [source/cli/plugins/cli_sandbox_plugin/include/cli_sandbox_plugin/cli_sandbox_plugin.h](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_sandbox_plugin/include/cli_sandbox_plugin/cli_sandbox_plugin.h)
-- [source/cli/plugins/cli_sandbox_plugin/source/cli_sandbox_plugin.cpp](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_sandbox_plugin/source/cli_sandbox_plugin.cpp)
-
 This page documents the MetaCall Command Line Interface (CLI) commands and their usage. The CLI provides a way to interact with MetaCall's polyglot runtime through command-line arguments and a Read-Eval-Print Loop (REPL) interface. For information about the REPL mode specifically, see [REPL Mode](./repl-mode.md).
-
 ## Overview
 
 The MetaCall CLI enables users to:
