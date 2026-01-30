@@ -4,31 +4,6 @@ title: Node.js Loader
 
 # Node.js Loader
 
-## Relevant source files
-
-- [cmake/CompileOptions.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/CompileOptions.cmake)
-- [cmake/FindNodeJS.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindNodeJS.cmake)
-- [source/loaders/node_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/CMakeLists.txt)
-- [source/loaders/node_loader/bootstrap/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/bootstrap/CMakeLists.txt)
-- [source/loaders/node_loader/bootstrap/lib/bootstrap.js](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/bootstrap/lib/bootstrap.js)
-- [source/loaders/node_loader/include/node_loader/node_loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/include/node_loader/node_loader_impl.h)
-- [source/loaders/node_loader/include/node_loader/node_loader_trampoline.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/include/node_loader/node_loader_trampoline.h)
-- [source/loaders/node_loader/source/node_loader_impl.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_impl.cpp)
-- [source/loaders/node_loader/source/node_loader_port.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_port.cpp)
-- [source/loaders/node_loader/source/node_loader_trampoline.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_trampoline.cpp)
-- [source/loaders/py_loader/include/py_loader/py_loader_dict.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/include/py_loader/py_loader_dict.h)
-- [source/loaders/py_loader/source/py_loader_dict.c](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/source/py_loader_dict.c)
-- [source/loaders/ts_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/ts_loader/CMakeLists.txt)
-- [source/loaders/ts_loader/bootstrap/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/ts_loader/bootstrap/CMakeLists.txt)
-- [source/loaders/ts_loader/bootstrap/lib/bootstrap.ts](https://github.com/metacall/core/blob/af9cad19/source/loaders/ts_loader/bootstrap/lib/bootstrap.ts)
-- [source/ports/node_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/node_port/CMakeLists.txt)
-- [source/scripts/node/gram/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/scripts/node/gram/CMakeLists.txt)
-- [source/scripts/node/gram/source/gram/package-lock.json](https://github.com/metacall/core/blob/af9cad19/source/scripts/node/gram/source/gram/package-lock.json)
-- [source/scripts/typescript/templating/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/scripts/typescript/templating/CMakeLists.txt)
-- [source/tests/metacall_node_async_test/source/metacall_node_async_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_node_async_test/source/metacall_node_async_test.cpp)
-- [source/tests/metacall_node_port_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_node_port_test/CMakeLists.txt)
-- [source/tests/metacall_python_open_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_python_open_test/CMakeLists.txt)
-
 The Node.js Loader enables MetaCall to load, execute, and interact with JavaScript code running in the Node.js runtime. This loader is a core component that bridges the gap between the Node.js ecosystem and other language runtimes within MetaCall, enabling seamless interoperability between JavaScript and other supported languages.
 
 ## Overview

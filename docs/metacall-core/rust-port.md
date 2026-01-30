@@ -4,24 +4,7 @@ title: Rust Port
 
 # Rust Port
 
-## Relevant source files
-
-- [VERSION](https://github.com/metacall/core/blob/af9cad19/VERSION)
-- [source/ports/java_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/java_port/CMakeLists.txt)
-- [source/ports/js_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/js_port/CMakeLists.txt)
-- [source/ports/py_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/py_port/CMakeLists.txt)
-- [source/ports/rb_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/rb_port/CMakeLists.txt)
-- [source/ports/rs_port/.devcontainer/devcontainer.json](https://github.com/metacall/core/blob/af9cad19/source/ports/rs_port/.devcontainer/devcontainer.json)
-- [source/ports/rs_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/rs_port/CMakeLists.txt)
-- [source/ports/rs_port/Dockerfile](https://github.com/metacall/core/blob/af9cad19/source/ports/rs_port/Dockerfile)
-- [source/ports/rs_port/build.rs](https://github.com/metacall/core/blob/af9cad19/source/ports/rs_port/build.rs)
-- [source/ports/rs_port/inline/src/lib.rs](https://github.com/metacall/core/blob/af9cad19/source/ports/rs_port/inline/src/lib.rs)
-- [source/ports/rs_port/rust-toolchain](https://github.com/metacall/core/blob/af9cad19/source/ports/rs_port/rust-toolchain)
-- [source/ports/rs_port/src/bindings.rs](https://github.com/metacall/core/blob/af9cad19/source/ports/rs_port/src/bindings.rs)
-- [tools/runtime/Dockerfile](https://github.com/metacall/core/blob/af9cad19/tools/runtime/Dockerfile)
-
 The Rust Port provides a Rust language interface to the MetaCall Core, allowing Rust developers to call functions written in other programming languages directly from their Rust applications. This component enables cross-language interoperability, making it possible to integrate code from languages like Python, JavaScript, Ruby, and others into a Rust codebase.
-
 For information about running Rust code from other languages, see [Rust Loader](./rust-loader.md).
 
 ## Architecture

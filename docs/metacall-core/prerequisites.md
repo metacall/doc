@@ -4,25 +4,6 @@ title: Prerequisites
 
 # Prerequisites
 
-## Relevant source files
-
-- [CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/CMakeLists.txt)
-- [README.md](https://github.com/metacall/core/blob/af9cad19/README.md)
-- [VERSION](https://github.com/metacall/core/blob/af9cad19/VERSION)
-- [deploy/images/overview.png](https://github.com/metacall/core/blob/af9cad19/deploy/images/overview.png)
-- [docker-compose.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.yml)
-- [docs/README.md](https://github.com/metacall/core/blob/af9cad19/docs/README.md)
-- [source/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/CMakeLists.txt)
-- [source/loaders/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/CMakeLists.txt)
-- [source/ports/java_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/java_port/CMakeLists.txt)
-- [source/ports/js_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/js_port/CMakeLists.txt)
-- [source/ports/py_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/py_port/CMakeLists.txt)
-- [source/ports/rb_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/rb_port/CMakeLists.txt)
-- [tools/metacall-configure.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-configure.sh)
-- [tools/metacall-environment.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-environment.sh)
-- [tools/metacall-runtime.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-runtime.sh)
-- [tools/runtime/Dockerfile](https://github.com/metacall/core/blob/af9cad19/tools/runtime/Dockerfile)
-
 This page documents the system requirements and dependencies needed to build, install, and run MetaCall Core. It covers required development tools, compilers, language runtimes, and libraries for all supported platforms. For information about configuring the build system after installing prerequisites, see [Build Configuration](./build-configuration.md).
 
 ## Base Requirements

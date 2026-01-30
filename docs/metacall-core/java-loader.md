@@ -4,31 +4,6 @@ title: Java Loader
 
 # Java Loader
 
-## Relevant source files
-
-- [CONTRIBUTORS](https://github.com/metacall/core/blob/af9cad19/CONTRIBUTORS)
-- [deploy/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/deploy/CMakeLists.txt)
-- [source/loaders/c_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/c_loader/CMakeLists.txt)
-- [source/loaders/cs_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/cs_loader/CMakeLists.txt)
-- [source/loaders/file_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/file_loader/CMakeLists.txt)
-- [source/loaders/java_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/java_loader/CMakeLists.txt)
-- [source/loaders/java_loader/bootstrap/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/java_loader/bootstrap/CMakeLists.txt)
-- [source/loaders/java_loader/bootstrap/lib/bootstrap.java](https://github.com/metacall/core/blob/af9cad19/source/loaders/java_loader/bootstrap/lib/bootstrap.java)
-- [source/loaders/java_loader/source/java_loader_impl.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/java_loader/source/java_loader_impl.cpp)
-- [source/loaders/js_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/js_loader/CMakeLists.txt)
-- [source/loaders/jsm_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/jsm_loader/CMakeLists.txt)
-- [source/loaders/mock_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/mock_loader/CMakeLists.txt)
-- [source/loaders/py_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/CMakeLists.txt)
-- [source/loaders/rb_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/rb_loader/CMakeLists.txt)
-- [source/scripts/java/cmake/JavaJarProject.cmake.in](https://github.com/metacall/core/blob/af9cad19/source/scripts/java/cmake/JavaJarProject.cmake.in)
-- [source/scripts/java/jartest/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/scripts/java/jartest/CMakeLists.txt)
-- [source/scripts/java/jartest/source/JarTest.jar](https://github.com/metacall/core/blob/af9cad19/source/scripts/java/jartest/source/JarTest.jar)
-- [source/scripts/java/test/source/Test.java](https://github.com/metacall/core/blob/af9cad19/source/scripts/java/test/source/Test.java)
-- [source/scripts/python/wasm/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/wasm/CMakeLists.txt)
-- [source/serials/metacall_serial/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/serials/metacall_serial/CMakeLists.txt)
-- [source/serials/rapid_json_serial/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/serials/rapid_json_serial/CMakeLists.txt)
-- [source/tests/metacall_java_test/source/metacall_java_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_java_test/source/metacall_java_test.cpp)
-
 The Java Loader is a component of the MetaCall Core that enables execution of Java code and interoperability between Java and other programming languages supported by MetaCall. This page documents the architecture, implementation, and functionality of the Java Loader.
 
 ## Overview

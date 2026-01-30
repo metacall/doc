@@ -4,32 +4,6 @@ title: Command Line Interface
 
 # Command Line Interface
 
-## Relevant source files
-
-- [cmake/FindV8.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindV8.cmake)
-- [source/cli/metacallcli/include/metacallcli/application.hpp](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/include/metacallcli/application.hpp)
-- [source/cli/metacallcli/source/application.cpp](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/source/application.cpp)
-- [source/cli/metacallcli/test/time.py](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/test/time.py)
-- [source/cli/plugins/cli_cmd_plugin/include/cli_cmd_plugin/cli_cmd_plugin.hpp](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_cmd_plugin/include/cli_cmd_plugin/cli_cmd_plugin.hpp)
-- [source/cli/plugins/cli_cmd_plugin/source/cli_cmd_plugin.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_cmd_plugin/source/cli_cmd_plugin.js)
-- [source/cli/plugins/cli_cmd_plugin/source/test.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_cmd_plugin/source/test.js)
-- [source/cli/plugins/cli_core_plugin/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_core_plugin/CMakeLists.txt)
-- [source/cli/plugins/cli_repl_plugin/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/CMakeLists.txt)
-- [source/cli/plugins/cli_repl_plugin/source/cli_repl_plugin.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/cli_repl_plugin.js)
-- [source/cli/plugins/cli_repl_plugin/source/parser.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/parser.js)
-- [source/cli/plugins/cli_repl_plugin/source/test.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/test.js)
-- [source/cli/plugins/cli_sandbox_plugin/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_sandbox_plugin/CMakeLists.txt)
-- [source/cli/plugins/cli_sandbox_plugin/include/cli_sandbox_plugin/cli_sandbox_plugin.h](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_sandbox_plugin/include/cli_sandbox_plugin/cli_sandbox_plugin.h)
-- [source/cli/plugins/cli_sandbox_plugin/source/cli_sandbox_plugin.cpp](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_sandbox_plugin/source/cli_sandbox_plugin.cpp)
-- [source/loader/include/loader/loader.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader.h)
-- [source/loader/include/loader/loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl.h)
-- [source/loader/include/loader/loader_impl_interface.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl_interface.h)
-- [source/loader/source/loader.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader.c)
-- [source/loader/source/loader_impl.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader_impl.c)
-- [source/metacall/include/metacall/metacall.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall.h)
-- [source/metacall/source/metacall.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c)
-- [source/tests/metacall_test/source/metacall_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_test/source/metacall_test.cpp)
-
 The MetaCall Command Line Interface (CLI) provides a versatile environment for executing code in multiple programming languages, offering both direct script execution and an interactive REPL (Read-Eval-Print Loop) mode. This document explains the architecture and usage of the MetaCall CLI tool.
 
 ## Architecture Overview

@@ -4,27 +4,7 @@ title: Detours System
 
 # Detours System
 
-## Relevant source files
-
-- [cmake/FindV8.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindV8.cmake)
-- [cmake/InstallRapidJSON.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/InstallRapidJSON.cmake)
-- [source/detours/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/detours/CMakeLists.txt)
-- [source/detours/funchook_detour/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/detours/funchook_detour/CMakeLists.txt)
-- [source/loader/include/loader/loader.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader.h)
-- [source/loader/include/loader/loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl.h)
-- [source/loader/include/loader/loader_impl_interface.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl_interface.h)
-- [source/loader/source/loader.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader.c)
-- [source/loader/source/loader_impl.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader_impl.c)
-- [source/metacall/include/metacall/metacall.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall.h)
-- [source/metacall/source/metacall.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c)
-- [source/tests/detour_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/detour_test/CMakeLists.txt)
-- [source/tests/detour_test/source/detour_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/detour_test/source/detour_test.cpp)
-- [source/tests/detour_test/source/main.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/detour_test/source/main.cpp)
-- [source/tests/metacall_fork_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_fork_test/CMakeLists.txt)
-- [source/tests/metacall_test/source/metacall_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_test/source/metacall_test.cpp)
-
 The Detours System is a core component of MetaCall that enables function hooking, interception, and redirection at runtime. It allows MetaCall to intercept function calls and redirect them to alternative implementations, which is essential for cross-language function calls and ensuring thread safety in forked processes. This system is critical for MetaCall's ability to seamlessly integrate code from different programming languages.
-
 For information about the core Value System that handles data conversion between languages, see [Serialization and Value System](./serialization-and-value-system.md).
 
 ## Architecture

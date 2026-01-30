@@ -4,20 +4,6 @@ title: Serialization Formats
 
 # Serialization Formats
 
-## Relevant source files
-
-- [source/metacall/include/metacall/metacall_value.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall_value.h)
-- [source/metacall/source/metacall_value.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall_value.c)
-- [source/reflect/include/reflect/reflect_type_id.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_type_id.h)
-- [source/reflect/include/reflect/reflect_value_type.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_value_type.h)
-- [source/reflect/source/reflect_type_id.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_type_id.c)
-- [source/reflect/source/reflect_value_type.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type.c)
-- [source/reflect/source/reflect_value_type_cast.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type_cast.c)
-- [source/reflect/source/reflect_value_type_id_size.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_value_type_id_size.c)
-- [source/serials/metacall_serial/source/metacall_serial_impl_serialize.c](https://github.com/metacall/core/blob/af9cad19/source/serials/metacall_serial/source/metacall_serial_impl_serialize.c)
-- [source/serials/rapid_json_serial/source/rapid_json_serial_impl.cpp](https://github.com/metacall/core/blob/af9cad19/source/serials/rapid_json_serial/source/rapid_json_serial_impl.cpp)
-- [source/tests/serial_test/source/serial_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/serial_test/source/serial_test.cpp)
-
 ## Overview
 
 The MetaCall Serialization system provides a framework for converting MetaCall values to and from various data formats. This system is essential for cross-language interoperability, remote procedure calls, and data persistence. The serialization framework is part of the larger MetaCall Core and works closely with the Value System to handle the conversion of data types across different languages and formats.

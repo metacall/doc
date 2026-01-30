@@ -4,42 +4,7 @@ title: Writing Tests
 
 # Writing Tests
 
-## Relevant source files
-
-- [.env](https://github.com/metacall/core/blob/af9cad19/.env)
-- [.github/workflows/benchmark.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/benchmark.yml)
-- [.github/workflows/clang-format.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/clang-format.yml)
-- [.github/workflows/docker-hub.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/docker-hub.yml)
-- [.github/workflows/linux-test.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/linux-test.yml)
-- [.github/workflows/macos-test.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/macos-test.yml)
-- [.github/workflows/release.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/release.yml)
-- [.github/workflows/windows-test.yml](https://github.com/metacall/core/blob/af9cad19/.github/workflows/windows-test.yml)
-- [cmake/CompileOptions.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/CompileOptions.cmake)
-- [cmake/FindNodeJS.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindNodeJS.cmake)
-- [docker-compose.platform.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.platform.yml)
-- [source/loaders/node_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/CMakeLists.txt)
-- [source/loaders/node_loader/bootstrap/lib/bootstrap.js](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/bootstrap/lib/bootstrap.js)
-- [source/loaders/node_loader/include/node_loader/node_loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/include/node_loader/node_loader_impl.h)
-- [source/loaders/node_loader/include/node_loader/node_loader_trampoline.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/include/node_loader/node_loader_trampoline.h)
-- [source/loaders/node_loader/source/node_loader_impl.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_impl.cpp)
-- [source/loaders/node_loader/source/node_loader_port.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_port.cpp)
-- [source/loaders/node_loader/source/node_loader_trampoline.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_trampoline.cpp)
-- [source/loaders/py_loader/include/py_loader/py_loader_dict.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/include/py_loader/py_loader_dict.h)
-- [source/loaders/py_loader/source/py_loader_dict.c](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/source/py_loader_dict.c)
-- [source/loaders/ts_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/ts_loader/CMakeLists.txt)
-- [source/loaders/ts_loader/bootstrap/lib/bootstrap.ts](https://github.com/metacall/core/blob/af9cad19/source/loaders/ts_loader/bootstrap/lib/bootstrap.ts)
-- [source/scripts/python/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/CMakeLists.txt)
-- [source/tests/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/CMakeLists.txt)
-- [source/tests/metacall_node_async_test/source/metacall_node_async_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_node_async_test/source/metacall_node_async_test.cpp)
-- [tools/metacall-benchmarks-merge.py](https://github.com/metacall/core/blob/af9cad19/tools/metacall-benchmarks-merge.py)
-- [tools/metacall-build.ps1](https://github.com/metacall/core/blob/af9cad19/tools/metacall-build.ps1)
-- [tools/metacall-build.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-build.sh)
-- [tools/metacall-configure.ps1](https://github.com/metacall/core/blob/af9cad19/tools/metacall-configure.ps1)
-- [tools/metacall-environment.ps1](https://github.com/metacall/core/blob/af9cad19/tools/metacall-environment.ps1)
-- [tools/metacall-sanitizer.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-sanitizer.sh)
-
 This document provides a comprehensive guide for writing and running tests for the MetaCall project. It covers the testing infrastructure, how to create new tests, and best practices for testing different language loaders and cross-language functionality.
-
 For information about running existing tests, see [Running Tests](./running-tests.md). For details on using sanitizers to catch memory and threading issues, see [Sanitizers](./sanitizers.md).
 
 ## Testing Infrastructure

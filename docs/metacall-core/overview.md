@@ -4,30 +4,7 @@ title: Overview
 
 # Overview
 
-## Relevant source files
-
-- [CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/CMakeLists.txt)
-- [README.md](https://github.com/metacall/core/blob/af9cad19/README.md)
-- [cmake/FindV8.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindV8.cmake)
-- [deploy/images/overview.png](https://github.com/metacall/core/blob/af9cad19/deploy/images/overview.png)
-- [docker-compose.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.yml)
-- [docs/README.md](https://github.com/metacall/core/blob/af9cad19/docs/README.md)
-- [source/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/CMakeLists.txt)
-- [source/loader/include/loader/loader.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader.h)
-- [source/loader/include/loader/loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl.h)
-- [source/loader/include/loader/loader_impl_interface.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl_interface.h)
-- [source/loader/source/loader.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader.c)
-- [source/loader/source/loader_impl.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader_impl.c)
-- [source/loaders/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/CMakeLists.txt)
-- [source/metacall/include/metacall/metacall.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall.h)
-- [source/metacall/source/metacall.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c)
-- [source/tests/metacall_test/source/metacall_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_test/source/metacall_test.cpp)
-- [tools/metacall-configure.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-configure.sh)
-- [tools/metacall-environment.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-environment.sh)
-- [tools/metacall-runtime.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-runtime.sh)
-
 MetaCall is a polyglot runtime that enables cross-language function interface calls. It allows developers to seamlessly call functions, methods, and procedures between different programming languages, effectively breaking down language barriers in software development.
-
 This document introduces the core concepts of MetaCall, providing a high-level understanding of its architecture and functionality. For more detailed information about features and capabilities, see [Features and Capabilities](./features-and-capabilities.md), and for a comprehensive list of supported languages, see [Supported Languages](./supported-languages.md).
 
 ## Purpose and Key Features

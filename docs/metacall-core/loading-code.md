@@ -4,47 +4,6 @@ title: Loading Code
 
 # Loading Code
 
-## Relevant source files
-
-- [cmake/CompileOptions.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/CompileOptions.cmake)
-- [cmake/FindNodeJS.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindNodeJS.cmake)
-- [cmake/FindV8.cmake](https://github.com/metacall/core/blob/af9cad19/cmake/FindV8.cmake)
-- [source/cli/metacallcli/test/cli-test-rb.py.in](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/test/cli-test-rb.py.in)
-- [source/cli/metacallcli/test/cli-test.py.in](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/test/cli-test.py.in)
-- [source/loader/include/loader/loader.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader.h)
-- [source/loader/include/loader/loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl.h)
-- [source/loader/include/loader/loader_impl_interface.h](https://github.com/metacall/core/blob/af9cad19/source/loader/include/loader/loader_impl_interface.h)
-- [source/loader/source/loader.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader.c)
-- [source/loader/source/loader_impl.c](https://github.com/metacall/core/blob/af9cad19/source/loader/source/loader_impl.c)
-- [source/loaders/node_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/CMakeLists.txt)
-- [source/loaders/node_loader/bootstrap/lib/bootstrap.js](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/bootstrap/lib/bootstrap.js)
-- [source/loaders/node_loader/include/node_loader/node_loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/include/node_loader/node_loader_impl.h)
-- [source/loaders/node_loader/include/node_loader/node_loader_trampoline.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/include/node_loader/node_loader_trampoline.h)
-- [source/loaders/node_loader/source/node_loader_impl.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_impl.cpp)
-- [source/loaders/node_loader/source/node_loader_port.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_port.cpp)
-- [source/loaders/node_loader/source/node_loader_trampoline.cpp](https://github.com/metacall/core/blob/af9cad19/source/loaders/node_loader/source/node_loader_trampoline.cpp)
-- [source/loaders/py_loader/include/py_loader/py_loader_dict.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/include/py_loader/py_loader_dict.h)
-- [source/loaders/py_loader/include/py_loader/py_loader_impl.h](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/include/py_loader/py_loader_impl.h)
-- [source/loaders/py_loader/source/py_loader_dict.c](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/source/py_loader_dict.c)
-- [source/loaders/py_loader/source/py_loader_impl.c](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/source/py_loader_impl.c)
-- [source/loaders/py_loader/source/py_loader_port.c](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/source/py_loader_port.c)
-- [source/loaders/ts_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/ts_loader/CMakeLists.txt)
-- [source/loaders/ts_loader/bootstrap/lib/bootstrap.ts](https://github.com/metacall/core/blob/af9cad19/source/loaders/ts_loader/bootstrap/lib/bootstrap.ts)
-- [source/metacall/include/metacall/metacall.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall.h)
-- [source/metacall/source/metacall.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall.c)
-- [source/ports/py_port/metacall/\_\_init\_\_.py](https://github.com/metacall/core/blob/af9cad19/source/ports/py_port/metacall/__init__.py)
-- [source/ports/py_port/metacall/api.py](https://github.com/metacall/core/blob/af9cad19/source/ports/py_port/metacall/api.py)
-- [source/scripts/python/pointer/source/pointer.py.in](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/pointer/source/pointer.py.in)
-- [source/tests/metacall_node_async_test/source/metacall_node_async_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_node_async_test/source/metacall_node_async_test.cpp)
-- [source/tests/metacall_node_test/source/main.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_node_test/source/main.cpp)
-- [source/tests/metacall_node_test/source/metacall_node_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_node_test/source/metacall_node_test.cpp)
-- [source/tests/metacall_python_async_test/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_python_async_test/CMakeLists.txt)
-- [source/tests/metacall_python_async_test/source/main.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_python_async_test/source/main.cpp)
-- [source/tests/metacall_python_async_test/source/metacall_python_async_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_python_async_test/source/metacall_python_async_test.cpp)
-- [source/tests/metacall_python_pointer_test/source/metacall_python_pointer_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_python_pointer_test/source/metacall_python_pointer_test.cpp)
-- [source/tests/metacall_python_port_import_test/source/metacall_python_port_import_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_python_port_import_test/source/metacall_python_port_import_test.cpp)
-- [source/tests/metacall_test/source/metacall_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_test/source/metacall_test.cpp)
-
 This document details the methods and processes for loading source code from various programming languages into the MetaCall runtime. Loading code is a fundamental operation in MetaCall that allows functions written in different languages to be callable from any supported language in the MetaCall ecosystem.
 
 ## Overview of Code Loading
