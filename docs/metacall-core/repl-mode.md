@@ -4,27 +4,8 @@ title: REPL Mode
 
 # REPL Mode
 
-## Relevant source files
-
-- [source/cli/metacallcli/include/metacallcli/application.hpp](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/include/metacallcli/application.hpp)
-- [source/cli/metacallcli/source/application.cpp](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/source/application.cpp)
-- [source/cli/metacallcli/test/time.py](https://github.com/metacall/core/blob/af9cad19/source/cli/metacallcli/test/time.py)
-- [source/cli/plugins/cli_cmd_plugin/include/cli_cmd_plugin/cli_cmd_plugin.hpp](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_cmd_plugin/include/cli_cmd_plugin/cli_cmd_plugin.hpp)
-- [source/cli/plugins/cli_cmd_plugin/source/cli_cmd_plugin.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_cmd_plugin/source/cli_cmd_plugin.js)
-- [source/cli/plugins/cli_cmd_plugin/source/test.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_cmd_plugin/source/test.js)
-- [source/cli/plugins/cli_core_plugin/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_core_plugin/CMakeLists.txt)
-- [source/cli/plugins/cli_repl_plugin/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/CMakeLists.txt)
-- [source/cli/plugins/cli_repl_plugin/source/cli_repl_plugin.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/cli_repl_plugin.js)
-- [source/cli/plugins/cli_repl_plugin/source/parser.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/parser.js)
-- [source/cli/plugins/cli_repl_plugin/source/test.js](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_repl_plugin/source/test.js)
-- [source/cli/plugins/cli_sandbox_plugin/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_sandbox_plugin/CMakeLists.txt)
-- [source/cli/plugins/cli_sandbox_plugin/include/cli_sandbox_plugin/cli_sandbox_plugin.h](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_sandbox_plugin/include/cli_sandbox_plugin/cli_sandbox_plugin.h)
-- [source/cli/plugins/cli_sandbox_plugin/source/cli_sandbox_plugin.cpp](https://github.com/metacall/core/blob/af9cad19/source/cli/plugins/cli_sandbox_plugin/source/cli_sandbox_plugin.cpp)
-
 The MetaCall REPL (Read-Eval-Print Loop) provides an interactive shell environment for executing cross-language function calls and managing code loading across different programming languages. This page documents the REPL mode implementation, its architecture, and usage patterns.
-
 For information about CLI commands available in the REPL, see [CLI Commands](./cli-commands.md).
-
 ## Overview
 
 The REPL mode serves as an interactive interface to the MetaCall runtime, allowing developers to:

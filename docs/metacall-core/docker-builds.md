@@ -4,24 +4,7 @@ title: Docker Builds
 
 # Docker Builds
 
-## Relevant source files
-
-- [CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/CMakeLists.txt)
-- [README.md](https://github.com/metacall/core/blob/af9cad19/README.md)
-- [deploy/images/overview.png](https://github.com/metacall/core/blob/af9cad19/deploy/images/overview.png)
-- [docker-compose.cache.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.cache.yml)
-- [docker-compose.sh](https://github.com/metacall/core/blob/af9cad19/docker-compose.sh)
-- [docker-compose.test.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.test.yml)
-- [docker-compose.yml](https://github.com/metacall/core/blob/af9cad19/docker-compose.yml)
-- [docs/README.md](https://github.com/metacall/core/blob/af9cad19/docs/README.md)
-- [source/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/CMakeLists.txt)
-- [source/loaders/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/CMakeLists.txt)
-- [tools/metacall-configure.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-configure.sh)
-- [tools/metacall-environment.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-environment.sh)
-- [tools/metacall-runtime.sh](https://github.com/metacall/core/blob/af9cad19/tools/metacall-runtime.sh)
-
 This document describes how to use Docker to build, test, and deploy MetaCall. Docker provides a consistent environment for building MetaCall across different platforms and simplifies the development process by isolating dependencies. For information about building MetaCall without Docker, see [Build System](./build-system.md) and [Build Configuration](./build-configuration.md).
-
 ## Overview of MetaCall Docker Build System
 
 MetaCall uses Docker Compose to manage multiple Docker images that serve different purposes in the development, testing, and deployment workflow. The system consists of four main Docker images arranged in a dependency hierarchy.

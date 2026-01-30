@@ -4,41 +4,7 @@ title: Ruby Loader
 
 # Ruby Loader
 
-## Relevant source files
-
-- [deploy/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/deploy/CMakeLists.txt)
-- [source/loaders/c_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/c_loader/CMakeLists.txt)
-- [source/loaders/cs_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/cs_loader/CMakeLists.txt)
-- [source/loaders/file_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/file_loader/CMakeLists.txt)
-- [source/loaders/js_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/js_loader/CMakeLists.txt)
-- [source/loaders/jsm_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/jsm_loader/CMakeLists.txt)
-- [source/loaders/mock_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/mock_loader/CMakeLists.txt)
-- [source/loaders/py_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/py_loader/CMakeLists.txt)
-- [source/loaders/rb_loader/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/loaders/rb_loader/CMakeLists.txt)
-- [source/loaders/rb_loader/source/rb_loader_impl.c](https://github.com/metacall/core/blob/af9cad19/source/loaders/rb_loader/source/rb_loader_impl.c)
-- [source/loaders/rb_loader/source/rb_loader_impl_parser.c](https://github.com/metacall/core/blob/af9cad19/source/loaders/rb_loader/source/rb_loader_impl_parser.c)
-- [source/metacall/include/metacall/metacall_error.h](https://github.com/metacall/core/blob/af9cad19/source/metacall/include/metacall/metacall_error.h)
-- [source/metacall/source/metacall_error.c](https://github.com/metacall/core/blob/af9cad19/source/metacall/source/metacall_error.c)
-- [source/reflect/include/reflect/reflect_accessor.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_accessor.h)
-- [source/reflect/include/reflect/reflect_class.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_class.h)
-- [source/reflect/include/reflect/reflect_exception.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_exception.h)
-- [source/reflect/include/reflect/reflect_object.h](https://github.com/metacall/core/blob/af9cad19/source/reflect/include/reflect/reflect_object.h)
-- [source/reflect/source/reflect_class.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_class.c)
-- [source/reflect/source/reflect_exception.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_exception.c)
-- [source/reflect/source/reflect_object.c](https://github.com/metacall/core/blob/af9cad19/source/reflect/source/reflect_object.c)
-- [source/scripts/python/classname/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/classname/CMakeLists.txt)
-- [source/scripts/python/classname/depends/\_\_init\_\_.py](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/classname/depends/__init__.py)
-- [source/scripts/python/classname/source/classname.py](https://github.com/metacall/core/blob/af9cad19/source/scripts/python/classname/source/classname.py)
-- [source/scripts/ruby/klass/source/klass.rb](https://github.com/metacall/core/blob/af9cad19/source/scripts/ruby/klass/source/klass.rb)
-- [source/serials/metacall_serial/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/serials/metacall_serial/CMakeLists.txt)
-- [source/serials/rapid_json_serial/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/serials/rapid_json_serial/CMakeLists.txt)
-- [source/tests/metacall_python_object_class_test/source/metacall_python_object_class_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_python_object_class_test/source/metacall_python_object_class_test.cpp)
-- [source/tests/metacall_ruby_object_class_test/source/metacall_ruby_object_class_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/metacall_ruby_object_class_test/source/metacall_ruby_object_class_test.cpp)
-- [source/tests/reflect_object_class_test/source/reflect_object_class_test.cpp](https://github.com/metacall/core/blob/af9cad19/source/tests/reflect_object_class_test/source/reflect_object_class_test.cpp)
-- [source/threading/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/threading/CMakeLists.txt)
-
 The Ruby Loader is a plugin for MetaCall Core that enables loading, executing, and interfacing with Ruby code at runtime. This component allows Ruby functions, objects, and classes to be called from other programming languages supported by MetaCall, and vice versa.
-
 ## Architecture
 
 The Ruby Loader follows the standard loader architecture of MetaCall, implementing Ruby-specific capabilities to bridge the Ruby interpreter with the MetaCall reflection system.

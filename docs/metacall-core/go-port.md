@@ -4,26 +4,8 @@ title: Go Port
 
 # Go Port
 
-## Relevant source files
-
-- [VERSION](https://github.com/metacall/core/blob/af9cad19/VERSION)
-- [source/ports/go_port/source/README.md](https://github.com/metacall/core/blob/af9cad19/source/ports/go_port/source/README.md)
-- [source/ports/go_port/source/await.go](https://github.com/metacall/core/blob/af9cad19/source/ports/go_port/source/await.go)
-- [source/ports/go_port/source/go.mod](https://github.com/metacall/core/blob/af9cad19/source/ports/go_port/source/go.mod)
-- [source/ports/go_port/source/go.sum](https://github.com/metacall/core/blob/af9cad19/source/ports/go_port/source/go.sum)
-- [source/ports/go_port/source/go_port.go](https://github.com/metacall/core/blob/af9cad19/source/ports/go_port/source/go_port.go)
-- [source/ports/go_port/source/go_port_test.go](https://github.com/metacall/core/blob/af9cad19/source/ports/go_port/source/go_port_test.go)
-- [source/ports/go_port/source/pointer.go](https://github.com/metacall/core/blob/af9cad19/source/ports/go_port/source/pointer.go)
-- [source/ports/java_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/java_port/CMakeLists.txt)
-- [source/ports/js_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/js_port/CMakeLists.txt)
-- [source/ports/py_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/py_port/CMakeLists.txt)
-- [source/ports/rb_port/CMakeLists.txt](https://github.com/metacall/core/blob/af9cad19/source/ports/rb_port/CMakeLists.txt)
-- [tools/runtime/Dockerfile](https://github.com/metacall/core/blob/af9cad19/tools/runtime/Dockerfile)
-
 The Go Port enables Go applications to interoperate with code written in other programming languages supported by MetaCall. This port provides a thin wrapper around the MetaCall C API, allowing Go developers to load and execute code written in Python, JavaScript, Ruby, and other languages directly from Go code.
-
 For information about other language ports, see [Port System](./port-system.md).
-
 ## 1\. Overview
 
 The Go Port allows Go applications to:
