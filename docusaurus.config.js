@@ -13,7 +13,7 @@ const config = {
   favicon: "img/metacall-logo.png",
 
   // Set the production url of your site here
-  url: "https://github.com",
+  url: "https://metacall.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   baseUrl: "/doc/",
 
@@ -33,8 +33,7 @@ const config = {
   presets: [
     [
       "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      {
         docs: {
           sidebarPath: "./sidebars.js",
           tagsBasePath: "tags",
@@ -43,7 +42,13 @@ const config = {
         theme: {
           customCss: "./src/css/custom.css",
         },
-      }),
+
+        sitemap: {
+          changefreq: "weekly",
+          priority: 0.5,
+          ignorePatterns: ["/tags/**"],
+        },
+      },
     ],
   ],
 
