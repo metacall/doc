@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <Layout
       title={`MetaCall Documentation`}
-      description="Description will go into a meta tag in <head />"
+      description="Official MetaCall documentation for the polyglot runtime, FaaS, Deploy, protocol and tools."
     >
       <HomepageHeader />
       <main>

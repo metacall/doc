@@ -13,7 +13,7 @@ const FeatureList = [
         you do with it.
       </>
     ),
-    goto: "/docs/category/introduction/",
+    goto: "/docs/how-metacall-works",
   },
   {
     title: "Using MetaCall",

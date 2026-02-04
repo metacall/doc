@@ -6,9 +6,10 @@ sidebar_position: 1
 
 **Works for JavaScript, TypeScript, NodeJS.**
 
-Once you have installed the **MetaCall CLI** globally using the [installation guide](/docs/introduction/installation), you can start integrating MetaCall into your JavaScript/Node.js projects. Follow the steps below to set up MetaCall in your Node.js environment.
+Once you have installed the **MetaCall CLI** globally using the [installation guide](/docs/category/installating-metacall-cli), you can start integrating MetaCall into your JavaScript/Node.js projects. Follow the steps below to set up MetaCall in your Node.js environment.
 
 ## NPM Package
+
 - `npm` :
 
   ```
@@ -16,6 +17,7 @@ Once you have installed the **MetaCall CLI** globally using the [installation gu
   ```
 
 ## Importing MetaCall
+
 To import MetaCall in your Node.js project, use the following :
 
     ```
@@ -33,54 +35,55 @@ To import MetaCall in your Node.js project, use the following :
 
 ## Function Definitions
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
-1. ### metacall(name, ...args)
+### metacall(name, ...args)
+
     This function executes a function which you have imported from another file (which can be a **Python** function, **C++** function etc)
 
-    *Parameters*
-    
+    _Parameters_
     - `name` (String) : Name of the function to call.
 
     - `args` (any) : Arguments to pass to the function.
 
-    *Returns* : The result of the function execution.
+    _Returns_ : The result of the function execution.
 
-    **Example** : 
+    **Example** :
 
-    <Tabs>
-    <TabItem value="index.js" label="index.js" default>
-        ```js
-        const { metacall, metacall_load_from_file } = require('metacall');
+<Tabs>
+<TabItem value="index.js" label="index.js" default>
 
-        metacall_load_from_file('py', ['sum.py']);
+```js
+const { metacall, metacall_load_from_file } = require("metacall");
 
-        console.log(metacall('add', 5, 10));
-        ```
-    </TabItem>
-    <TabItem value="sum.py" label="sum.py">
-        ```py
-        def add(a, b):
-            return a + b
-        ```
-    </TabItem>
-    </Tabs>
+metacall_load_from_file("py", ["sum.py"]);
 
-2. ### metacall_load_from_file(tag, paths)
+console.log(metacall("add", 5, 10));
+```
+
+</TabItem>
+<TabItem value="sum.py" label="sum.py">
+```py
+def add(a, b):
+    return a + b
+```
+</TabItem>
+</Tabs>
+
+### metacall_load_from_file(tag, paths)
+
     This function loads a file / script into your JS file. (imported file can be a **Python** file, **C++** file etc)
 
-    *Parameters*
-    
+    _Parameters_
     - `tag` (String) : Loader Type (e.g 'py' for Python, 'js' for JavaScript).
 
     - `paths` (Array) : File paths to be loaded.
 
-    *Returns* : Load Result.
+    _Returns_ : Load Result.
 
     **Example** :
 
     ```js
-    metacall_load_from_file('py', ['sum.py']);
+    metacall_load_from_file("py", ["sum.py"]);
     ```
-
