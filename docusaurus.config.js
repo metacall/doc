@@ -4,132 +4,153 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'MetaCall Docs',
-  tagline: 'Documentation for MetaCall',
-  favicon: 'img/metacall-logo.png',
+  title: "MetaCall Docs",
+  tagline: "Documentation for MetaCall",
+  favicon: "img/metacall-logo.png",
 
   // Set the production url of your site here
-  url: 'https://github.com',
+  url: "https://metacall.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
-  baseUrl: '/doc/',
+  baseUrl: "/doc/",
 
   // GitHub pages deployment config.
-  organizationName: 'metacall', // your GitHub user/org
-  projectName: 'doc', // repo name
-  deploymentBranch: 'gh-pages',
+  organizationName: "metacall", // your GitHub user/org
+  projectName: "doc", // repo name
+  deploymentBranch: "gh-pages",
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: "warn",
+  onBrokenMarkdownLinks: "warn",
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      "classic",
+      {
         docs: {
-          sidebarPath: './sidebars.js',
-          tagsBasePath: 'tags',
+          sidebarPath: "./sidebars.js",
+          tagsBasePath: "tags",
           breadcrumbs: true,
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
-      }),
+
+        sitemap: {
+          changefreq: "weekly",
+          priority: 0.5,
+          ignorePatterns: ["/tags/**"],
+        },
+      },
     ],
   ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      customCss: './src/css/custom.css',
-      image: 'img/docusaurus-social-card.jpg',
+      metadata: [
+        {
+          name: "description",
+          content:
+            "Official MetaCall documentation for the polyglot runtime, FaaS, Deploy, protocol and tools.",
+        },
+        {
+          name: "keywords",
+          content:
+            "MetaCall, documentation, polyglot runtime, FaaS, Deploy, serverless, protocol",
+        },
+        {
+          name: "author",
+          content: "MetaCall",
+        },
+      ],
+      customCss: "./src/css/custom.css",
+      image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: 'Metacall Docs',
+        title: "Metacall Docs",
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/metacall-logo.png',
+          alt: "My Site Logo",
+          src: "img/metacall-logo.png",
         },
         items: [
           {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Documentation',
+            type: "docSidebar",
+            sidebarId: "tutorialSidebar",
+            position: "left",
+            label: "Documentation",
           },
           // Use "to" for internal Docusaurus routes
           {
-            label: 'Install',
-            to: '/docs/category/installating-metacall-cli',
-            position: 'left',
+            label: "Install",
+            to: "/docs/category/installating-metacall-cli",
+            position: "left",
           },
           {
-            label: 'Tutorials',
-            to: '/docs/category/tutorials',
-            position: 'left',
+            label: "Tutorials",
+            to: "/docs/category/tutorials",
+            position: "left",
           },
           {
-            href: '/starred',
-            label: '⭐ Stars',
-            position: 'right',
+            href: "/starred",
+            label: "⭐ Stars",
+            position: "right",
           },
           {
-            href: 'https://github.com/metacall',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/metacall",
+            label: "GitHub",
+            position: "right",
           },
         ],
       },
 
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Intro',
+            title: "Intro",
             items: [
-              { label: 'Getting Started', to: '/docs/getting-started' },
+              { label: "Getting Started", to: "/docs/getting-started" },
               {
-                label: 'Install',
-                to: '/docs/category/installating-metacall-cli',
+                label: "Install",
+                to: "/docs/category/installating-metacall-cli",
               },
             ],
           },
           {
-            title: 'Use MetaCall',
+            title: "Use MetaCall",
             items: [
-              { label: 'Tutorials', to: '/docs/category/tutorials' },
-              { label: 'Deployment', to: '/docs/deployment' },
+              { label: "Tutorials", to: "/docs/category/tutorials" },
+              { label: "Deployment", to: "/docs/deployment" },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
-              { label: 'Discord', href: 'https://discord.gg/upwP4mwJWa' },
+              { label: "Discord", href: "https://discord.gg/upwP4mwJWa" },
               {
-                label: 'Telegram',
-                href: 'https://t.me/joinchat/BMSVbBatp0Vi4s5l4VgUgg',
+                label: "Telegram",
+                href: "https://t.me/joinchat/BMSVbBatp0Vi4s5l4VgUgg",
               },
               {
-                label: 'Matrix',
-                href: 'https://matrix.to/#/#metacall:matrix.org',
+                label: "Matrix",
+                href: "https://matrix.to/#/#metacall:matrix.org",
               },
             ],
           },
           {
-            title: 'More',
+            title: "More",
             items: [
-              { label: 'GitHub', href: 'https://github.com/metacall/' },
+              { label: "GitHub", href: "https://github.com/metacall/" },
               {
-                label: 'Changelog',
-                href: 'https://github.com/metacall/core/releases',
+                label: "Changelog",
+                href: "https://github.com/metacall/core/releases",
               },
             ],
           },
